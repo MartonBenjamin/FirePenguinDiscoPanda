@@ -1,7 +1,3 @@
 Marton Benjamin
 Marton Peter Marton
-<<<<<<< HEAD
 Nagy Akos
-=======
-Verebelyi Mate
->>>>>>> fbff55940ff99ee31bb5334e21363bd23a8663c5
