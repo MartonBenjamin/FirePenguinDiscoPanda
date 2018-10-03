@@ -1,0 +1,20 @@
+﻿<Window x:Class="mátéka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mátéka"
+        mc:Ignorable="d"
+        Title="FirePenguinDiscoPanda" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid Background="Khaki">
+        <Label Content="Felhasználónév:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Margin="225,180,438.6,214" Height="26"/>
+        <Label Content="Jelszó:" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="130" Margin="225,206,438.6,190" Height="24"/>
+        <PasswordBox x:Name="pswbox" HorizontalAlignment="Center" Margin="355,206,288.6,0" Width="150" Height="20" VerticalAlignment="Top"/>
+        <TextBox x:Name="tblogin" HorizontalAlignment="Center" Height="20" Width="150" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="355,180,288.6,0"/>
+        <Button x:Name="btnlogin" Click="btnlogin_Click" Content="Bejelentkezés" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="430,245,0,0"/>
+        <Image Margin="225,25,288.6,236" Source="logo.png" Stretch="Fill" Opacity="0.8512"/>
+        <Label Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>
