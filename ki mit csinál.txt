@@ -1,0 +1,3 @@
+Benjámin - Adatbázis
+Máté, Balázs - Viselkedés diagram
+Péter, Ákos - komponens diagram
