@@ -36,12 +36,14 @@ namespace Raktar
             {
                 lblloginfo.Visibility = Visibility.Visible;
                 lblloginfo.Content = "Sikeres bejelentkezés!";
+                lblloginfo.Foreground = Brushes.Green;
                 Bejelentkezes();
             }
             else
             {
                 lblloginfo.Visibility = Visibility.Visible;
                 lblloginfo.Content = "Hibás felhasználónév vagy jelszó!";
+                lblloginfo.Foreground = Brushes.Red;
 
             }
         }
