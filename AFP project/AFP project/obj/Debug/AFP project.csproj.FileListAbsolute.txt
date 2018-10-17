@@ -1,0 +1,23 @@
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\DB\AFP_DB_log.mdf
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\DB\AFP_DB_log_log.ldf
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\AFP project.exe.config
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\AFP project.exe
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\AFP project.pdb
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\EntityFramework.dll
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\EntityFramework.xml
+C:\Users\B\source\repos\AFP project\AFP project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.csprojAssemblyReference.cache
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\MainWindow.g.cs
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\App.g.cs
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project_Content.g.cs
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project_MarkupCompile.cache
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project_MarkupCompile.lref
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\MainWindow.baml
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.g.resources
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP_project.Properties.Resources.resources
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.csproj.GenerateResource.cache
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.csproj.CoreCompileInputs.cache
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.csproj.CopyComplete
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.exe
+C:\Users\B\source\repos\AFP project\AFP project\obj\Debug\AFP project.pdb
