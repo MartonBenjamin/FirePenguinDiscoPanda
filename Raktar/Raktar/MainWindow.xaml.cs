@@ -22,7 +22,6 @@ namespace Raktar
     /// </summary>
     public partial class MainWindow : Window
     {
-        
         static string nev = "teszt";
         static string jelszo = "123";
         
@@ -30,25 +29,41 @@ namespace Raktar
         {
             InitializeComponent();
         }
+        
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            
             lblloginfo.Visibility = Visibility.Hidden;
-            if (tblogin.Text == nev && pswbox.Password == jelszo)
+            using (adatbazisEntities db = new adatbazisEntities())
             {
-                lblloginfo.Visibility = Visibility.Visible;
-                lblloginfo.Content = "Sikeres bejelentkezés!";
-                lblloginfo.Foreground = Brushes.Green;
-                Bejelentkezes();
-            }
-            else
-            {
-                lblloginfo.Visibility = Visibility.Visible;
-                lblloginfo.Content = "Hibás felhasználónév vagy jelszó!";
-                lblloginfo.Foreground = Brushes.Red;
+                var user = db.Loginadatok.FirstOrDefault(u => u.felhasznalonev == tblogin.Text);
+                int maxId = db.Loginadatok.Select(p => p.id).Max();
+                user.felhasznalonev = "admin";
+                user.jelszo = "admin";
+                user.id = maxId + 1;
+                db.Loginadatok.Add(user);
+                db.SaveChanges();
+                if (user != null)
+                {
+                    if (user.jelszo == pswbox.Password)
+                    {
+                        lblloginfo.Visibility = Visibility.Visible;
+                        lblloginfo.Content = "Sikeres bejelentkezés!";
+                        lblloginfo.Foreground = Brushes.Green;
+                        Bejelentkezes();
+                    }
+                    else
+                    {
+                        lblloginfo.Visibility = Visibility.Visible;
+                        lblloginfo.Content = "Hibás felhasználónév vagy jelszó!";
+                        lblloginfo.Foreground = Brushes.Red;
 
+                    }
+
+                }
+                
             }
+            
         }
         private void Bejelentkezes()
         {

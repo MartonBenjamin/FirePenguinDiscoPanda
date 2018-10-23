@@ -28,7 +28,7 @@ namespace AFP_project
             {
                 User usr = db.User.FirstOrDefault(p => p.Id == 1);
                 if(usr != null)
-                    lbl1.Content = lbl1.Content = usr.Name;
+                    lbl1.Content = usr.Name;
             }
         }
 

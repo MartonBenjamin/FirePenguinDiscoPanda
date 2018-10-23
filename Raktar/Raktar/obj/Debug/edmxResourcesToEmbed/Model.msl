@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="firepenguinModelStoreContainer" CdmEntityContainer="adatbazisEntities">
+    <EntitySetMapping Name="Felhasznalok">
+      <EntityTypeMapping TypeName="firepenguinModel.Felhasznalok">
+        <MappingFragment StoreEntitySet="Felhasznalok">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vezeteknev" ColumnName="vezeteknev" />
+          <ScalarProperty Name="keresztnev" ColumnName="keresztnev" />
+          <ScalarProperty Name="szulido" ColumnName="szulido" />
+          <ScalarProperty Name="adoazon" ColumnName="adoazon" />
+          <ScalarProperty Name="taj" ColumnName="taj" />
+          <ScalarProperty Name="irsz" ColumnName="irsz" />
+          <ScalarProperty Name="anyjaneve" ColumnName="anyjaneve" />
+          <ScalarProperty Name="fizetes" ColumnName="fizetes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raktár">
+      <EntityTypeMapping TypeName="firepenguinModel.Raktár">
+        <MappingFragment StoreEntitySet="Raktár">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Név" ColumnName="Név" />
+          <ScalarProperty Name="Cím" ColumnName="Cím" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Város">
+      <EntityTypeMapping TypeName="firepenguinModel.Város">
+        <MappingFragment StoreEntitySet="Város">
+          <ScalarProperty Name="Irányítószám" ColumnName="Irányítószám" />
+          <ScalarProperty Name="Város1" ColumnName="Város" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Termék">
+      <EntityTypeMapping TypeName="firepenguinModel.Termék">
+        <MappingFragment StoreEntitySet="Termék">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Megnevezés" ColumnName="Megnevezés" />
+          <ScalarProperty Name="Súly_gramm_" ColumnName="Súly(gramm)" />
+          <ScalarProperty Name="Raktáron" ColumnName="Raktáron" />
+          <ScalarProperty Name="Raktár" ColumnName="Raktár" />
+          <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />
+          <ScalarProperty Name="Szavatosság" ColumnName="Szavatosság" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loginadatok">
+      <EntityTypeMapping TypeName="firepenguinModel.Loginadatok">
+        <MappingFragment StoreEntitySet="Loginadatok">
+          <ScalarProperty Name="jelszo" ColumnName="jelszo" />
+          <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

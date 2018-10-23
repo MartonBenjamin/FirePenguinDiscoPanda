@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="firepenguinModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Felhasznalok">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="vezeteknev" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="keresztnev" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="szulido" Type="date" Nullable="false" />
+    <Property Name="adoazon" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="taj" Type="char" MaxLength="9" Nullable="false" />
+    <Property Name="irsz" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="anyjaneve" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="fizetes" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Loginadatok">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="felhasznalonev" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="jelszo" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Raktár">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Név" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cím" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Termék">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Megnevezés" />
+      <PropertyRef Name="Súly(gramm)" />
+      <PropertyRef Name="Raktáron" />
+      <PropertyRef Name="Raktár" />
+      <PropertyRef Name="Beszállítva" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Megnevezés" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Súly(gramm)" Type="int" Nullable="false" />
+    <Property Name="Raktáron" Type="tinyint" Nullable="false" />
+    <Property Name="Raktár" Type="int" Nullable="false" />
+    <Property Name="Beszállítva" Type="date" Nullable="false" />
+    <Property Name="Szavatosság" Type="date" />
+  </EntityType>
+  <EntityType Name="Város">
+    <Key>
+      <PropertyRef Name="Irányítószám" />
+    </Key>
+    <Property Name="Irányítószám" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Város" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Felhasznalok_Varos">
+    <End Role="Város" Type="Self.Város" Multiplicity="1" />
+    <End Role="Felhasznalok" Type="Self.Felhasznalok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Város">
+        <PropertyRef Name="Irányítószám" />
+      </Principal>
+      <Dependent Role="Felhasznalok">
+        <PropertyRef Name="irsz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="firepenguinModelStoreContainer">
+    <EntitySet Name="Felhasznalok" EntityType="Self.Felhasznalok" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loginadatok" EntityType="Self.Loginadatok" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Raktár" EntityType="Self.Raktár" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Város" EntityType="Self.Város" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Termék" EntityType="Self.Termék" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Termék].[id] AS [id], 
+    [Termék].[Megnevezés] AS [Megnevezés], 
+    [Termék].[Súly(gramm)] AS [Súly(gramm)], 
+    [Termék].[Raktáron] AS [Raktáron], 
+    [Termék].[Raktár] AS [Raktár], 
+    [Termék].[Beszállítva] AS [Beszállítva], 
+    [Termék].[Szavatosság] AS [Szavatosság]
+    FROM [dbo].[Termék] AS [Termék]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Felhasznalok_Varos" Association="Self.FK_Felhasznalok_Varos">
+      <End Role="Város" EntitySet="Város" />
+      <End Role="Felhasznalok" EntitySet="Felhasznalok" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
