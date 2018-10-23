@@ -23,6 +23,7 @@ namespace AFP_project
         public MainWindow()
         {
             InitializeComponent();
+            
             using (AFP_DB_logEntities db = new AFP_DB_logEntities())
             {
                 User usr = db.User.FirstOrDefault(p => p.Id == 1);

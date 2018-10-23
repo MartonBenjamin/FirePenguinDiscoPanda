@@ -22,8 +22,10 @@ namespace Raktar
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         static string nev = "teszt";
         static string jelszo = "123";
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace Raktar
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
+            
             lblloginfo.Visibility = Visibility.Hidden;
             if (tblogin.Text == nev && pswbox.Password == jelszo)
             {
