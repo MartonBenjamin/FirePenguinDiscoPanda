@@ -81,6 +81,9 @@ namespace Raktar
         }
         private void Bejelentkezes()
         {
+            Window1 win1 = new Window1();
+            win1.Show();
+            this.Close();
             
         }
     }

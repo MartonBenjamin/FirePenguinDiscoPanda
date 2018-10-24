@@ -403,3 +403,5 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.Threading.Tasks.E
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe.config
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar_Content.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.g.cs
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.baml
