@@ -55,13 +55,22 @@ namespace Raktar
                         lblloginfo.Foreground = Brushes.Green;
                         Bejelentkezes();
                     }
-                    
+                    else
+                    {
+                        lblloginfo.Visibility = Visibility.Visible;
+
+                        lblloginfo.Content = "Hibás jelszó!";
+                        lblloginfo.Foreground = Brushes.Red;
+
+
+                    }
+
                 }
                 else
                 {
                     lblloginfo.Visibility = Visibility.Visible;
 
-                    lblloginfo.Content = "Hibás felhasználónév vagy jelszó!";
+                    lblloginfo.Content = "Hibás felhasználónév!";
                     lblloginfo.Foreground = Brushes.Red;
 
 
