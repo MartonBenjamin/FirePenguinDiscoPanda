@@ -1,0 +1,3 @@
+BB MP Login, log ablakkezelés, design
+VM NÁ MB Termékkezelés/Raktárkezelés/Dolgozokezeles ablakkezelés, design
+unit test, assert

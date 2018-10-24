@@ -407,3 +407,7 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.g.cs
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.g.cs
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.g.cs
