@@ -10,5 +10,7 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model11.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model11.tt")]
 
 

@@ -22,8 +22,8 @@ namespace Raktar
     /// </summary>
     public partial class MainWindow : Window
     {
-        static string nev = "teszt";
-        static string jelszo = "123";
+        //static string nev = "teszt";
+        //static string jelszo = "123";
         
         public MainWindow()
         {
@@ -34,17 +34,20 @@ namespace Raktar
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
             lblloginfo.Visibility = Visibility.Hidden;
-            using (adatbazisEntities db = new adatbazisEntities())
+            using (firepenguinEntities1 db = new firepenguinEntities1())
             {
-                var user = db.Loginadatok.FirstOrDefault(u => u.felhasznalonev == tblogin.Text);
-                int maxId = db.Loginadatok.Select(p => p.id).Max();
-                user.felhasznalonev = "admin";
-                user.jelszo = "admin";
-                user.id = maxId + 1;
-                db.Loginadatok.Add(user);
-                db.SaveChanges();
+
+
+                var user = db.Logins.FirstOrDefault(u => u.felhasznalonev == tblogin.Text);
+                int maxId = db.Logins.Select(p => p.id).Max();
+                //user.felhasznalonev = "admin";
+                //user.jelszo = "admin";
+                //user.id = maxId + 1;
+                //db.Loginadatok.Add(user);
+                //db.SaveChanges();
                 if (user != null)
                 {
+                    
                     if (user.jelszo == pswbox.Password)
                     {
                         lblloginfo.Visibility = Visibility.Visible;
@@ -55,7 +58,8 @@ namespace Raktar
                     else
                     {
                         lblloginfo.Visibility = Visibility.Visible;
-                        lblloginfo.Content = "Hibás felhasználónév vagy jelszó!";
+                        lblloginfo.Content =  pswbox.Password + user.jelszo + ".";
+                        //lblloginfo.Content = "Hibás felhasználónév vagy jelszó!";
                         lblloginfo.Foreground = Brushes.Red;
 
                     }

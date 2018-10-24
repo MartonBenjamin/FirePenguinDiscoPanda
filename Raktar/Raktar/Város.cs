@@ -17,13 +17,13 @@ namespace Raktar
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Város()
         {
-            this.Felhasznalok = new HashSet<Felhasznalok>();
+            this.Felhasznaloks = new HashSet<Felhasznalok>();
         }
     
         public string Irányítószám { get; set; }
         public string Város1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Felhasznalok> Felhasznalok { get; set; }
+        public virtual ICollection<Felhasznalok> Felhasznaloks { get; set; }
     }
 }

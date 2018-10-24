@@ -118,7 +118,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Felhasznalok.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>model11.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>model11.tt</DependentUpon>
     </Compile>
     <Compile Include="Loginadatok.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -128,14 +131,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="model11.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>model11.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model11.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>model11.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>model11.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Raktár.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>model11.tt</DependentUpon>
     </Compile>
     <Compile Include="Termék.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>model11.tt</DependentUpon>
     </Compile>
     <Compile Include="Város.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>model11.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +203,13 @@
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="model11.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>model11.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="model11.edmx.diagram">
+      <DependentUpon>model11.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,6 +246,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="model11.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>model11.edmx</DependentUpon>
+      <LastGenOutput>model11.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="model11.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>model11.edmx</DependentUpon>
+      <LastGenOutput>model11.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
