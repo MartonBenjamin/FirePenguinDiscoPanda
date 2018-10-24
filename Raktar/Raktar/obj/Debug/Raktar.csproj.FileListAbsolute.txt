@@ -282,7 +282,6 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CoreC
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.pdb
-C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Microsoft.Win32.Primitives.dll
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\netstandard.dll
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.AppContext.dll
@@ -405,3 +404,6 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar_Content.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.baml
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.g.cs
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Window1.baml
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
