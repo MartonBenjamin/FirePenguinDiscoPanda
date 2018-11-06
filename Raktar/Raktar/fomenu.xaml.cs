@@ -19,9 +19,11 @@ namespace Raktar
     /// </summary>
     public partial class Window1 : Window
     {
+        static List<CDolgozok> dolgozok = CDolgozokkezeles.DolgozokListaLeker();
         public Window1()
         {
             InitializeComponent();
+            
         }
     }
 }

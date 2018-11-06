@@ -62,7 +62,6 @@ namespace Raktar
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
                 var termekid = db.Termék.Select(u => u.id).Min();
-
                 while (termekid <= db.Termék.Select(u => u.id).Max())
                 {
                     termek.Add(new CTermekkezeles() { Id = db.Termék.Select(a => a.id).FirstOrDefault() });

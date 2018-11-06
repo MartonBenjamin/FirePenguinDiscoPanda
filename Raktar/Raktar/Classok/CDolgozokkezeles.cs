@@ -80,6 +80,7 @@ namespace Raktar
     class CDolgozokkezeles
     {
         static public List<CDolgozok> dolgozok = new List<CDolgozok>();
+
         public static List<CDolgozok> DolgozokListaLeker()
         {
             uint id; uint fizetes;
@@ -106,6 +107,35 @@ namespace Raktar
                 }
             }
             return dolgozok;
+        }
+        //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
+        public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, uint fizetes)
+        {
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Felhasznalok ujdolgozo = new Felhasznalok();
+                int maxId = db.Felhasznaloks.Select(p => p.id).Max();
+                ujdolgozo.id = maxId + 1;
+                ujdolgozo.vezeteknev = vezeteknev;
+                ujdolgozo.keresztnev = keresztnev;
+                ujdolgozo.szulido = Convert.ToDateTime(szulido);
+                ujdolgozo.adoazon = adoazon;
+                ujdolgozo.taj = taj;
+                ujdolgozo.irsz = irsz;
+                ujdolgozo.anyjaneve = anyjaneve;
+                ujdolgozo.fizetes = fizetes;
+
+                db.Felhasznaloks.Add(ujdolgozo);
+                db.SaveChanges();
+            }
+        }
+        public static void Dolgozotorol(uint id)
+        {
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
+                db.Felhasznaloks.Remove(toroldolgozo);
+            }
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Raktar
                 Window1 win1 = new Window1();
                 mainWin.Close();
                 win1.Show();
+                
             });
         }
 

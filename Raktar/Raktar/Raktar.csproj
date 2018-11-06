@@ -121,6 +121,9 @@
     <Compile Include="Classok\CLogin.cs" />
     <Compile Include="Classok\CTermekkezeles.cs" />
     <Compile Include="Classok\CRaktarakKezeles.cs" />
+    <Compile Include="Pagek\DolgozoHozaad.xaml.cs">
+      <DependentUpon>DolgozoHozaad.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pagek\Dolgozok.xaml.cs">
       <DependentUpon>Dolgozok.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
     <Compile Include="fomenu.xaml.cs">
       <DependentUpon>fomenu.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pagek\DolgozoHozaad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pagek\Dolgozok.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -244,6 +251,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="logo.png" />
     <Content Include="model11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model11.edmx</DependentUpon>

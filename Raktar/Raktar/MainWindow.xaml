@@ -13,9 +13,10 @@
         <PasswordBox x:Name="pswbox" HorizontalAlignment="Center" Margin="355,206,288.6,0" Width="150" Height="20" VerticalAlignment="Top"/>
         <TextBox x:Name="tblogin" HorizontalAlignment="Center" Height="20" Width="150" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="355,180,288.6,0"/>
         <Button x:Name="btnlogin" Click="btnlogin_Click" Content="Bejelentkezés" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="430,245,0,0"/>
-        <!--<Image Margin="225,25,288.6,236" Source="\logo.png" Stretch="Fill" Opacity="0.8512"/>-->
         <Label x:Name="lbversion" Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label x:Name="lblloginfo" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 120" Foreground="Red"/>
+        <Image Margin="225,10,288.6,248" Source="logo.png" Stretch="Fill" Opacity="0.85"/>
+
 
     </Grid>
 </Window>
