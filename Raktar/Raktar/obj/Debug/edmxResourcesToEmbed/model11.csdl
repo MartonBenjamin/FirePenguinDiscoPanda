@@ -43,14 +43,14 @@
     <Key>
       <PropertyRef Name="id" />
       <PropertyRef Name="Megnevezés" />
-      <PropertyRef Name="Súly_gramm_" />
+      <PropertyRef Name="Súly_gramm" />
       <PropertyRef Name="Raktáron" />
       <PropertyRef Name="Raktár" />
       <PropertyRef Name="Beszállítva" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="Megnevezés" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Súly_gramm_" Type="Int32" Nullable="false" />
+    <Property Name="Súly_gramm" Type="Int32" Nullable="false" />
     <Property Name="Raktáron" Type="Byte" Nullable="false" />
     <Property Name="Raktár" Type="Int32" Nullable="false" />
     <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />

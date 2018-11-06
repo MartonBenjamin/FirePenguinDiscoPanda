@@ -47,7 +47,7 @@
         <MappingFragment StoreEntitySet="Termék">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Megnevezés" ColumnName="Megnevezés" />
-          <ScalarProperty Name="Súly_gramm_" ColumnName="Súly(gramm)" />
+          <ScalarProperty Name="Súly_gramm" ColumnName="Súly(gramm)" />
           <ScalarProperty Name="Raktáron" ColumnName="Raktáron" />
           <ScalarProperty Name="Raktár" ColumnName="Raktár" />
           <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />

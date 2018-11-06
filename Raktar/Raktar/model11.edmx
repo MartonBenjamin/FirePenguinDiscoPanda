@@ -142,14 +142,14 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="Megnevezés" />
-            <PropertyRef Name="Súly_gramm_" />
+            <PropertyRef Name="Súly_gramm" />
             <PropertyRef Name="Raktáron" />
             <PropertyRef Name="Raktár" />
             <PropertyRef Name="Beszállítva" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Megnevezés" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Súly_gramm_" Type="Int32" Nullable="false" />
+          <Property Name="Súly_gramm" Type="Int32" Nullable="false" />
           <Property Name="Raktáron" Type="Byte" Nullable="false" />
           <Property Name="Raktár" Type="Int32" Nullable="false" />
           <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />
@@ -230,7 +230,7 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
               <MappingFragment StoreEntitySet="Termék">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Megnevezés" ColumnName="Megnevezés" />
-                <ScalarProperty Name="Súly_gramm_" ColumnName="Súly(gramm)" />
+                <ScalarProperty Name="Súly_gramm" ColumnName="Súly(gramm)" />
                 <ScalarProperty Name="Raktáron" ColumnName="Raktáron" />
                 <ScalarProperty Name="Raktár" ColumnName="Raktár" />
                 <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />

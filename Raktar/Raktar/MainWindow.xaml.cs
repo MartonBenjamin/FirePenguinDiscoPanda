@@ -28,6 +28,9 @@ namespace Raktar
         public MainWindow()
         {
             InitializeComponent();
+            //termék page hozzáférés
+            //Termekek win1 = new Termekek();
+            //this.Content = win1;
         }
 
 
