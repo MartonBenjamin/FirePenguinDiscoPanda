@@ -63,7 +63,7 @@ namespace Raktar
             {
                 var termekid = db.Termék.Select(u => u.id).Min();
 
-                while (termekid < db.Termék.Select(u => u.id).Max())
+                while (termekid <= db.Termék.Select(u => u.id).Max())
                 {
                     termek.Add(new CTermekkezeles() { Id = db.Termék.Select(a => a.id).FirstOrDefault() });
                     termek.Add(new CTermekkezeles() { Megnevezés = db.Termék.Select(a => a.Megnevezés).FirstOrDefault() });
