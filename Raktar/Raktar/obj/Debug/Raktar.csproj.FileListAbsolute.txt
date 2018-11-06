@@ -417,3 +417,11 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.g.cs
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.g.cs
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.g.cs
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.baml

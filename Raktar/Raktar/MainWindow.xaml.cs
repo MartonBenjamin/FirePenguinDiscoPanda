@@ -36,7 +36,8 @@ namespace Raktar
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            lblloginfo.Visibility = Visibility.Hidden;
+            CLogin login = new CLogin();
+            login.LoginTry();
         }
     }
 }
