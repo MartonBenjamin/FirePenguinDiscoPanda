@@ -429,3 +429,5 @@ C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.baml
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.g.cs
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.baml

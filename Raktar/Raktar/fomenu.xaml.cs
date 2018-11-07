@@ -40,7 +40,7 @@ namespace Raktar
             this.Content = raktarak;
         }
 
-        private void btn_click_termekek(object sender, RoutedEventArgs e)
+        private void btn_click_termek(object sender, RoutedEventArgs e)
         {
             Termekek termekek = new Termekek();
             this.Content = termekek;
