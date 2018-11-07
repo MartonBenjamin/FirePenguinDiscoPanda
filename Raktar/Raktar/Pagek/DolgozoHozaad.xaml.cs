@@ -30,5 +30,12 @@ namespace Raktar.Pagek
             CDolgozokkezeles.DolgozokHozaad(tbvezeteknev.Text, tbkeresztnev.Text, tbszulido.Text,
                 tbadoazon.Text, tbtaj.Text, tbirsz.Text, tbanyjaneve.Text, Convert.ToUInt32(tbfizetes.Text));
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Dolgozok dolgozok = new Dolgozok();
+            this.Content = dolgozok;
+
+        }
     }
 }

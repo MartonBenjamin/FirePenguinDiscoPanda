@@ -9,5 +9,9 @@
         ResizeMode="CanMinimize"
         
         >
-    <Grid/>
+    <Grid>
+        <Button Click="btn_click_dolgozok" Content="Dolgozok" HorizontalAlignment="Left" Margin="135,176,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="btn_click_raktarak" Content="Raktarak" HorizontalAlignment="Left" Margin="252,176,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="btn_click_termek" Content="Termek" HorizontalAlignment="Left" Margin="406,181,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
 </Window>

@@ -60,5 +60,11 @@ namespace Raktar
             InitializeComponent();
             TablazatLetrehoz();
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Window1 fomenu = new Window1();
+            this.Content = fomenu;
+        }
     }
 }

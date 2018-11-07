@@ -9,6 +9,7 @@
       Title="Raktarak">
 
     <Grid>
-        
+        <Image  Source="if_undo-back-arrow_2931166.png" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="72" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+
     </Grid>
 </Page>

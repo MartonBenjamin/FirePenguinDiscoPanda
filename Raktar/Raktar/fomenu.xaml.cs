@@ -25,5 +25,25 @@ namespace Raktar
             InitializeComponent();
             
         }
+
+        private void btn_click_dolgozok(object sender, RoutedEventArgs e)
+        {
+            Dolgozok dolgozok = new Dolgozok();
+            this.Content = dolgozok;
+
+
+        }
+
+        private void btn_click_raktarak(object sender, RoutedEventArgs e)
+        {
+            Raktarak raktarak = new Raktarak();
+            this.Content = raktarak;
+        }
+
+        private void btn_click_termekek(object sender, RoutedEventArgs e)
+        {
+            Termekek termekek = new Termekek();
+            this.Content = termekek;
+        }
     }
 }
