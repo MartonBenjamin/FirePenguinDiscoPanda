@@ -19,7 +19,7 @@ namespace Raktar.Pagek
     /// Interaction logic for DolgozoHozaad.xaml
     /// </summary>
     public partial class DolgozoHozaad : Page
-    {  
+    {
         public DolgozoHozaad()
         {
             InitializeComponent();
@@ -31,14 +31,11 @@ namespace Raktar.Pagek
                 tbadoazon.Text, tbtaj.Text, tbirsz.Text, tbanyjaneve.Text, Convert.ToUInt32(tbfizetes.Text));
         }
 
-        MainWindow mainWin = Application.Current.Windows
-        .Cast<Window>()
-        .FirstOrDefault(window => window is MainWindow) as MainWindow;
-
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Dolgozok dolgozok = new Dolgozok();
-            mainWin.Content = dolgozok;
+            this.Content = dolgozok;
+
         }
     }
 }

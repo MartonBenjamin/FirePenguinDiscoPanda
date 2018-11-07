@@ -10,42 +10,40 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Raktar.Pagek
+namespace Raktar
 {
     /// <summary>
-    /// Interaction logic for fomenu.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class fomenu : Page
+    public partial class Window1 : Window
     {
         static List<CDolgozok> dolgozok = CDolgozokkezeles.DolgozokListaLeker();
-        public fomenu()
+        public Window1()
         {
             InitializeComponent();
+            
         }
-
-        MainWindow mainWin = Application.Current.Windows
-        .Cast<Window>()
-        .FirstOrDefault(window => window is MainWindow) as MainWindow;
 
         private void btn_click_dolgozok(object sender, RoutedEventArgs e)
         {
             Dolgozok dolgozok = new Dolgozok();
-            mainWin.Content = dolgozok;
+            this.Content = dolgozok;
+
+
         }
 
         private void btn_click_raktarak(object sender, RoutedEventArgs e)
         {
             Raktarak raktarak = new Raktarak();
-            mainWin.Content = raktarak;
+            this.Content = raktarak;
         }
 
         private void btn_click_termek(object sender, RoutedEventArgs e)
         {
             Termekek termekek = new Termekek();
-            mainWin.Content = termekek;
+            this.Content = termekek;
         }
     }
 }

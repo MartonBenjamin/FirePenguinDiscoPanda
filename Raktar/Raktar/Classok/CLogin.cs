@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
-using Raktar.Pagek;
+
 
 namespace Raktar
 {
@@ -29,9 +29,9 @@ namespace Raktar
         {
             Application.Current.Dispatcher.Invoke((Action)delegate
             {
-                fomenu win1 = new fomenu();
-               
-                mainWin.Content = win1;
+                Window1 win1 = new Window1();
+                mainWin.Close();
+                win1.Show();
                 
             });
         }
