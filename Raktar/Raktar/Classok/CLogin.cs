@@ -51,7 +51,7 @@ namespace Raktar
                         mainWin.lblloginfo.Content = "Sikeres bejelentkezés!";
                         mainWin.lblloginfo.Foreground = Brushes.Green;
 
-                        Task.Delay(2000).ContinueWith(t => ValidLogin());
+                        Task.Delay(750).ContinueWith(t => ValidLogin());
 
                     }
                     else
