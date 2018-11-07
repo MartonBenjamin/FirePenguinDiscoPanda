@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Raktar
 {
-    class CTermekkezeles
+    class CTermekek
     {
-        //Add,remove,modify Ha 0 van raktáron kiírja, hogy "nincs raktáron"
-        static List<CTermekkezeles> termek = new List<CTermekkezeles>();
-
         public int Id
         {
             get; set;
@@ -23,7 +20,7 @@ namespace Raktar
         {
             get; set;
         }
-        public string Raktáron
+        public byte Raktáron
         {
             get; set;
         }
@@ -39,61 +36,60 @@ namespace Raktar
         {
             get; set;
         }
-
-        public override string ToString()
+        public CTermekek(int id, string megnevezes, int suly, byte raktaron, int raktar, DateTime beszallitva, DateTime Szavatossag)
         {
-            return Id + " " + Megnevezés + " " + Suly_gramm + " " + Raktáron + " " + Raktár + " " + Beszállítva + " " + Szavatosság;
+            this.Id = id; this.Megnevezés = megnevezes; this.Suly_gramm = suly; this.Raktáron = raktaron;
+            this.Beszállítva = beszallitva; this.Szavatosság = Szavatosság;
         }
+    }
+    class CTermekkezeles
+    {
+        //Add,remove,modify Ha 0 van raktáron kiírja, hogy "nincs raktáron"
+        static List<CTermekek> termekek = new List<CTermekek>(); 
 
-        public static List<CTermekkezeles> ListaVisszaAd()
-        {
-            return termek;
-        }
+       
 
-        public static void termekTorol()
+        public static void termekTorol(int id)
         {
             using(firepenguinEntities1 db = new firepenguinEntities1())
             {
-
+                Termék toroltermek = db.Termék.FirstOrDefault(p => p.id == id);
+                db.Termék.Remove(toroltermek);
             }
         }
-        public static void termekListaFeltolt()
+        public static List<CTermekek> termekListaVisszaAd()
         {
+            int id; int suly; int raktar;
+            string megnevezes; byte raktaron;
+            DateTime beszallitva; DateTime szavatossag;
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
-                var termekid = db.Termék.Select(u => u.id).Min();
-                while (termekid <= db.Termék.Select(u => u.id).Max())
+                var actid = db.Termék.Select(u => u.id).Min();
+                var termek = db.Termék.FirstOrDefault(u => u.id == actid);
+                while (actid <= db.Termék.Select(u => u.id).Max())
                 {
-                    termek.Add(new CTermekkezeles() { Id = db.Termék.Select(a => a.id).FirstOrDefault() });
-                    termek.Add(new CTermekkezeles() { Megnevezés = db.Termék.Select(a => a.Megnevezés).FirstOrDefault() });
-                    termek.Add(new CTermekkezeles() { Suly_gramm = db.Termék.Select(a => a.Súly_gramm).FirstOrDefault() });
-                    if (db.Termék.Select(a => a.Raktáron).FirstOrDefault() == 1)
-                    {
-                        termek.Add(new CTermekkezeles() { Raktáron = "Raktáron van" });
-                    }
-                    else
-                    {
-                        termek.Add(new CTermekkezeles() { Raktáron = "Nincs raktáron" });
-                    }
-                    termek.Add(new CTermekkezeles() { Raktár = db.Termék.Select(a => a.Raktár).FirstOrDefault() });
-                    termek.Add(new CTermekkezeles() { Beszállítva = db.Termék.Select(a => a.Beszállítva).FirstOrDefault() });
-                    termek.Add(new CTermekkezeles() { Szavatosság = (DateTime)db.Termék.Select(a => a.Szavatosság).FirstOrDefault() });
-                    termekid++;
+                    id = termek.id;
+                    suly = termek.Súly_gramm;
+                    raktar = termek.Raktár;
+                    megnevezes = termek.Megnevezés;
+                    raktaron = termek.Raktáron;
+                    beszallitva = termek.Beszállítva;
+                    szavatossag = Convert.ToDateTime(termek.Szavatosság);
+
+                    CTermekek lekerttermek = new CTermekek(id,megnevezes,suly,raktaron,raktar,beszallitva,szavatossag);
+                    actid++;
+                    termekek.Add(lekerttermek);
                 }
+                
             }
+            return termekek;
         }
 
 
 
-        public static void RaktaronVanE()
+        public static void TermekModosit()
         {
-            if (termek == null)
-            {
-                Termekek termekek = new Termekek();
-                termekek.nincsTermekLbl.Visibility = System.Windows.Visibility.Visible;
-                termekek.nincsTermekLbl.Foreground = System.Windows.Media.Brushes.Red;
-                termekek.Content = "A raktár üres!";
-            }
+
         }
 
     }
