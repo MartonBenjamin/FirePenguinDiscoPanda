@@ -55,6 +55,7 @@ namespace Raktar
             {
                 Termék toroltermek = db.Termék.FirstOrDefault(p => p.id == id);
                 db.Termék.Remove(toroltermek);
+                db.SaveChanges();
             }
         }
         public static List<CTermekek> termekListaVisszaAd()
@@ -85,7 +86,10 @@ namespace Raktar
             return termekek;
         }
 
+        public static void TermekHozaad()
+        {
 
+        }
 
         public static void TermekModosit()
         {

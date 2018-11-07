@@ -76,6 +76,7 @@ namespace Raktar
             {
                 Raktár torolraktar = db.Raktár.FirstOrDefault(p => p.id == id);
                 db.Raktár.Remove(torolraktar);
+                db.SaveChanges();
             }
         }
     }

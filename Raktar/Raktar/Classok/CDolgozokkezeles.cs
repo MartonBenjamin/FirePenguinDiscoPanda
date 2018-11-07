@@ -135,6 +135,7 @@ namespace Raktar
             {
                 Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
                 db.Felhasznaloks.Remove(toroldolgozo);
+                db.SaveChanges();
             }
         }
     }
