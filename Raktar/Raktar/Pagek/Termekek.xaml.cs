@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Raktar.Pagek;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,10 +62,14 @@ namespace Raktar
             TablazatLetrehoz();
         }
 
+        MainWindow mainWin = Application.Current.Windows
+        .Cast<Window>()
+        .FirstOrDefault(window => window is MainWindow) as MainWindow;
+
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Window1 fomenu = new Window1();
-            this.Content = fomenu;
+            fomenu main = new fomenu();
+            mainWin.Content = main;
         }
     }
 }
