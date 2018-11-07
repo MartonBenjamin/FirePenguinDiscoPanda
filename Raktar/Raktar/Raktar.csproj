@@ -148,6 +148,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>model11.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pagek\fomenu.xaml.cs">
+      <DependentUpon>fomenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pagek\Raktarak.xaml.cs">
       <DependentUpon>Raktarak.xaml</DependentUpon>
     </Compile>
@@ -162,9 +165,6 @@
     </Compile>
     <Compile Include="Város.cs">
       <DependentUpon>model11.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fomenu.xaml.cs">
-      <DependentUpon>fomenu.xaml</DependentUpon>
     </Compile>
     <Page Include="Pagek\DolgozoHozaad.xaml">
       <SubType>Designer</SubType>
@@ -186,7 +186,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="fomenu.xaml">
+    <Page Include="Pagek\fomenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

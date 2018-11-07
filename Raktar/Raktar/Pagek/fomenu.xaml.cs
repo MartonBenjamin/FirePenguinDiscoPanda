@@ -16,29 +16,36 @@ using System.Windows.Shapes;
 namespace Raktar.Pagek
 {
     /// <summary>
-    /// Interaction logic for DolgozoHozaad.xaml
+    /// Interaction logic for fomenu.xaml
     /// </summary>
-    public partial class DolgozoHozaad : Page
-    {  
-        public DolgozoHozaad()
+    public partial class fomenu : Page
+    {
+        static List<CDolgozok> dolgozok = CDolgozokkezeles.DolgozokListaLeker();
+        public fomenu()
         {
             InitializeComponent();
-        }
-
-        private void btnDolgozoHozaad_Click(object sender, RoutedEventArgs e)
-        {
-            CDolgozokkezeles.DolgozokHozaad(tbvezeteknev.Text, tbkeresztnev.Text, tbszulido.Text,
-                tbadoazon.Text, tbtaj.Text, tbirsz.Text, tbanyjaneve.Text, Convert.ToUInt32(tbfizetes.Text));
         }
 
         MainWindow mainWin = Application.Current.Windows
         .Cast<Window>()
         .FirstOrDefault(window => window is MainWindow) as MainWindow;
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void btn_click_dolgozok(object sender, RoutedEventArgs e)
         {
             Dolgozok dolgozok = new Dolgozok();
             mainWin.Content = dolgozok;
+        }
+
+        private void btn_click_raktarak(object sender, RoutedEventArgs e)
+        {
+            Raktarak raktarak = new Raktarak();
+            mainWin.Content = raktarak;
+        }
+
+        private void btn_click_termek(object sender, RoutedEventArgs e)
+        {
+            Termekek termekek = new Termekek();
+            mainWin.Content = termekek;
         }
     }
 }
