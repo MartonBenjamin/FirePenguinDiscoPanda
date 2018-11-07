@@ -56,6 +56,7 @@ namespace Raktar
                 Termék toroltermek = db.Termék.FirstOrDefault(p => p.id == id);
                 db.Termék.Remove(toroltermek);
                 db.SaveChanges();
+                
             }
         }
         public static List<CTermekek> termekListaVisszaAd()
@@ -81,35 +82,24 @@ namespace Raktar
                         Szavatosság = Convert.ToDateTime(termek.Szavatosság)
                     });
                 }
-
-                //    var actid = db.Termék.Select(u => u.id).First();
-                //    int szamlalo = actid;
-                //    var termek = db.Termék.FirstOrDefault(u => u.id == actid);
-
-                //    while (szamlalo <= db.Termék.Select(u => u.id).Max())
-                //    {
-
-                //        termekek.Add(new CTermekek
-                //        {
-                //            Id = termek.id,
-                //            Suly_gramm = termek.Súly_gramm,
-                //            Raktár = termek.Raktár,
-                //            Megnevezés = termek.Megnevezés,
-                //            Raktáron = termek.Raktáron,
-                //            Beszállítva = Convert.ToDateTime(termek.Beszállítva),
-                //            Szavatosság = Convert.ToDateTime(termek.Szavatosság)
-                //        });
-
-                //        szamlalo++;
-                //    }             
-                //}
                 return termekek;
             }
         }
 
-        public static void TermekHozaad()
+        public static void TermekHozaad(int suly, int raktar, string megnevezes, byte raktaron, DateTime szavatossag)
         {
-
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Termék ujtermek = new Termék();
+                int maxId = db.Felhasznaloks.Select(p => p.id).Max();
+                ujtermek.id = maxId + 1;
+                ujtermek.Megnevezés = megnevezes;
+                ujtermek.Súly_gramm = suly;
+                ujtermek.Raktár = raktar;
+                ujtermek.Raktáron = raktaron;
+                ujtermek.Beszállítva = DateTime.Now;
+                ujtermek.Szavatosság = szavatossag;
+            }
         }
 
         public static void TermekModosit()

@@ -47,6 +47,7 @@ namespace Raktar
 
                     if (user.jelszo == mainWin.pswbox.Password)
                     {
+                        
                         mainWin.lblloginfo.Visibility = Visibility.Visible;
                         mainWin.lblloginfo.Content = "Sikeres bejelentkezés!";
                         mainWin.lblloginfo.Foreground = Brushes.Green;

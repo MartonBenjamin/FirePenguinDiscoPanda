@@ -19,8 +19,9 @@ namespace Raktar
 {
     class CDolgozok
     {
-        uint id, fizetes;
-        string vezeteknev, keresztnev, szulido, adoazon, taj, irsz, anyjaneve;
+        int id, fizetes;
+        string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;
+        DateTime szulido;
 
 
         public string Vezeteknev
@@ -33,7 +34,7 @@ namespace Raktar
             get { return keresztnev; }
             set { keresztnev = value; }
         }
-        public string Szulido
+        public DateTime Szulido
         {
             get { return szulido; }
             set { szulido = value; }
@@ -58,23 +59,17 @@ namespace Raktar
             get { return anyjaneve; }
             set { anyjaneve = value; }
         }
-        public uint Id
+        public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        public uint Fizetes
+        public int Fizetes
         {
             get { return fizetes; }
             set { fizetes = value; }
         }
-        public CDolgozok(uint id, string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, uint fizetes)
-        {
-            this.id = id; this.vezeteknev = vezeteknev; this.keresztnev = keresztnev;
-            this.szulido = szulido; this.adoazon = adoazon; this.taj = taj; this.irsz = irsz;
-            this.anyjaneve = anyjaneve; this.fizetes = fizetes;
-        }
-
+        
 
     }
     class CDolgozokkezeles
@@ -83,60 +78,58 @@ namespace Raktar
 
         public static List<CDolgozok> DolgozokListaLeker()
         {
-            uint id; uint fizetes;
-            string vezeteknev; string keresztnev; string szulido; string adoazon; string taj; string irsz; string anyjaneve;
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
 
-                var actid = db.Felhasznaloks.Select(u => u.id).Min();
-                var worker = db.Felhasznaloks.FirstOrDefault(u => u.id == actid);
-                while (actid <= db.Felhasznaloks.Select(u => u.id).Max())
+                foreach (var felhasznalok in db.Felhasznaloks)
                 {
-                    id = Convert.ToUInt32(worker.id);
-                    fizetes = Convert.ToUInt32(worker.fizetes);
-                    vezeteknev = Convert.ToString(worker.vezeteknev);
-                    keresztnev = Convert.ToString(worker.keresztnev);
-                    szulido = Convert.ToString(worker.szulido);
-                    adoazon = Convert.ToString(worker.adoazon);
-                    taj = Convert.ToString(worker.taj);
-                    irsz = Convert.ToString(worker.irsz);
-                    anyjaneve = Convert.ToString(worker.anyjaneve);
-                    CDolgozok dolgozo = new CDolgozok(id, vezeteknev, keresztnev, szulido, adoazon, taj, irsz, anyjaneve, fizetes);
-                    dolgozok.Add(dolgozo);
-                    actid++;
+                    dolgozok.Add(new CDolgozok
+                    {
+                        Id = felhasznalok.id,
+                        Vezeteknev = felhasznalok.vezeteknev,
+                        Keresztnev = felhasznalok.keresztnev,
+                        Irsz = felhasznalok.irsz,
+                        Szulido = Convert.ToDateTime(felhasznalok.szulido),
+                        Adoazon = felhasznalok.adoazon,
+                        Taj = felhasznalok.taj,
+                        Anyjaneve = felhasznalok.anyjaneve
+
+                    });
+                }
+                return dolgozok;
+            }
+        }
+
+            //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
+            public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, uint fizetes)
+            {
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Felhasznalok ujdolgozo = new Felhasznalok();
+                
+                    int maxId = db.Felhasznaloks.Select(p => p.id).Max();
+                    ujdolgozo.id = maxId + 1;
+                    ujdolgozo.vezeteknev = vezeteknev;
+                    ujdolgozo.keresztnev = keresztnev;
+                    ujdolgozo.szulido = Convert.ToDateTime(szulido);
+                    ujdolgozo.adoazon = adoazon;
+                    ujdolgozo.taj = taj;
+                    ujdolgozo.irsz = irsz;
+                    ujdolgozo.anyjaneve = anyjaneve;
+                    ujdolgozo.fizetes = fizetes;
+
+                    db.Felhasznaloks.Add(ujdolgozo);
+                    db.SaveChanges();
                 }
             }
-            return dolgozok;
-        }
-        //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
-        public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, uint fizetes)
-        {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
+            public static void Dolgozotorol(uint id)
             {
-                Felhasznalok ujdolgozo = new Felhasznalok();
-                int maxId = db.Felhasznaloks.Select(p => p.id).Max();
-                ujdolgozo.id = maxId + 1;
-                ujdolgozo.vezeteknev = vezeteknev;
-                ujdolgozo.keresztnev = keresztnev;
-                ujdolgozo.szulido = Convert.ToDateTime(szulido);
-                ujdolgozo.adoazon = adoazon;
-                ujdolgozo.taj = taj;
-                ujdolgozo.irsz = irsz;
-                ujdolgozo.anyjaneve = anyjaneve;
-                ujdolgozo.fizetes = fizetes;
-
-                db.Felhasznaloks.Add(ujdolgozo);
-                db.SaveChanges();
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
+                    db.Felhasznaloks.Remove(toroldolgozo);
+                    db.SaveChanges();
+                }
             }
         }
-        public static void Dolgozotorol(uint id)
-        {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
-            {
-                Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
-                db.Felhasznaloks.Remove(toroldolgozo);
-                db.SaveChanges();
-            }
-        }
-    }
 }

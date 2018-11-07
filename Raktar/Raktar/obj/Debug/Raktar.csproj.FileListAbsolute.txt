@@ -404,7 +404,6 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar_Content.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
-C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
@@ -420,7 +419,6 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.baml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.baml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.baml
-C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.g.cs
@@ -433,3 +431,5 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.g.cs
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.g.cs
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml

@@ -16,25 +16,10 @@ namespace Raktar
         {
             get; set;
         }
-        public int Iranyitoszam
-        {
-            get; set;
-        }
+
         public string Raktarcim
         {
             get; set;
-        }
-        public int Kapacitas
-        {
-            get; set;
-        }
-
-        public bool Ures
-        { get; set; }
-        public CRaktarak(int id, string raktarnev, string raktarcim)
-        {
-            this.Id = id; this.Raktarnev = raktarnev; this.Raktarcim = raktarcim;
-            
         }
     }
     class CRaktarakKezeles
@@ -43,32 +28,38 @@ namespace Raktar
 
         static List<CRaktarak> raktarak = new List<CRaktarak>();
 
-        static List<CRaktarak> RaktarListaVisszaad()
+        public static List<CRaktarak> RaktarListaVisszaad()
         {
-            int id;
-            string raktarnev; string raktarcim; 
+            
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
-                var actid = db.Raktár.Select(u => u.id).Min();
-                var raktar = db.Raktár.FirstOrDefault(u => u.id == actid);
-                while (actid <= db.Raktár.Select(u => u.id).Max())
+                foreach (var raktár in db.Raktár)
                 {
-                    id = raktar.id;
-                    raktarcim = raktar.Cím;
-                    raktarnev = raktar.Név;
-                    CRaktarak leraktar = new CRaktarak(id,raktarnev,raktarcim);
-                    raktarak.Add(leraktar);
+                    raktarak.Add(new CRaktarak
+                    {
+                        Id = raktár.id,
+                        Raktarnev = raktár.Név,
+                        Raktarcim = raktár.Cím
 
-                    actid++;
+                    });
                 }
             }
 
                 return raktarak;
         }
 
-        public static void RaktarHozzaAd()
+        public static void RaktarHozzaAd(string raktarnev, string raktarcim)
         {
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Raktár ujraktar = new Raktár();
+                int maxId = db.Raktár.Select(p => p.id).Max();
+                ujraktar.Név = raktarnev;
+                ujraktar.Cím = raktarcim;
+                db.Raktár.Add(ujraktar);
+                db.SaveChanges();
 
+            }
         }
         public static void RaktarTorol(int id)
         {
