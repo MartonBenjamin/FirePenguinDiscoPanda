@@ -38,6 +38,8 @@ namespace Raktar
         {
             CLogin login = new CLogin();
             login.LoginTry();
+            //Dolgozó hozzáadás tesztelés! Működik!
+            //CDolgozokkezeles.DolgozokHozaad("Teszt", "Felhasználó", "1999.01.01", "9876543210", "192837465", "3300", "Drága Édesanya", 100000);
         }
     }
 }

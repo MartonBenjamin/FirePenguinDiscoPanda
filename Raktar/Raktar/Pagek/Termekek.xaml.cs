@@ -26,7 +26,7 @@ namespace Raktar
 
             DataGrid datagrid = new DataGrid();
             dataGridView1.AutoGenerateColumns = false;
-            datagrid.DataContext = CTermekkezeles.ListaVisszaAd();
+            datagrid.DataContext = CTermekkezeles.termekListaVisszaAd();
 
             DataGridTextColumn oszlop1 = new DataGridTextColumn();
             oszlop1.Header = "id";
@@ -58,7 +58,6 @@ namespace Raktar
         public Termekek()
         {
             InitializeComponent();
-            CTermekkezeles.RaktaronVanE();
             TablazatLetrehoz();
         }
     }
