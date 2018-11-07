@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <Label x:Name="nincsTermekLbl" Visibility="Hidden" Content="Label" HorizontalAlignment="Left" Margin="353,245,0,0" VerticalAlignment="Top" Width="204"/>
-        <DataGrid x:Name="dataGridView1" HorizontalAlignment="Left" Height="284" Margin="10,156,0,0" VerticalAlignment="Top" Width="780"/>
+        <DataGrid   x:Name="dataGridView1" HorizontalAlignment="Left" Height="284" Margin="10,156,0,0" VerticalAlignment="Top" Width="780"/>
         <Image  Source="if_undo-back-arrow_2931166.png" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="72" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
 
     </Grid>

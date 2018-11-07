@@ -408,11 +408,9 @@ C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
-D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.baml
-D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\fomenu.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.baml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
@@ -433,3 +431,5 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.baml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.g.cs
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.g.cs
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml

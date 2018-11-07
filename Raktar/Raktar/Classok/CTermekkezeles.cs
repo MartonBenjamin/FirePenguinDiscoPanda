@@ -36,16 +36,16 @@ namespace Raktar
         {
             get; set;
         }
-        public CTermekek(int id, string megnevezes, int suly, byte raktaron, int raktar, DateTime beszallitva, DateTime Szavatossag)
-        {
-            this.Id = id; this.Megnevezés = megnevezes; this.Suly_gramm = suly; this.Raktáron = raktaron;
-            this.Beszállítva = beszallitva; this.Szavatosság = Szavatosság;
-        }
+        //public CTermekek(int id, string megnevezes, int suly, byte raktaron, int raktar, DateTime beszallitva, DateTime Szavatossag)
+        //{
+        //    this.Id = id; this.Megnevezés = megnevezes; this.Suly_gramm = suly; this.Raktáron = raktaron;
+        //    this.Beszállítva = beszallitva; this.Szavatosság = Szavatosság;
+        //}
     }
     class CTermekkezeles
     {
         //Add,remove,modify Ha 0 van raktáron kiírja, hogy "nincs raktáron"
-        static List<CTermekek> termekek = new List<CTermekek>(); 
+
 
        
 
@@ -60,30 +60,51 @@ namespace Raktar
         }
         public static List<CTermekek> termekListaVisszaAd()
         {
-            int id; int suly; int raktar;
-            string megnevezes; byte raktaron;
-            DateTime beszallitva; DateTime szavatossag;
+            List<CTermekek> termekek = new List<CTermekek>();
+
+            //int id; int suly; int raktar;
+            //string megnevezes; byte raktaron;
+            //DateTime beszallitva; DateTime szavatossag;
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
-                var actid = db.Termék.Select(u => u.id).Min();
-                var termek = db.Termék.FirstOrDefault(u => u.id == actid);
-                while (actid <= db.Termék.Select(u => u.id).Max())
-                {
-                    id = termek.id;
-                    suly = termek.Súly_gramm;
-                    raktar = termek.Raktár;
-                    megnevezes = termek.Megnevezés;
-                    raktaron = termek.Raktáron;
-                    beszallitva = termek.Beszállítva;
-                    szavatossag = Convert.ToDateTime(termek.Szavatosság);
 
-                    CTermekek lekerttermek = new CTermekek(id,megnevezes,suly,raktaron,raktar,beszallitva,szavatossag);
-                    actid++;
-                    termekek.Add(lekerttermek);
+                foreach (var termek in db.Termék)
+                {
+                    termekek.Add(new CTermekek
+                    {
+                        Id = termek.id,
+                        Suly_gramm = termek.Súly_gramm,
+                        Raktár = termek.Raktár,
+                        Megnevezés = termek.Megnevezés,
+                        Raktáron = termek.Raktáron,
+                        Beszállítva = Convert.ToDateTime(termek.Beszállítva),
+                        Szavatosság = Convert.ToDateTime(termek.Szavatosság)
+                    });
                 }
-                
+
+                //    var actid = db.Termék.Select(u => u.id).First();
+                //    int szamlalo = actid;
+                //    var termek = db.Termék.FirstOrDefault(u => u.id == actid);
+
+                //    while (szamlalo <= db.Termék.Select(u => u.id).Max())
+                //    {
+
+                //        termekek.Add(new CTermekek
+                //        {
+                //            Id = termek.id,
+                //            Suly_gramm = termek.Súly_gramm,
+                //            Raktár = termek.Raktár,
+                //            Megnevezés = termek.Megnevezés,
+                //            Raktáron = termek.Raktáron,
+                //            Beszállítva = Convert.ToDateTime(termek.Beszállítva),
+                //            Szavatosság = Convert.ToDateTime(termek.Szavatosság)
+                //        });
+
+                //        szamlalo++;
+                //    }             
+                //}
+                return termekek;
             }
-            return termekek;
         }
 
         public static void TermekHozaad()
