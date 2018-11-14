@@ -24,42 +24,12 @@ namespace Raktar
     {
         private void TablazatLetrehoz()
         {
-
-            
-            
-
-            dataGridView1.ItemsSource = CTermekkezeles.termekListaVisszaAd();
-
-            //DataGridTextColumn oszlop1 = new DataGridTextColumn();
-            //oszlop1.Header = "id";
-            //DataGridTextColumn oszlop2 = new DataGridTextColumn();
-            //oszlop2.Header = "Megnevezés";
-            //DataGridTextColumn oszlop3 = new DataGridTextColumn();
-            //oszlop3.Header = "Súly(gramm)";
-            //DataGridTextColumn oszlop4 = new DataGridTextColumn();
-            //oszlop4.Header = "Raktáron";
-            //DataGridTextColumn oszlop5 = new DataGridTextColumn();
-            //oszlop5.Header = "Raktár id";
-            //DataGridTextColumn oszlop6 = new DataGridTextColumn();
-            //oszlop6.Header = "Beszállítva";
-            //DataGridTextColumn oszlop7 = new DataGridTextColumn();
-            //oszlop7.Header = "Szavatosság";
-            
-
-            //dataGridView1.Columns.Add(oszlop1);
-            //dataGridView1.Columns.Add(oszlop2);
-            //dataGridView1.Columns.Add(oszlop3);
-            //dataGridView1.Columns.Add(oszlop4);
-            //dataGridView1.Columns.Add(oszlop5);
-            //dataGridView1.Columns.Add(oszlop6);
-            //dataGridView1.Columns.Add(oszlop7);
-
-
-
+            dataGridView1.ItemsSource = CTermekkezeles.termekListaVisszaAd();           
         }
         public Termekek()
         {
             InitializeComponent();
+
             TablazatLetrehoz();
         }
 

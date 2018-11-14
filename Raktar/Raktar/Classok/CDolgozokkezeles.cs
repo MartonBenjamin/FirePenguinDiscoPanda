@@ -74,10 +74,11 @@ namespace Raktar
     }
     class CDolgozokkezeles
     {
-        static public List<CDolgozok> dolgozok = new List<CDolgozok>();
+        
 
         public static List<CDolgozok> DolgozokListaLeker()
         {
+            List<CDolgozok> dolgozok = new List<CDolgozok>();
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
 
