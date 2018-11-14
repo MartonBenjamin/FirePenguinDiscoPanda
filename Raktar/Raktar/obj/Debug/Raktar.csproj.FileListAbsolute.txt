@@ -583,3 +583,5 @@ C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Ra
 C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe
 C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.pdb
 >>>>>>> 84373ead6623b83fbede691f5aedfddb0ad9611b
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.g.cs
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.baml
