@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
+using System.Windows.Threading;
 
 namespace Raktar
 {
@@ -26,7 +27,7 @@ namespace Raktar
         public MainWindow()
         {
             InitializeComponent();
-
+            startclock();
         }
 
 
@@ -35,6 +36,18 @@ namespace Raktar
             CLogin login = new CLogin();
             login.LoginTry();
            
+        }
+        public void startclock()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += tickevent;
+            timer.Start();
+
+        }
+        public void tickevent(object sender, EventArgs e)
+        {
+            datelbl.Text = DateTime.Now.ToString();
         }
     }
 }

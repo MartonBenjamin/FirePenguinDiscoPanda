@@ -65,6 +65,7 @@
         <Label x:Name="lbversion" Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label x:Name="lblloginfo" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 120" Foreground="Red"/>
         <Image Margin="225,10,288.6,248" Source="logo.png" Stretch="Fill" Opacity="0.85"/>
+        <TextBlock Name="datelbl"  HorizontalAlignment="Left" Height="17.933" Margin="0,394.84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175.133"/>
 
 
 
