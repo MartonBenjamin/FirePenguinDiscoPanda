@@ -20,7 +20,6 @@ namespace Raktar.Pagek
     /// </summary>
     public partial class fomenu : Page
     {
-        static List<CDolgozok> dolgozok = CDolgozokkezeles.DolgozokListaLeker();
         public fomenu()
         {
             InitializeComponent();

@@ -8,21 +8,21 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DolgozoHozaad">
 
-    <Grid>
+    <Grid Background="Khaki">
         <Button  x:Name="btnDolgozoHozaad" Click="btnDolgozoHozaad_Click" Content="Hozzáad" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Width="100" Margin="60,0,0,40" Background="#FFFF0707" BorderBrush="White" Foreground="#FF7DFF00" Height="19" Cursor="AppStarting" AutomationProperties.HelpText="Hozzáad egy dolgozót az adatbázishoz">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="15"/>
             </Button.Effect>
             
         </Button>
-        <TextBox x:Name="tbvezeteknev" HorizontalAlignment="Left" Margin="175,60,0,0" TextWrapping="Wrap" Text="Vezetéknév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbkeresztnev" HorizontalAlignment="Left" Margin="175,80,0,0" TextWrapping="Wrap" Text="Keresztnév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbszulido" HorizontalAlignment="Left" Margin="175,100,0,0" TextWrapping="Wrap" Text="Születési idő" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbadoazon" HorizontalAlignment="Left" Margin="175,120,0,0" TextWrapping="Wrap" Text="Adóazonosító szám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbtaj" HorizontalAlignment="Left" Margin="175,140,0,0" TextWrapping="Wrap" Text="Taj szám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbirsz" HorizontalAlignment="Left" Margin="175,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbanyjaneve" HorizontalAlignment="Left" Margin="175,180,0,0" TextWrapping="Wrap" Text="Anyja neve" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbfizetes" HorizontalAlignment="Left" Margin="175,200,0,0" TextWrapping="Wrap" Text="Fizetés" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbvezeteknev" Background="Khaki" HorizontalAlignment="Left" Margin="175,60,0,0" TextWrapping="Wrap" Text="Vezetéknév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbkeresztnev" Background="Khaki" HorizontalAlignment="Left" Margin="175,80,0,0" TextWrapping="Wrap" Text="Keresztnév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbszulido" Background="Khaki" HorizontalAlignment="Left" Margin="175,100,0,0" TextWrapping="Wrap" Text="Születési idő" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbadoazon" Background="Khaki" HorizontalAlignment="Left" Margin="175,120,0,0" TextWrapping="Wrap" Text="Adóazonosító szám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbtaj" Background="Khaki" HorizontalAlignment="Left" Margin="175,140,0,0" TextWrapping="Wrap" Text="Taj szám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="175,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbanyjaneve" Background="Khaki" HorizontalAlignment="Left" Margin="175,180,0,0" TextWrapping="Wrap" Text="Anyja neve" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbfizetes" Background="Khaki" HorizontalAlignment="Left" Margin="175,200,0,0" TextWrapping="Wrap" Text="Fizetés" Width="150" Foreground="Black" VerticalAlignment="Top"/>
         <Image  Source="if_undo-back-arrow_2931166.png" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="72" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
 
     </Grid>

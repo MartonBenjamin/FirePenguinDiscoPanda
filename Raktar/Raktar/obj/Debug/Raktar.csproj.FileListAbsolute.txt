@@ -402,7 +402,6 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.Threading.Tasks.E
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe.config
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar_Content.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
-C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Termekek.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Raktarak.g.cs

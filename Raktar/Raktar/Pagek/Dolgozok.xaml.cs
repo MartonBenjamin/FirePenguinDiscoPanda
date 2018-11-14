@@ -21,10 +21,17 @@ namespace Raktar
     /// </summary>
     public partial class Dolgozok : Page
     {
-        
+        private void GridFill()
+        {
+
+            DataGrid datagrid = new DataGrid();
+            dtgDolgozok.ItemsSource = CDolgozokkezeles.DolgozokListaLeker();
+        }
+
         public Dolgozok()
         {
             InitializeComponent();
+            GridFill();
         }
 
         MainWindow mainWin = Application.Current.Windows
@@ -42,6 +49,11 @@ namespace Raktar
         {       
             DolgozoHozaad dolgozoHozaad = new DolgozoHozaad();
             mainWin.Content = dolgozoHozaad;
+        }
+
+        private void btndolgozotorol_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
