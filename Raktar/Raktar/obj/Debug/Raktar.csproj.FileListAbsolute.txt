@@ -585,3 +585,5 @@ C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Ra
 >>>>>>> 84373ead6623b83fbede691f5aedfddb0ad9611b
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.g.cs
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.baml
