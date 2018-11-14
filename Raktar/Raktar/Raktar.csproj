@@ -262,6 +262,7 @@
     <Resource Include="Pagek\if_undo-back-arrow_2931166.png" />
     <Resource Include="logo.png" />
     <Resource Include="kep.bmp" />
+    <Resource Include="loginbutton.png" />
     <Content Include="model11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model11.edmx</DependentUpon>

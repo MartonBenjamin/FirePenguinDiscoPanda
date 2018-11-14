@@ -23,6 +23,11 @@ namespace Raktar
         string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;
         DateTime szulido;
 
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public string Vezeteknev
         {
@@ -59,11 +64,7 @@ namespace Raktar
             get { return anyjaneve; }
             set { anyjaneve = value; }
         }
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        
         public int Fizetes
         {
             get { return fizetes; }
@@ -93,7 +94,10 @@ namespace Raktar
                         Szulido = Convert.ToDateTime(felhasznalok.szulido),
                         Adoazon = felhasznalok.adoazon,
                         Taj = felhasznalok.taj,
-                        Anyjaneve = felhasznalok.anyjaneve
+                        Anyjaneve = felhasznalok.anyjaneve,
+                        Fizetes = Convert.ToInt32(felhasznalok.fizetes)
+                       
+                       
 
                     });
                 }
@@ -102,7 +106,7 @@ namespace Raktar
         }
 
             //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
-            public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, uint fizetes)
+            public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
             {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
@@ -123,7 +127,7 @@ namespace Raktar
                     db.SaveChanges();
                 }
             }
-            public static void Dolgozotorol(uint id)
+            public static void Dolgozotorol(int id)
             {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {

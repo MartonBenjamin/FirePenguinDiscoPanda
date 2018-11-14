@@ -9,21 +9,22 @@
         ResizeMode="NoResize" Background="{x:Null}">
 
     <Grid>
-        
-        
+
+
         <Label Content="Felhasználónév:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Margin="58,120,606,275" Height="26"/>
         <Label Content="Jelszó:" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="130" Margin="58,188,606,209" Height="24"/>
         <PasswordBox x:Name="pswbox" BorderThickness="0" HorizontalContentAlignment="Center"  VerticalContentAlignment="Bottom" HorizontalAlignment="Center" Margin="58,212,531.6,0" Width="204" Height="26" VerticalAlignment="Top" Background="{x:Null}"/>
         <TextBox x:Name="tblogin" BorderThickness="0" Text="" HorizontalAlignment="Center" Height="20" Width="204" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="58,155,531.6,0" Background="{x:Null}"/>
         <Label x:Name="lbversion"  Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-        <Label x:Name="lblloginfo" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 120" Foreground="Red"/>
         <Image Margin="504,138,10,120" Source="logo.png" Stretch="Fill" Opacity="0.85"/>
         <TextBlock Name="datelbl"  HorizontalAlignment="Left" Height="17.933" Margin="0,394.84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175.133"/>
-        <Button Opacity="100" BorderThickness="0" x:Name="btnlogin" Click="btnlogin_Click" Content="Bejelentkezés" HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Height="70" Margin="40,255,0,0" RenderTransformOrigin="-0.56,1.267" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Image Margin="58,255,531.6,100" MouseLeftButtonDown="btnlogin_Click" Source="loginbutton.png" Stretch="Fill"/>
+        <Label x:Name="lblloginfo" Height="auto" Content=" " Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="62,0,531.6,51" FontSize="14" FontStyle="Oblique" Foreground="Red"/>
+
         <Grid.Background>
             <ImageBrush ImageSource="kep.bmp" Stretch="UniformToFill"/>
         </Grid.Background>
 
     </Grid>
-    
+
 </Window>

@@ -23,11 +23,20 @@ namespace Raktar.Pagek
         public fomenu()
         {
             InitializeComponent();
+            Bejelentkezett();
         }
 
         MainWindow mainWin = Application.Current.Windows
         .Cast<Window>()
         .FirstOrDefault(window => window is MainWindow) as MainWindow;
+        private void Bejelentkezett()
+        {
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Login bejelentkezett = new Login();
+                
+            }
+        }
 
         private void btn_click_dolgozok(object sender, RoutedEventArgs e)
         {

@@ -7,7 +7,7 @@
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="vezeteknev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="keresztnev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="szulido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="szulido" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="adoazon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="taj" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="irsz" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />

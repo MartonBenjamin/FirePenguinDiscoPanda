@@ -7,7 +7,7 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="vezeteknev" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="keresztnev" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="szulido" Type="date" Nullable="false" />
+    <Property Name="szulido" Type="datetime" Nullable="false" />
     <Property Name="adoazon" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="taj" Type="char" MaxLength="9" Nullable="false" />
     <Property Name="irsz" Type="char" MaxLength="4" Nullable="false" />
@@ -56,18 +56,6 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
     <Property Name="Irányítószám" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="Város" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Felhasznalok_Varos">
-    <End Role="Város" Type="Self.Város" Multiplicity="1" />
-    <End Role="Felhasznalok" Type="Self.Felhasznalok" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Város">
-        <PropertyRef Name="Irányítószám" />
-      </Principal>
-      <Dependent Role="Felhasznalok">
-        <PropertyRef Name="irsz" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="firepenguinModel1StoreContainer">
     <EntitySet Name="Felhasznalok" EntityType="Self.Felhasznalok" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
@@ -84,9 +72,5 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
     [Termék].[Szavatosság] AS [Szavatosság]
     FROM [dbo].[Termék] AS [Termék]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_Felhasznalok_Varos" Association="Self.FK_Felhasznalok_Varos">
-      <End Role="Város" EntitySet="Város" />
-      <End Role="Felhasznalok" EntitySet="Felhasznalok" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>

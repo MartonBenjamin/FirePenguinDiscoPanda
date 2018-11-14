@@ -13,7 +13,7 @@
             <Button.Effect>
                 <DropShadowEffect BlurRadius="15"/>
             </Button.Effect>
-            
+
         </Button>
         <TextBox x:Name="tbvezeteknev" Background="Khaki" HorizontalAlignment="Left" Margin="175,60,0,0" TextWrapping="Wrap" Text="Vezetéknév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
         <TextBox x:Name="tbkeresztnev" Background="Khaki" HorizontalAlignment="Left" Margin="175,80,0,0" TextWrapping="Wrap" Text="Keresztnév" Width="150" Foreground="Black" VerticalAlignment="Top"/>

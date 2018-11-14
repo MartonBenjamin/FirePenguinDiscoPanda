@@ -51,7 +51,9 @@ namespace Raktar
 
         private void btndolgozotorol_Click(object sender, RoutedEventArgs e)
         {
-
+            CDolgozokkezeles.Dolgozotorol(Convert.ToInt32(tbdolgozoindex.Text));
+            GridFill();
         }
+
     }
 }
