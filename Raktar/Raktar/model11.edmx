@@ -4,19 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="firepenguinModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="firepenguinModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Felhasznalok">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="vezeteknev" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="keresztnev" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="vezeteknev" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="keresztnev" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="szulido" Type="date" Nullable="false" />
           <Property Name="adoazon" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="taj" Type="char" MaxLength="9" Nullable="false" />
           <Property Name="irsz" Type="char" MaxLength="4" Nullable="false" />
-          <Property Name="anyjaneve" Type="nchar" MaxLength="150" Nullable="false" />
+          <Property Name="anyjaneve" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fizetes" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="Login">
@@ -94,8 +94,7 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
             <End Role="Felhasznalok" EntitySet="Felhasznalok" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="firepenguinModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -104,13 +103,13 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="vezeteknev" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="keresztnev" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="vezeteknev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="keresztnev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="szulido" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="adoazon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="taj" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="irsz" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="anyjaneve" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="anyjaneve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fizetes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Város" Relationship="Self.FK_Felhasznalok_Varos" FromRole="Felhasznalok" ToRole="Város" />
         </EntityType>

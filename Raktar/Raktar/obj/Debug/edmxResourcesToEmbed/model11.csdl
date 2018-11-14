@@ -5,13 +5,13 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="vezeteknev" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="keresztnev" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="vezeteknev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="keresztnev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="szulido" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="adoazon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="taj" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="irsz" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="anyjaneve" Type="String" MaxLength="150" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="anyjaneve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fizetes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="Város" Relationship="Self.FK_Felhasznalok_Varos" FromRole="Felhasznalok" ToRole="Város" />
   </EntityType>

@@ -23,9 +23,7 @@ namespace Raktar
     {
         private void GridFill()
         {
-
-            DataGrid datagrid = new DataGrid();
-            dtgDolgozok.ItemsSource = CDolgozokkezeles.DolgozokListaLeker();
+             dtgDolgozok.ItemsSource = CDolgozokkezeles.DolgozokListaLeker();
         }
 
         public Dolgozok()

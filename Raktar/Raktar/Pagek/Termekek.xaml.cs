@@ -25,7 +25,7 @@ namespace Raktar
         private void TablazatLetrehoz()
         {
 
-            DataGrid datagrid = new DataGrid();
+            
             
 
             dataGridView1.ItemsSource = CTermekkezeles.termekListaVisszaAd();

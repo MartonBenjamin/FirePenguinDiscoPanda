@@ -5,13 +5,13 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="vezeteknev" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="keresztnev" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="vezeteknev" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="keresztnev" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="szulido" Type="date" Nullable="false" />
     <Property Name="adoazon" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="taj" Type="char" MaxLength="9" Nullable="false" />
     <Property Name="irsz" Type="char" MaxLength="4" Nullable="false" />
-    <Property Name="anyjaneve" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="anyjaneve" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fizetes" Type="money" Nullable="false" />
   </EntityType>
   <EntityType Name="Login">
