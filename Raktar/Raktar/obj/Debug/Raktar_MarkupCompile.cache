@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\
+=======
+C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\
+>>>>>>> 84373ead6623b83fbede691f5aedfddb0ad9611b
 Raktar
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\App.xaml
 7-879396009
 2776466452
 23518925000
 1411177262507
 Pagek\DolgozoHozaad.xaml;Pagek\Dolgozok.xaml;MainWindow.xaml;Pagek\fomenu.xaml;Pagek\Termekek.xaml;Pagek\Raktarak.xaml;Pagek\TermekHozzaad.xaml;
+=======
+C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\App.xaml
+61060949942
+2776466452
+221028540913
+141-1801108625
+Pagek\DolgozoHozaad.xaml;Pagek\Dolgozok.xaml;MainWindow.xaml;Pagek\fomenu.xaml;Pagek\Termekek.xaml;Pagek\Raktarak.xaml;
+>>>>>>> 84373ead6623b83fbede691f5aedfddb0ad9611b
 
 False
 
