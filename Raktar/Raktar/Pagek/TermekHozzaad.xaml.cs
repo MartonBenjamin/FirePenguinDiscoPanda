@@ -38,6 +38,14 @@ namespace Raktar.Pagek
             Termekek main = new Termekek();
             mainWin.Content = main;
         }
+
+        
+
+        private void megnevezes_GotFocus(object sender, RoutedEventArgs e)
+        {
+            megnevezes.Text = "";
+        }
+
         
     }
 }

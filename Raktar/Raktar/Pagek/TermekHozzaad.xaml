@@ -9,7 +9,7 @@
       Title="TermekHozzaad">
 
     <Grid>
-        <TextBox x:Name="megnevezes" Text="Megnevezés" HorizontalAlignment="Left" Height="23" Margin="170,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox  x:Name="megnevezes" Text="Megnevezés" HorizontalAlignment="Left" Height="23" Margin="170,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="megnevezes_GotFocus"  />
         <TextBox HorizontalAlignment="Left" Height="23" Margin="170,115,0,0" TextWrapping="Wrap" x:Name="suly" Text="Súly(gramm)" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="170,138,0,0" TextWrapping="Wrap" x:Name="Raktar_id" Text="Raktár id" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="170,161,0,0" TextWrapping="Wrap" x:Name="raktaron" Text="darabszám" VerticalAlignment="Top" Width="120"/>
