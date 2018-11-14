@@ -154,6 +154,9 @@
     <Compile Include="Pagek\Raktarak.xaml.cs">
       <DependentUpon>Raktarak.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pagek\TermekHozzaad.xaml.cs">
+      <DependentUpon>TermekHozzaad.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Raktár.cs">
       <DependentUpon>model11.tt</DependentUpon>
     </Compile>
@@ -195,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pagek\Raktarak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pagek\TermekHozzaad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

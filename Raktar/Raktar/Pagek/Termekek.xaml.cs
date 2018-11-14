@@ -42,5 +42,11 @@ namespace Raktar
             fomenu main = new fomenu();
             mainWin.Content = main;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TermekHozzaad main = new TermekHozzaad();
+            mainWin.Content = main;
+        }
     }
 }

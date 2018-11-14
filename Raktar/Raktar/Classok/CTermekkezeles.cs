@@ -91,7 +91,7 @@ namespace Raktar
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
                 Termék ujtermek = new Termék();
-                int maxId = db.Felhasznaloks.Select(p => p.id).Max();
+                int maxId = db.Termék.Select(p => p.id).Max();
                 ujtermek.id = maxId + 1;
                 ujtermek.Megnevezés = megnevezes;
                 ujtermek.Súly_gramm = suly;
@@ -99,14 +99,16 @@ namespace Raktar
                 ujtermek.Raktáron = raktaron;
                 ujtermek.Beszállítva = DateTime.Now;
                 ujtermek.Szavatosság = szavatossag;
+                db.Termék.Add(ujtermek);
+                
+                db.SaveChanges();
             }
         }
 
-        public static void TermekModosit()
-        {
-
+       
+            
         }
 
     }
-}
+
 

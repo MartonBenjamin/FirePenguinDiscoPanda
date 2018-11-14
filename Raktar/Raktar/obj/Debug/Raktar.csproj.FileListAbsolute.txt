@@ -433,3 +433,5 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\fomenu.baml
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.g.cs
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\TermekHozzaad.baml
