@@ -261,6 +261,7 @@
     <Resource Include="targonca.png" />
     <Resource Include="Pagek\if_undo-back-arrow_2931166.png" />
     <Resource Include="logo.png" />
+    <Resource Include="kep.bmp" />
     <Content Include="model11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model11.edmx</DependentUpon>

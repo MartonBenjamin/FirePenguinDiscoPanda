@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="FirePenguinDiscoPanda" Height="450" Width="800"
         ResizeMode="NoResize">
-    
+
     <Window.Resources>
         <Style x:Key="LoginButton" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -53,18 +53,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
     </Window.Resources>
-   
-        <Grid Background="Khaki">
-        <Label Content="Felhasználónév:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Margin="225,180,438.6,214" Height="26"/>
-        <Label Content="Jelszó:" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="130" Margin="225,206,438.6,190" Height="24"/>
-        <PasswordBox x:Name="pswbox" HorizontalAlignment="Center" Margin="355,206,288.6,0" Width="150" Height="20" VerticalAlignment="Top"/>
-        <TextBox x:Name="tblogin" HorizontalAlignment="Center" Height="20" Width="150" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="355,180,288.6,0"/>
-        <Button x:Name="btnlogin" Click="btnlogin_Click" Content="Bejelentkezés" Style="{DynamicResource LoginButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Height="30" Margin="360,245,0,0"/>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="kep.bmp" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Label Content="Felhasználónév:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Margin="58,120,606,275" Height="26"/>
+        <Label Content="Jelszó:" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="130" Margin="58,188,606,209" Height="24"/>
+        <PasswordBox x:Name="pswbox" HorizontalAlignment="Center" Margin="58,217,532,0" Width="204" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="tblogin" HorizontalAlignment="Center" Height="20" Width="204" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="58,157,532,0"/>
+        <Button Opacity="100" x:Name="btnlogin" Click="btnlogin_Click" Content="Bejelentkezés" Style="{DynamicResource LoginButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="204" Height="59" Margin="58,259,0,0" RenderTransformOrigin="-0.56,1.267"/>
         <Label x:Name="lbversion" Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Label x:Name="lblloginfo" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 120" Foreground="Red"/>
-        <Image Margin="225,10,288.6,248" Source="logo.png" Stretch="Fill" Opacity="0.85"/>
+        <Image Margin="504,138,10,120" Source="logo.png" Stretch="Fill" Opacity="0.85"/>
         <TextBlock Name="datelbl"  HorizontalAlignment="Left" Height="17.933" Margin="0,394.84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175.133"/>
 
 
