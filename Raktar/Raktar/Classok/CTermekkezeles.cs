@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Logger;
 
 namespace Raktar
 {
@@ -88,20 +89,26 @@ namespace Raktar
 
         public static void TermekHozaad(int suly, int raktar, string megnevezes, byte raktaron, DateTime szavatossag)
         {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
+            try
             {
-                Termék ujtermek = new Termék();
-                int maxId = db.Termék.Select(p => p.id).Max();
-                ujtermek.id = maxId + 1;
-                ujtermek.Megnevezés = megnevezes;
-                ujtermek.Súly_gramm = suly;
-                ujtermek.Raktár = raktar;
-                ujtermek.Raktáron = raktaron;
-                ujtermek.Beszállítva = DateTime.Now;
-                ujtermek.Szavatosság = szavatossag;
-                db.Termék.Add(ujtermek);
-                
-                db.SaveChanges();
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Termék ujtermek = new Termék();
+                    int maxId = db.Termék.Select(p => p.id).Max();
+                    ujtermek.id = maxId + 1;
+                    ujtermek.Megnevezés = megnevezes;
+                    ujtermek.Súly_gramm = suly;
+                    ujtermek.Raktár = raktar;
+                    ujtermek.Raktáron = raktaron;
+                    ujtermek.Beszállítva = DateTime.Now;
+                    ujtermek.Szavatosság = szavatossag;
+                    db.Termék.Add(ujtermek);
+
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex) {
+
             }
         }
 
