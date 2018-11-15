@@ -23,7 +23,7 @@
         <TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="175,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
         <TextBox x:Name="tbanyjaneve" Background="Khaki" HorizontalAlignment="Left" Margin="175,180,0,0" TextWrapping="Wrap" Text="Anyja neve" Width="150" Foreground="Black" VerticalAlignment="Top"/>
         <TextBox x:Name="tbfizetes" Background="Khaki" HorizontalAlignment="Left" Margin="175,200,0,0" TextWrapping="Wrap" Text="Fizetés" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <Image  Source="if_undo-back-arrow_2931166.png" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="72" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image Margin="10,10,685,387.6" Source="/Raktar;component/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
 
     </Grid>
 </Page>

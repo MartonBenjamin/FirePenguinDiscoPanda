@@ -55,5 +55,11 @@ namespace Raktar.Pagek
             Termekek termekek = new Termekek();
             mainWin.Content = termekek;
         }
+
+
+        private void grdkijelentkezes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

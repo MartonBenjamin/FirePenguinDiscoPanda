@@ -9,7 +9,7 @@
       Title="Dolgozok">
 
     <Grid Background="Khaki">
-        <Image  Source="if_undo-back-arrow_2931166.png" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="72" MouseLeftButtonDown="Image_MouseLeftButtonDown"  />
+        <Image Margin="10,10,685,387.6" Source="/Raktar;component/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
         <Button x:Name="btndolgozohozzaad" Content="Dolgozó hozzáadása" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,371,0,0" Click="Button_Click"/>
         <Button x:Name="btndolgozotorol" Content="Dolgozó törlése" Width="120" HorizontalAlignment="Left" Margin="135,371,0,0" VerticalAlignment="Top" Click="btndolgozotorol_Click"/>
         <DataGrid x:Name="dtgDolgozok" ColumnWidth="auto" HorizontalAlignment="Left" Height="auto" Margin="90,80,0,0" VerticalAlignment="Top" Width="auto"/>
