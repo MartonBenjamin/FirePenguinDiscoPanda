@@ -10,10 +10,10 @@
 
     <Grid>
         <TextBox  x:Name="megnevezes" Text="Megnevezés" HorizontalAlignment="Left" Height="23" Margin="170,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="megnevezes_GotFocus"  />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,115,0,0" TextWrapping="Wrap" x:Name="suly" Text="Súly(gramm)" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,138,0,0" TextWrapping="Wrap" x:Name="Raktar_id" Text="Raktár id" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,161,0,0" TextWrapping="Wrap" x:Name="raktaron" Text="darabszám" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,184,0,0" TextWrapping="Wrap" x:Name="szavatossag" Text="Szavatosság" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,115,0,0" TextWrapping="Wrap" x:Name="suly" Text="Súly(gramm)" VerticalAlignment="Top" Width="120" GotFocus="suly_GotFocus"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,138,0,0" TextWrapping="Wrap" x:Name="Raktar_id" Text="Raktár id" VerticalAlignment="Top" Width="120" GotFocus="raktar_id_GotFocus"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,161,0,0" TextWrapping="Wrap" x:Name="raktaron" Text="darabszám" VerticalAlignment="Top" Width="120" GotFocus="darabszam_GotFocus"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,184,0,0" TextWrapping="Wrap" x:Name="szavatossag" Text="Szavatosság" VerticalAlignment="Top" Width="120" GotFocus="szavatossag_GotFocus"/>
         <Button Click="Button_Click" Content="Termék hozzáad" HorizontalAlignment="Left" Margin="170,246,0,0" VerticalAlignment="Top" Width="120"/>
         <Image Margin="10,10,685,387.6" Source="/Raktar;component/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
     </Grid>

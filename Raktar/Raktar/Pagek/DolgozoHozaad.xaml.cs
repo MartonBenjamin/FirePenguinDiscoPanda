@@ -40,5 +40,37 @@ namespace Raktar.Pagek
             Dolgozok dolgozok = new Dolgozok();
             mainWin.Content = dolgozok;
         }
+        private void vezeteknev_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbvezeteknev.Text = "";
+        }
+        private void keresztnev_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbkeresztnev.Text = "";
+        }
+        private void szulido_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbszulido.Text = "";
+        }
+        private void adoazon_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbadoazon.Text = "";
+        }
+        private void taj_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbtaj.Text = "";
+        }
+        private void fizetes_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbfizetes.Text = "";
+        }
+        private void irsz_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbirsz.Text = "";
+        }
+        private void anyjaneve_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbanyjaneve.Text = "";
+        }
     }
 }

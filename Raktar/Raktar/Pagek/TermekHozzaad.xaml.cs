@@ -45,7 +45,23 @@ namespace Raktar.Pagek
         {
             megnevezes.Text = "";
         }
+        private void suly_GotFocus(object sender, RoutedEventArgs e)
+        {
+            suly.Text = "";
+        }
+        private void raktar_id_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Raktar_id.Text = "";
+        }
+        private void darabszam_GotFocus(object sender, RoutedEventArgs e)
+        {
+            raktaron.Text = "";
+        }
+        private void szavatossag_GotFocus(object sender, RoutedEventArgs e)
+        {
+            szavatossag.Text = "";
+        }
 
-        
+
     }
 }

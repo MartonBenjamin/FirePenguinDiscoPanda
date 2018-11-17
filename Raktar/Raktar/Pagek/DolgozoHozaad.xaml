@@ -15,14 +15,14 @@
             </Button.Effect>
 
         </Button>
-        <TextBox x:Name="tbvezeteknev" Background="Khaki" HorizontalAlignment="Left" Margin="175,60,0,0" TextWrapping="Wrap" Text="Vezetéknév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbkeresztnev" Background="Khaki" HorizontalAlignment="Left" Margin="175,80,0,0" TextWrapping="Wrap" Text="Keresztnév" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbszulido" Background="Khaki" HorizontalAlignment="Left" Margin="175,100,0,0" TextWrapping="Wrap" Text="Születési idő" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbadoazon" Background="Khaki" HorizontalAlignment="Left" Margin="175,120,0,0" TextWrapping="Wrap" Text="Adóazonosító szám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbtaj" Background="Khaki" HorizontalAlignment="Left" Margin="175,140,0,0" TextWrapping="Wrap" Text="Taj szám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="175,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbanyjaneve" Background="Khaki" HorizontalAlignment="Left" Margin="175,180,0,0" TextWrapping="Wrap" Text="Anyja neve" Width="150" Foreground="Black" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbfizetes" Background="Khaki" HorizontalAlignment="Left" Margin="175,200,0,0" TextWrapping="Wrap" Text="Fizetés" Width="150" Foreground="Black" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbvezeteknev" Background="Khaki" HorizontalAlignment="Left" Margin="175,60,0,0" TextWrapping="Wrap" Text="Vezetéknév" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="vezeteknev_GotFocus"/>
+        <TextBox x:Name="tbkeresztnev" Background="Khaki" HorizontalAlignment="Left" Margin="175,80,0,0" TextWrapping="Wrap" Text="Keresztnév" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="keresztnev_GotFocus"/>
+        <TextBox x:Name="tbszulido" Background="Khaki" HorizontalAlignment="Left" Margin="175,100,0,0" TextWrapping="Wrap" Text="Születési idő" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="szulido_GotFocus"/>
+        <TextBox x:Name="tbadoazon" Background="Khaki" HorizontalAlignment="Left" Margin="175,120,0,0" TextWrapping="Wrap" Text="Adóazonosító szám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="adoazon_GotFocus"/>
+        <TextBox x:Name="tbtaj" Background="Khaki" HorizontalAlignment="Left" Margin="175,140,0,0" TextWrapping="Wrap" Text="Taj szám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="taj_GotFocus"/>
+        <TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="175,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="irsz_GotFocus"/>
+        <TextBox x:Name="tbanyjaneve" Background="Khaki" HorizontalAlignment="Left" Margin="175,180,0,0" TextWrapping="Wrap" Text="Anyja neve" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="anyjaneve_GotFocus"/>
+        <TextBox x:Name="tbfizetes" Background="Khaki" HorizontalAlignment="Left" Margin="175,200,0,0" TextWrapping="Wrap" Text="Fizetés" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="fizetes_GotFocus"/>
         <Image Margin="10,10,685,387.6" Source="/Raktar;component/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
 
     </Grid>
