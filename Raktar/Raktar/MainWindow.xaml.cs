@@ -30,21 +30,20 @@ namespace Raktar
             startclock();
         }
 
-
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
             CLogin login = new CLogin();
-            login.LoginTry();
-           
+            login.LoginTry();           
         }
+
         public void startclock()
         {
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += tickevent;
             timer.Start();
-
         }
+
         public void tickevent(object sender, EventArgs e)
         {
             datelbl.Text = DateTime.Now.ToString();
@@ -54,9 +53,22 @@ namespace Raktar
         {
             if(e.Key == Key.Enter)
             {
-                CLogin login = new CLogin();
-                login.LoginTry();
+                if (tblogin.IsFocused)
+                {
+                    pswbox.Focus();
+                }
+                else if (!pswbox.IsFocused && !tblogin.IsFocused)
+                {
+                    tblogin.Focus();
+                }
+                else
+                {
+                    CLogin login = new CLogin();
+                    login.LoginTry();
+                }               	                                             
             }
         }
+
+
     }
 }
