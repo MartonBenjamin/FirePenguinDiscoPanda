@@ -49,5 +49,14 @@ namespace Raktar
         {
             datelbl.Text = DateTime.Now.ToString();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                CLogin login = new CLogin();
+                login.LoginTry();
+            }
+        }
     }
 }
