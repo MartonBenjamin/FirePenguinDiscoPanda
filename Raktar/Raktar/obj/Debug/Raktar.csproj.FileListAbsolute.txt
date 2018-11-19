@@ -439,3 +439,4 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyC
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.pdb
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Logger.dll

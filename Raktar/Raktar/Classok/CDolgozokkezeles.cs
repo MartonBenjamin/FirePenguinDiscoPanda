@@ -19,9 +19,11 @@ namespace Raktar
 {
     class CDolgozok
     {
-        int id, fizetes;
-        string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;
+        private int id, fizetes, loginid;
+        private string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;
         DateTime szulido;
+
+        
 
         public int Id
         {
@@ -70,12 +72,43 @@ namespace Raktar
             get { return fizetes; }
             set { fizetes = value; }
         }
-        
+
+        public int Loginid
+        {
+            get { return loginid; }
+            set { loginid = value; }
+        }
+
 
     }
     class CDolgozokkezeles
     {
-        
+        static public int loggeduserid = 0;
+        public static CDolgozok LoggedUserVisszaad()
+        {
+            CDolgozok loggeddolgozo = new CDolgozok();
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+
+                foreach (var felhasznalok in db.Felhasznaloks)
+                {
+                    if (felhasznalok.loginid == loggeduserid)
+                    {
+                        loggeddolgozo.Id = felhasznalok.id;
+                        loggeddolgozo.Vezeteknev = felhasznalok.vezeteknev;
+                        loggeddolgozo.Keresztnev = felhasznalok.keresztnev;
+                        loggeddolgozo.Irsz = felhasznalok.irsz;
+                        loggeddolgozo.Szulido = felhasznalok.szulido;
+                        loggeddolgozo.Adoazon = felhasznalok.adoazon;
+                        loggeddolgozo.Taj = felhasznalok.taj;
+                        loggeddolgozo.Anyjaneve = felhasznalok.anyjaneve;
+                        loggeddolgozo.Fizetes = Convert.ToInt32(felhasznalok.fizetes);
+                        loggeddolgozo.Loginid = loggeduserid;
+                    }
+                }
+            }
+                return loggeddolgozo;
+        }
 
         public static List<CDolgozok> DolgozokListaLeker()
         {
@@ -95,7 +128,8 @@ namespace Raktar
                         Adoazon = felhasznalok.adoazon,
                         Taj = felhasznalok.taj,
                         Anyjaneve = felhasznalok.anyjaneve,
-                        Fizetes = Convert.ToInt32(felhasznalok.fizetes)
+                        Fizetes = Convert.ToInt32(felhasznalok.fizetes),
+                        Loginid = felhasznalok.loginid
                        
                        
 
