@@ -20,7 +20,7 @@ namespace Raktar.Pagek
     /// </summary>
     public partial class fomenu : Page
     {
-        
+        CDolgozok loggeduser;
         public fomenu()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Raktar.Pagek
         .FirstOrDefault(window => window is MainWindow) as MainWindow;
         private void Bejelentkezett()
         {
-            CDolgozok loggeduser = CDolgozokkezeles.LoggedUserVisszaad();
+            loggeduser = CDolgozokkezeles.LoggedUserVisszaad();
             lblloggeduser.Content =  "Bejelentkezve, mint: "+loggeduser.Vezeteknev + " " + loggeduser.Keresztnev;
         }
 
@@ -54,10 +54,16 @@ namespace Raktar.Pagek
             mainWin.Content = termekek;
         }
 
-
-        private void grdkijelentkezes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Btnlogoff_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Biztosan ki szeretnél jelentkezni?", "Megerősítés", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                loggeduser = null;
+                lblloggeduser.Content = "Nem vagy bejelentkezve!";
+                //login ablak újra mutatása kéne
+            }
+            
         }
     }
 }

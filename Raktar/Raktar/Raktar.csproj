@@ -270,6 +270,7 @@
     <Resource Include="Designthings\kep.bmp" />
     <Resource Include="Designthings\loginbutton.png" />
     <Resource Include="Designthings\gomb.png" />
+    <Resource Include="Designthings\logoff.png" />
     <Content Include="model11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model11.edmx</DependentUpon>

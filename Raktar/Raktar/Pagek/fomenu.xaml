@@ -50,6 +50,11 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Button x:Name="btnlogoff" BorderThickness="0" Click="Btnlogoff_Click" Content="Kijelentkezés" Width="120" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0" AutomationProperties.HelpText="Kijelentkezés">
+            <Button.Background>
+                <ImageBrush ImageSource="/Raktar;component/Designthings/gomb.png"/>
+            </Button.Background>
+        </Button>
         <Button Click="btn_click_dolgozok"  Content="Dolgozók"  HorizontalAlignment="Left" Margin="280,170,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
         <Button Click="btn_click_raktarak" Content="Raktárak" HorizontalAlignment="Left" Margin="280,210,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
         <Button Click="btn_click_termek" Content="Termékek" HorizontalAlignment="Left" Margin="280,250,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
@@ -57,7 +62,7 @@
         <Label Content="Raktárak kezelése" FontSize="13" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="392,205,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="30" Width="150"/>
         <Label Content="Termékek kezelése" FontSize="13" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="392,245,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="30" Width="150"/>
         <Label Content="" HorizontalAlignment="Left" Margin="30,30,0,0" Width="auto" VerticalAlignment="Top"/>
-        <Label x:Name="lblloggeduser" Content="Bejelentkezve" HorizontalAlignment="Right" FontSize="18" Margin="9,11,0,0" VerticalAlignment="Top"/>
-        </Grid>
+        <Label x:Name="lblloggeduser" Content="LoggedUser" HorizontalAlignment="Right" FontSize="18" Margin="0,11,20,0" VerticalAlignment="Top" Background="{x:Null}"/>
+    </Grid>
 
 </Page>
