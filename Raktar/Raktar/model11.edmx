@@ -18,6 +18,7 @@
           <Property Name="irsz" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="anyjaneve" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fizetes" Type="money" Nullable="false" />
+          <Property Name="loginid" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -35,16 +36,9 @@
           <Property Name="Név" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cím" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Termék">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="Megnevezés" />
-            <PropertyRef Name="Súly(gramm)" />
-            <PropertyRef Name="Raktáron" />
-            <PropertyRef Name="Raktár" />
-            <PropertyRef Name="Beszállítva" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Megnevezés" Type="varchar" MaxLength="50" Nullable="false" />
@@ -61,22 +55,28 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <Property Name="Irányítószám" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="Város" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Felhasznalok_Login">
+          <End Role="Login" Type="Self.Login" Multiplicity="1" />
+          <End Role="Felhasznalok" Type="Self.Felhasznalok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Felhasznalok">
+              <PropertyRef Name="loginid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="firepenguinModel1StoreContainer">
           <EntitySet Name="Felhasznalok" EntityType="Self.Felhasznalok" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Raktár" EntityType="Self.Raktár" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Termék" EntityType="Self.Termék" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Város" EntityType="Self.Város" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Termék" EntityType="Self.Termék" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Termék].[id] AS [id], 
-    [Termék].[Megnevezés] AS [Megnevezés], 
-    [Termék].[Súly(gramm)] AS [Súly(gramm)], 
-    [Termék].[Raktáron] AS [Raktáron], 
-    [Termék].[Raktár] AS [Raktár], 
-    [Termék].[Beszállítva] AS [Beszállítva], 
-    [Termék].[Szavatosság] AS [Szavatosság]
-    FROM [dbo].[Termék] AS [Termék]</DefiningQuery>
-          </EntitySet>
+          <AssociationSet Name="FK_Felhasznalok_Login" Association="Self.FK_Felhasznalok_Login">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Felhasznalok" EntitySet="Felhasznalok" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -96,6 +96,8 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <Property Name="anyjaneve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fizetes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Város" Relationship="Self.FK_Felhasznalok_Varos" FromRole="Felhasznalok" ToRole="Város" />
+          <Property Name="loginid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Login" Relationship="firepenguinModel1.FK_Felhasznalok_Login" FromRole="Felhasznalok" ToRole="Login" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -104,6 +106,7 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="felhasznalonev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="jelszo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Felhasznaloks" Relationship="firepenguinModel1.FK_Felhasznalok_Login" FromRole="Login" ToRole="Felhasznalok" />
         </EntityType>
         <EntityType Name="Raktár">
           <Key>
@@ -120,23 +123,6 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <Property Name="Irányítószám" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Város1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Felhasznaloks" Relationship="Self.FK_Felhasznalok_Varos" FromRole="Város" ToRole="Felhasznalok" />
-        </EntityType>
-        <EntityType Name="Termék">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="Megnevezés" />
-            <PropertyRef Name="Súly_gramm" />
-            <PropertyRef Name="Raktáron" />
-            <PropertyRef Name="Raktár" />
-            <PropertyRef Name="Beszállítva" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Megnevezés" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Súly_gramm" Type="Int32" Nullable="false" />
-          <Property Name="Raktáron" Type="Byte" Nullable="false" />
-          <Property Name="Raktár" Type="Int32" Nullable="false" />
-          <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Szavatosság" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK_Felhasznalok_Varos">
           <End Role="Város" Type="Self.Város" Multiplicity="1" />
@@ -155,12 +141,40 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="Raktár" EntityType="Self.Raktár" />
           <EntitySet Name="Város" EntityType="Self.Város" />
-          <EntitySet Name="Termék" EntityType="Self.Termék" />
           <AssociationSet Name="FK_Felhasznalok_Varos" Association="Self.FK_Felhasznalok_Varos">
             <End Role="Város" EntitySet="Város" />
             <End Role="Felhasznalok" EntitySet="Felhasznaloks" />
           </AssociationSet>
+          <EntitySet Name="Termék" EntityType="firepenguinModel1.Termék" />
+          <AssociationSet Name="FK_Felhasznalok_Login" Association="firepenguinModel1.FK_Felhasznalok_Login">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="Felhasznalok" EntitySet="Felhasznaloks" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Termék">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Megnevezés" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Súly_gramm_" Type="Int32" Nullable="false" />
+          <Property Name="Raktáron" Type="Byte" Nullable="false" />
+          <Property Name="Raktár" Type="Int32" Nullable="false" />
+          <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Szavatosság" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_Felhasznalok_Login">
+          <End Type="firepenguinModel1.Login" Role="Login" Multiplicity="1" />
+          <End Type="firepenguinModel1.Felhasznalok" Role="Felhasznalok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Felhasznalok">
+              <PropertyRef Name="loginid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -170,6 +184,7 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <EntitySetMapping Name="Felhasznaloks">
             <EntityTypeMapping TypeName="firepenguinModel1.Felhasznalok">
               <MappingFragment StoreEntitySet="Felhasznalok">
+                <ScalarProperty Name="loginid" ColumnName="loginid" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="vezeteknev" ColumnName="vezeteknev" />
                 <ScalarProperty Name="keresztnev" ColumnName="keresztnev" />
@@ -211,13 +226,13 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
           <EntitySetMapping Name="Termék">
             <EntityTypeMapping TypeName="firepenguinModel1.Termék">
               <MappingFragment StoreEntitySet="Termék">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Megnevezés" ColumnName="Megnevezés" />
-                <ScalarProperty Name="Súly_gramm" ColumnName="Súly(gramm)" />
-                <ScalarProperty Name="Raktáron" ColumnName="Raktáron" />
-                <ScalarProperty Name="Raktár" ColumnName="Raktár" />
-                <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />
                 <ScalarProperty Name="Szavatosság" ColumnName="Szavatosság" />
+                <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />
+                <ScalarProperty Name="Raktár" ColumnName="Raktár" />
+                <ScalarProperty Name="Raktáron" ColumnName="Raktáron" />
+                <ScalarProperty Name="Súly_gramm_" ColumnName="Súly(gramm)" />
+                <ScalarProperty Name="Megnevezés" ColumnName="Megnevezés" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

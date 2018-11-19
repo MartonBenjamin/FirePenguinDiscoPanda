@@ -262,15 +262,14 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="sisak.png" />
-    <Resource Include="raklap.png" />
-    <Resource Include="Visszagomb.png" />
-    <Resource Include="targonca.png" />
-    <Resource Include="Pagek\if_undo-back-arrow_2931166.png" />
-    <Resource Include="logo.png" />
-    <Resource Include="kep.bmp" />
-    <Resource Include="loginbutton.png" />
-    <Resource Include="gomb.png" />
+    <Resource Include="Designthings\sisak.png" />
+    <Resource Include="Designthings\raklap.png" />
+    <Resource Include="Designthings\Visszagomb.png" />
+    <Resource Include="Designthings\targonca.png" />
+    <Resource Include="Designthings\logo.png" />
+    <Resource Include="Designthings\kep.bmp" />
+    <Resource Include="Designthings\loginbutton.png" />
+    <Resource Include="Designthings\gomb.png" />
     <Content Include="model11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>model11.edmx</DependentUpon>

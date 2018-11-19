@@ -23,7 +23,9 @@ namespace Raktar
         public string irsz { get; set; }
         public string anyjaneve { get; set; }
         public decimal fizetes { get; set; }
+        public int loginid { get; set; }
     
         public virtual Város Város { get; set; }
+        public virtual Login Login { get; set; }
     }
 }

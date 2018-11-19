@@ -74,7 +74,7 @@ namespace Raktar
                     termekek.Add(new CTermekek
                     {
                         Id = termek.id,
-                        Suly_gramm = termek.Súly_gramm,
+                        Suly_gramm = termek.Súly_gramm_,
                         Raktár = termek.Raktár,
                         Megnevezés = termek.Megnevezés,
                         Raktáron = termek.Raktáron,
@@ -94,7 +94,7 @@ namespace Raktar
                 int maxId = db.Termék.Select(p => p.id).Max();
                 ujtermek.id = maxId + 1;
                 ujtermek.Megnevezés = megnevezes;
-                ujtermek.Súly_gramm = suly;
+                ujtermek.Súly_gramm_ = suly;
                 ujtermek.Raktár = raktar;
                 ujtermek.Raktáron = raktaron;
                 ujtermek.Beszállítva = DateTime.Now;

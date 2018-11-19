@@ -9,7 +9,7 @@
       Title="Főmenü">
 
     <Grid Background="Khaki">
-        <Image Margin="255,114,432,269.6" Source="/Raktar;component/sisak.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <Image Margin="255,114,432,269.6" Source="/Raktar;component/Designthings/sisak.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>
@@ -19,7 +19,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Margin="525,-10,-20,191.6" Source="/Raktar;component/raklap.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <Image Margin="525,-10,-20,191.6" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>
@@ -29,8 +29,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Margin="-35,210,540,-28.4" Source="/Raktar;component/raklap.png" Stretch="Fill" RenderTransformOrigin="0.559,0.485"/>
-        <Image Margin="580,250,0,17.6" Source="/Raktar;component/targonca.png" HorizontalAlignment="Left" Width="210" RenderTransformOrigin="0.5,0.5">
+        <Image Margin="-35,210,540,-28.4" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.559,0.485"/>
+        <Image Margin="580,250,0,17.6" Source="/Raktar;component/Designthings/targonca.png" HorizontalAlignment="Left" Width="210" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="1"/>
@@ -40,7 +40,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Margin="10,15,0,252.6" Source="/Raktar;component/targonca.png" HorizontalAlignment="Left" Width="210" RenderTransformOrigin="0.5,0.5">
+        <Image Margin="10,15,0,252.6" Source="/Raktar;component/Designthings/targonca.png" HorizontalAlignment="Left" Width="210" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>
@@ -58,7 +58,7 @@
         <Label Content="Termékek kezelése" FontSize="13" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="392,245,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="30" Width="150"/>
         <Label Content="" HorizontalAlignment="Left" Margin="30,30,0,0" Width="auto" VerticalAlignment="Top"/>
         <Grid x:Name="grdkijelentkezes" Margin="696,10,10,392.6" RenderTransformOrigin="-1.819,0.557" MouseLeftButtonDown="grdkijelentkezes_MouseLeftButtonDown">
-            <Image Source="/Raktar;component/gomb.png" Stretch="Fill"/>
+            <Image Source="/Raktar;component/Designthings/gomb.png" Stretch="Fill"/>
             <Label Content="Kijelentkezés" HorizontalAlignment="Left" Margin="9,11,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Grid>

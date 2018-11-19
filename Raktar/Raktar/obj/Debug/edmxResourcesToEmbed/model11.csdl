@@ -14,6 +14,8 @@
     <Property Name="anyjaneve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fizetes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="Város" Relationship="Self.FK_Felhasznalok_Varos" FromRole="Felhasznalok" ToRole="Város" />
+    <Property Name="loginid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Login" Relationship="firepenguinModel1.FK_Felhasznalok_Login" FromRole="Felhasznalok" ToRole="Login" />
   </EntityType>
   <EntityType Name="Login">
     <Key>
@@ -22,6 +24,7 @@
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="felhasznalonev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="jelszo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Felhasznaloks" Relationship="firepenguinModel1.FK_Felhasznalok_Login" FromRole="Login" ToRole="Felhasznalok" />
   </EntityType>
   <EntityType Name="Raktár">
     <Key>
@@ -38,23 +41,6 @@
     <Property Name="Irányítószám" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Város1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Felhasznaloks" Relationship="Self.FK_Felhasznalok_Varos" FromRole="Város" ToRole="Felhasznalok" />
-  </EntityType>
-  <EntityType Name="Termék">
-    <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="Megnevezés" />
-      <PropertyRef Name="Súly_gramm" />
-      <PropertyRef Name="Raktáron" />
-      <PropertyRef Name="Raktár" />
-      <PropertyRef Name="Beszállítva" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="Megnevezés" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Súly_gramm" Type="Int32" Nullable="false" />
-    <Property Name="Raktáron" Type="Byte" Nullable="false" />
-    <Property Name="Raktár" Type="Int32" Nullable="false" />
-    <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Szavatosság" Type="DateTime" Precision="0" />
   </EntityType>
   <Association Name="FK_Felhasznalok_Varos">
     <End Role="Város" Type="Self.Város" Multiplicity="1" />
@@ -73,10 +59,38 @@
     <EntitySet Name="Logins" EntityType="Self.Login" />
     <EntitySet Name="Raktár" EntityType="Self.Raktár" />
     <EntitySet Name="Város" EntityType="Self.Város" />
-    <EntitySet Name="Termék" EntityType="Self.Termék" />
     <AssociationSet Name="FK_Felhasznalok_Varos" Association="Self.FK_Felhasznalok_Varos">
       <End Role="Város" EntitySet="Város" />
       <End Role="Felhasznalok" EntitySet="Felhasznaloks" />
     </AssociationSet>
+    <EntitySet Name="Termék" EntityType="firepenguinModel1.Termék" />
+    <AssociationSet Name="FK_Felhasznalok_Login" Association="firepenguinModel1.FK_Felhasznalok_Login">
+      <End Role="Login" EntitySet="Logins" />
+      <End Role="Felhasznalok" EntitySet="Felhasznaloks" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Termék">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Megnevezés" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Súly_gramm_" Type="Int32" Nullable="false" />
+    <Property Name="Raktáron" Type="Byte" Nullable="false" />
+    <Property Name="Raktár" Type="Int32" Nullable="false" />
+    <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Szavatosság" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_Felhasznalok_Login">
+    <End Type="firepenguinModel1.Login" Role="Login" Multiplicity="1" />
+    <End Type="firepenguinModel1.Felhasznalok" Role="Felhasznalok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Felhasznalok">
+        <PropertyRef Name="loginid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

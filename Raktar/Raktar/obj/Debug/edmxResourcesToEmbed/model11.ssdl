@@ -13,6 +13,7 @@
     <Property Name="irsz" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="anyjaneve" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fizetes" Type="money" Nullable="false" />
+    <Property Name="loginid" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Login">
     <Key>
@@ -30,16 +31,9 @@
     <Property Name="Név" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cím" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Termék">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="Megnevezés" />
-      <PropertyRef Name="Súly(gramm)" />
-      <PropertyRef Name="Raktáron" />
-      <PropertyRef Name="Raktár" />
-      <PropertyRef Name="Beszállítva" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="Megnevezés" Type="varchar" MaxLength="50" Nullable="false" />
@@ -56,21 +50,27 @@ warning 6002: The table/view 'firepenguin.dbo.Termék' does not have a primary k
     <Property Name="Irányítószám" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="Város" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Felhasznalok_Login">
+    <End Role="Login" Type="Self.Login" Multiplicity="1" />
+    <End Role="Felhasznalok" Type="Self.Felhasznalok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Felhasznalok">
+        <PropertyRef Name="loginid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="firepenguinModel1StoreContainer">
     <EntitySet Name="Felhasznalok" EntityType="Self.Felhasznalok" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Raktár" EntityType="Self.Raktár" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Termék" EntityType="Self.Termék" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Város" EntityType="Self.Város" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Termék" EntityType="Self.Termék" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Termék].[id] AS [id], 
-    [Termék].[Megnevezés] AS [Megnevezés], 
-    [Termék].[Súly(gramm)] AS [Súly(gramm)], 
-    [Termék].[Raktáron] AS [Raktáron], 
-    [Termék].[Raktár] AS [Raktár], 
-    [Termék].[Beszállítva] AS [Beszállítva], 
-    [Termék].[Szavatosság] AS [Szavatosság]
-    FROM [dbo].[Termék] AS [Termék]</DefiningQuery>
-    </EntitySet>
+    <AssociationSet Name="FK_Felhasznalok_Login" Association="Self.FK_Felhasznalok_Login">
+      <End Role="Login" EntitySet="Login" />
+      <End Role="Felhasznalok" EntitySet="Felhasznalok" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>
