@@ -57,14 +57,14 @@ namespace Raktar
                 {
                     pswbox.Focus();
                 }
-                else if (!pswbox.IsFocused && !tblogin.IsFocused)
+                else if (pswbox.IsFocused)
                 {
-                    tblogin.Focus();
+                    CLogin login = new CLogin();
+                    login.LoginTry();                    
                 }
                 else
                 {
-                    CLogin login = new CLogin();
-                    login.LoginTry();
+                    tblogin.Focus();
                 }               	                                             
             }
         }

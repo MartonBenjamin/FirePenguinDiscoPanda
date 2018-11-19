@@ -108,10 +108,12 @@ namespace Raktar
             //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
             public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
             {
+            try
+            {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
                     Felhasznalok ujdolgozo = new Felhasznalok();
-                
+
                     int maxId = db.Felhasznaloks.Select(p => p.id).Max();
                     ujdolgozo.id = maxId + 1;
                     ujdolgozo.vezeteknev = vezeteknev;
@@ -126,6 +128,12 @@ namespace Raktar
                     db.Felhasznaloks.Add(ujdolgozo);
                     db.SaveChanges();
                 }
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
+               
             }
             public static void Dolgozotorol(int id)
             {

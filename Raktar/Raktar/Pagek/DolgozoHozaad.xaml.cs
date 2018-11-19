@@ -27,8 +27,15 @@ namespace Raktar.Pagek
 
         private void btnDolgozoHozaad_Click(object sender, RoutedEventArgs e)
         {
-            CDolgozokkezeles.DolgozokHozaad(tbvezeteknev.Text, tbkeresztnev.Text, tbszulido.Text,
-                tbadoazon.Text, tbtaj.Text, tbirsz.Text, tbanyjaneve.Text, Convert.ToInt32(tbfizetes.Text));
+            try
+            {
+                CDolgozokkezeles.DolgozokHozaad(tbvezeteknev.Text, tbkeresztnev.Text, tbszulido.Text,
+                    tbadoazon.Text, tbtaj.Text, tbirsz.Text, tbanyjaneve.Text, Convert.ToInt32(tbfizetes.Text));
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
 
         MainWindow mainWin = Application.Current.Windows
