@@ -34,7 +34,7 @@ namespace Raktar.Pagek
             }
             catch (Exception ex)
             {
-                Logger.Logging.LogExToTxt(ex);
+                //Logger.Logging.LogExToTxt(ex);
             }
         }
 

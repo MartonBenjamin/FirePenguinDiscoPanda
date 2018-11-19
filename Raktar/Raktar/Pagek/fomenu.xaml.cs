@@ -20,6 +20,8 @@ namespace Raktar.Pagek
     /// </summary>
     public partial class fomenu : Page
     {
+        //static public int bejelentkezettuser = 0;
+        
         public fomenu()
         {
             InitializeComponent();
@@ -31,11 +33,13 @@ namespace Raktar.Pagek
         .FirstOrDefault(window => window is MainWindow) as MainWindow;
         private void Bejelentkezett()
         {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
-            {
-                Login bejelentkezett = new Login();
-                
-            }
+            //using (firepenguinEntities1 db = new firepenguinEntities1())
+            //{
+            //    var user = (from u in db.Felhasznaloks
+            //                where u.loginid == bejelentkezettuser
+            //                select u).FirstOrDefault();
+            //    lblloggeduser.Content = user.keresztnev;
+            //}
         }
 
         private void btn_click_dolgozok(object sender, RoutedEventArgs e)

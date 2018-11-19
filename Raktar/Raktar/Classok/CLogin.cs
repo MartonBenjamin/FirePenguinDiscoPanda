@@ -51,6 +51,7 @@ namespace Raktar
                         mainWin.lblloginfo.Visibility = Visibility.Visible;
                         mainWin.lblloginfo.Content = "Sikeres bejelentkezés!";
                         mainWin.lblloginfo.Foreground = Brushes.Green;
+                       // fomenu.bejelentkezettuser = user.id;
 
                         Task.Delay(500).ContinueWith(t => ValidLogin());
 

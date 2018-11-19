@@ -144,7 +144,6 @@ C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.pdb
-C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Raktar.exe.config
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Raktar.exe
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Raktar.pdb
@@ -439,3 +438,4 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CoreC
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csproj.CopyComplete
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.pdb
+C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache

@@ -17,13 +17,13 @@
         <PasswordBox x:Name="pswbox" BorderThickness="0" HorizontalContentAlignment="Center"  VerticalContentAlignment="Bottom" HorizontalAlignment="Center" Margin="58,212,531.6,0" Width="204" Height="26" VerticalAlignment="Top" Background="{x:Null}"/>
         <TextBox x:Name="tblogin" BorderThickness="0" Text="" HorizontalAlignment="Center" Height="20" Width="204" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="58,155,531.6,0" Background="{x:Null}"/>
         <Label x:Name="lbversion"  Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-        <Image Margin="504,138,10,120" Source="logo.png" Stretch="Fill" Opacity="0.85"/>
+        <Image Margin="504,138,10,120" Source="designthings/logo.png" Stretch="Fill" Opacity="0.85"/>
         <TextBlock Name="datelbl"  HorizontalAlignment="Left" Height="17.933" Margin="0,394.84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175.133"/>
-        <Image Margin="58,255,531.6,100" MouseLeftButtonDown="btnlogin_Click" Source="loginbutton.png" Stretch="Fill"/>
+        <Image Margin="58,255,531.6,100" MouseLeftButtonDown="btnlogin_Click" Source="designthings/loginbutton.png" Stretch="Fill"/>
         <Label x:Name="lblloginfo" Height="auto" Content=" " Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="62,0,531.6,51" FontSize="14" FontStyle="Oblique" Foreground="Red"/>
 
         <Grid.Background>
-            <ImageBrush ImageSource="kep.bmp" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="designthings/kep.bmp" Stretch="UniformToFill"/>
         </Grid.Background>
 
     </Grid>

@@ -57,10 +57,7 @@
         <Label Content="Raktárak kezelése" FontSize="13" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="392,205,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="30" Width="150"/>
         <Label Content="Termékek kezelése" FontSize="13" VerticalContentAlignment="Top" HorizontalAlignment="Left" Margin="392,245,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="30" Width="150"/>
         <Label Content="" HorizontalAlignment="Left" Margin="30,30,0,0" Width="auto" VerticalAlignment="Top"/>
-        <Grid x:Name="grdkijelentkezes" Margin="696,10,10,392.6" RenderTransformOrigin="-1.819,0.557" MouseLeftButtonDown="grdkijelentkezes_MouseLeftButtonDown">
-            <Image Source="/Raktar;component/Designthings/gomb.png" Stretch="Fill"/>
-            <Label Content="Kijelentkezés" HorizontalAlignment="Left" Margin="9,11,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblloggeduser" Content="Bejelentkezve" HorizontalAlignment="Right" FontSize="18" Margin="9,11,0,0" VerticalAlignment="Top"/>
         </Grid>
-    </Grid>
 
 </Page>
