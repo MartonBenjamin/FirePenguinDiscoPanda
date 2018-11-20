@@ -1,0 +1,32 @@
+﻿<Page x:Class="Raktar.Pagek.Regisztracio"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Raktar.Pagek"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Regisztracio">
+
+    <Grid>
+        <Grid Background="Khaki">
+            <Image Margin="525,-10,-20,191.6" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                        <SkewTransform AngleY="0" AngleX="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Margin="-35,210,540,-28.4" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.559,0.485"/>
+            <Label Content="" HorizontalAlignment="Left" Margin="30,30,0,0" Width="auto" VerticalAlignment="Top"/>
+            <Button Content="Reisztrál" HorizontalAlignment="Left" Margin="341,350,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="320,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="320,151,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Vendég/Diák (Ideiglenes/nem itt dolgozó felhasználó regisztrálása)" HorizontalAlignment="Left" Margin="221,78,0,0" VerticalAlignment="Top"/>
+        </Grid>
+
+    </Grid>
+</Page>
