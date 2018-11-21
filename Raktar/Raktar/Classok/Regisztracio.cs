@@ -8,8 +8,8 @@ namespace Raktar.Classok
 {
     class Regisztracio
     {
-        
-        private string vezeteknev, keresztnev,  taj, irsz, anyjaneve;
+
+        private string vezeteknev, keresztnev, taj, irsz, anyjaneve;
         DateTime szulido;
 
 
@@ -29,7 +29,7 @@ namespace Raktar.Classok
             get { return szulido; }
             set { szulido = value; }
         }
-        
+
         public string Taj
         {
             get { return taj; }
@@ -46,13 +46,56 @@ namespace Raktar.Classok
             set { anyjaneve = value; }
         }
 
-        
+    }
 
-        
+    class RegisztracioKezeles
+    {
+        static public int loggeduserid = 0;
+        public static Regisztracio LoggedUserVisszaad()
+        {
+            Regisztracio loggeddolgozo = new Regisztracio();
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+
+                foreach (var felhasznalok in db.Felhasznaloks)
+                {
+                    if (felhasznalok.loginid == loggeduserid)
+                    {
+                        loggeddolgozo.Vezeteknev = felhasznalok.vezeteknev;
+                        loggeddolgozo.Keresztnev = felhasznalok.keresztnev;
+                        loggeddolgozo.Irsz = felhasznalok.irsz;
+                        loggeddolgozo.Szulido = felhasznalok.szulido;
+                        loggeddolgozo.Taj = felhasznalok.taj;
+                        loggeddolgozo.Anyjaneve = felhasznalok.anyjaneve;
+                    }
+                }
+            }
+            return loggeddolgozo;
+        }
+
+        public static List<Regisztracio> RegisztraltakListaLeker()
+        {
+            List<Regisztracio> regisztraltak = new List<Regisztracio();
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+
+                foreach (var felhasznalok in db.Felhasznaloks)
+                {
+                    regisztraltak.Add(new Regisztracio
+                    {
+                        Vezeteknev = felhasznalok.vezeteknev,
+                        Keresztnev = felhasznalok.keresztnev,
+                        Irsz = felhasznalok.irsz,
+                        Szulido = Convert.ToDateTime(felhasznalok.szulido),
+                        Taj = felhasznalok.taj,
+                        Anyjaneve = felhasznalok.anyjaneve,
+                    });
+                }
+                return regisztraltak;
+            }
+        }
 
 
     }
-  
-    
 }
 
