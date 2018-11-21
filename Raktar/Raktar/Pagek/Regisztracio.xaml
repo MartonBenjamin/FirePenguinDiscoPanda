@@ -22,7 +22,7 @@
             </Image>
             <Image Margin="-35,210,540,-28.4" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.559,0.485"/>
             <Label Content="" HorizontalAlignment="Left" Margin="30,30,0,0" Width="auto" VerticalAlignment="Top"/>
-            <Button Content="Reisztrál" HorizontalAlignment="Left" Margin="341,350,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+            <Button Content="Reisztrál" HorizontalAlignment="Left" Margin="341,350,0,0" VerticalAlignment="Top" Width="75"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="316,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="316,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
             <Label Content="Dolgozó regisztrálása" HorizontalAlignment="Left" Margin="316,38,0,0" VerticalAlignment="Top"/>

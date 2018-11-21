@@ -64,6 +64,9 @@ namespace Raktar.Pagek
                 loggeduser = null;
                 CDolgozokkezeles.loggeduserid = 0;
                 lblloggeduser.Content = "Nem vagy bejelentkezve!";
+                MainWindow main = new MainWindow();
+                mainWin.Close();
+                main.Show();
                 //login ablak újra mutatása kéne
             }
             

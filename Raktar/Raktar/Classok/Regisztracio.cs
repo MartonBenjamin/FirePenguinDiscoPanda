@@ -75,7 +75,7 @@ namespace Raktar.Classok
 
         public static List<Regisztracio> RegisztraltakListaLeker()
         {
-            List<Regisztracio> regisztraltak = new List<Regisztracio();
+            List<Regisztracio> regisztraltak = new List<Regisztracio>();
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
 
