@@ -411,7 +411,6 @@ C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.Memory.xml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.Numerics.Vectors.xml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.exe.config
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\DolgozoHozaad.g.cs
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Dolgozok.g.cs

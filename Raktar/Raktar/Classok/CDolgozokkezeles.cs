@@ -17,7 +17,7 @@ using System.Threading;
 
 namespace Raktar
 {
-    class CDolgozok
+    public class CDolgozok
     {
         private int id, fizetes, loginid;
         private string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;
@@ -81,7 +81,7 @@ namespace Raktar
 
 
     }
-    class CDolgozokkezeles
+    public class CDolgozokkezeles
     {
         static public int loggeduserid = 0;
         public static CDolgozok LoggedUserVisszaad()
