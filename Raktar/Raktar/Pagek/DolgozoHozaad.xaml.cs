@@ -32,8 +32,19 @@ namespace Raktar.Pagek
                 CDolgozokkezeles.DolgozokHozaad(tbvezeteknev.Text, tbkeresztnev.Text, tbszulido.Text,
                     tbadoazon.Text, tbtaj.Text, tbirsz.Text, tbanyjaneve.Text, Convert.ToInt32(tbfizetes.Text));
             }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Hibás beviteli érték!");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show("Hiba:\nElméretezett érték található!");
+                Logger.Logging.LogExToTxt(ex);
+            }
             catch (Exception ex)
             {
+                MessageBox.Show("Hiba");
                 Logger.Logging.LogExToTxt(ex);
             }
         }

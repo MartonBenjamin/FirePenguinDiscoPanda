@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
 using Raktar.Modell;
+using System.Data.Entity.Core;
+using System.Data.Entity.Infrastructure;
 
 namespace Raktar
 {
@@ -22,30 +24,40 @@ namespace Raktar
     public class CDolgozokkezeles
     {
         static public int loggeduserid = 0;
+
         public static DolgozoModell LoggedUserVisszaad()
         {
-            DolgozoModell loggeddolgozo = new DolgozoModell();
-            using (firepenguinEntities1 db = new firepenguinEntities1())
+            try
             {
-
-                foreach (var felhasznalok in db.Felhasznaloks)
+                DolgozoModell loggeddolgozo = new DolgozoModell();
+                using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
-                    if (felhasznalok.loginid == loggeduserid)
+
+                    foreach (var felhasznalok in db.Felhasznaloks)
                     {
-                        loggeddolgozo.Id = felhasznalok.id;
-                        loggeddolgozo.Vezeteknev = felhasznalok.vezeteknev;
-                        loggeddolgozo.Keresztnev = felhasznalok.keresztnev;
-                        loggeddolgozo.Irsz = felhasznalok.irsz;
-                        loggeddolgozo.Szulido = felhasznalok.szulido;
-                        loggeddolgozo.Adoazon = felhasznalok.adoazon;
-                        loggeddolgozo.Taj = felhasznalok.taj;
-                        loggeddolgozo.Anyjaneve = felhasznalok.anyjaneve;
-                        loggeddolgozo.Fizetes = Convert.ToInt32(felhasznalok.fizetes);
-                        loggeddolgozo.Loginid = loggeduserid;
+                        if (felhasznalok.loginid == loggeduserid)
+                        {
+                            loggeddolgozo.Id = felhasznalok.id;
+                            loggeddolgozo.Vezeteknev = felhasznalok.vezeteknev;
+                            loggeddolgozo.Keresztnev = felhasznalok.keresztnev;
+                            loggeddolgozo.Irsz = felhasznalok.irsz;
+                            loggeddolgozo.Szulido = felhasznalok.szulido;
+                            loggeddolgozo.Adoazon = felhasznalok.adoazon;
+                            loggeddolgozo.Taj = felhasznalok.taj;
+                            loggeddolgozo.Anyjaneve = felhasznalok.anyjaneve;
+                            loggeddolgozo.Fizetes = Convert.ToInt32(felhasznalok.fizetes);
+                            loggeddolgozo.Loginid = loggeduserid;
+                        }
                     }
                 }
-            }
                 return loggeddolgozo;
+            }
+            catch (Exception ex)
+            {                
+                MessageBox.Show("Hiba a szerver kapcsolatban");
+                Logger.Logging.LogExToTxt(ex);
+                return null;
+            }
         }
 
         public static List<DolgozoModell> DolgozokListaLeker()
@@ -74,6 +86,18 @@ namespace Raktar
                     }
                     return dolgozok;
                 }
+            }
+            catch (EntityCommandExecutionException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+                return null;
+            }
+            catch (EntityException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+                return null;
             }
             catch (Exception ex)
             {
@@ -106,13 +130,30 @@ namespace Raktar
                     db.Felhasznaloks.Add(ujdolgozo);
                     db.SaveChanges();
                 }
+                MessageBox.Show("Dolgozó sikeresen hozzáadva.");
+            }
+            catch (EntityCommandExecutionException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (EntityException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (DbUpdateException ex)
+            {
+                MessageBox.Show("Hibás beviteli érték.");
+                Logger.Logging.LogExToTxt(ex);
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Hiba");
                 Logger.Logging.LogExToTxt(ex);
             }
-               
-            }
+    
+        }
             public static void Dolgozotorol(int id)
             {
             try
@@ -124,11 +165,27 @@ namespace Raktar
                     db.SaveChanges();
                 }
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
+                MessageBox.Show("Ilyen id-vel nem létezik dolgozó!");
                 Logger.Logging.LogExToTxt(ex);
             }
-            
+            catch (EntityCommandExecutionException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
             }
+            catch (EntityException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba!");
+                Logger.Logging.LogExToTxt(ex);
+            }
+
+        }
         }
 }

@@ -38,15 +38,46 @@ namespace Raktar
         .FirstOrDefault(window => window is MainWindow) as MainWindow;
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            fomenu main = new fomenu();
-            mainWin.Content = main;
+        {          
+            try
+            {
+                fomenu main = new fomenu();
+                mainWin.Content = main;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TermekHozzaad main = new TermekHozzaad();
-            mainWin.Content = main;
+            try
+            {
+                TermekHozzaad main = new TermekHozzaad();
+                mainWin.Content = main;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
+
+        private void btntermektorol_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CTermekkezeles.termekTorol(Convert.ToInt32(tbtermekindex.Text));
+                TablazatLetrehoz();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A beírt érték hibás.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+        }
+
     }
 }

@@ -27,16 +27,43 @@ namespace Raktar.Pagek
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CTermekkezeles.TermekHozaad(int.Parse(suly.Text),int.Parse(Raktar_id.Text),megnevezes.Text,byte.Parse(raktaron.Text),Convert.ToDateTime(szavatossag.Text));
+            try
+            {
+                CTermekkezeles.TermekHozaad(int.Parse(suly.Text), int.Parse(Raktar_id.Text), megnevezes.Text, byte.Parse(raktaron.Text), Convert.ToDateTime(szavatossag.Text));
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Hibás beviteli érték!");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show("Hiba:\nElméretezett érték található!");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba");
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
+        
         MainWindow mainWin = Application.Current.Windows
        .Cast<Window>()
        .FirstOrDefault(window => window is MainWindow) as MainWindow;
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Termekek main = new Termekek();
-            mainWin.Content = main;
+            try
+            {
+                Termekek main = new Termekek();
+                mainWin.Content = main;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }            
         }
 
         

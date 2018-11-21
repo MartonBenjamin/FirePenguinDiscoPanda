@@ -45,6 +45,7 @@ namespace Raktar
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
                 Logger.Logging.LogExToTxt(ex);
             }
         }
@@ -58,6 +59,7 @@ namespace Raktar
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
                 Logger.Logging.LogExToTxt(ex);
             }
         }
@@ -71,6 +73,7 @@ namespace Raktar
             }
             catch (Exception ex)
             {
+                MessageBox.Show("A beírt érték hibás.");
                 Logger.Logging.LogExToTxt(ex);
             }
         }
