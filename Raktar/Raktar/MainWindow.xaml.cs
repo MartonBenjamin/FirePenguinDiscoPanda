@@ -32,8 +32,17 @@ namespace Raktar
 
         private void btnlogin_Click(object sender, RoutedEventArgs e)
         {
-            CLogin login = new CLogin();
-            login.LoginTry();           
+            try
+            {
+                lblloginfo.Content = "Connecting...";
+                CLogin login = new CLogin();
+                login.LoginTry();
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
+               
         }
 
         public void startclock()

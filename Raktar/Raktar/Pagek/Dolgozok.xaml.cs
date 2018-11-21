@@ -38,21 +38,41 @@ namespace Raktar
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            fomenu main = new fomenu();
-            mainWin.Content = main;
-
+            try
+            {
+                fomenu main = new fomenu();
+                mainWin.Content = main;
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {       
-            DolgozoHozaad dolgozoHozaad = new DolgozoHozaad();
-            mainWin.Content = dolgozoHozaad;
+        {
+            try
+            {
+                DolgozoHozaad dolgozoHozaad = new DolgozoHozaad();
+                mainWin.Content = dolgozoHozaad;
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
 
         private void btndolgozotorol_Click(object sender, RoutedEventArgs e)
         {
-            CDolgozokkezeles.Dolgozotorol(Convert.ToInt32(tbdolgozoindex.Text));
-            GridFill();
+            try
+            {
+                CDolgozokkezeles.Dolgozotorol(Convert.ToInt32(tbdolgozoindex.Text));
+                GridFill();
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
         }
 
     }

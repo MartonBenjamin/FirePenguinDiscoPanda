@@ -37,40 +37,49 @@ namespace Raktar
         }
 
         public void LoginTry()
-        {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
-            {
-                var user = db.Logins.FirstOrDefault(u => u.felhasznalonev == mainWin.tblogin.Text);
-                int maxId = db.Logins.Select(p => p.id).Max();
-                if (user != null)
+        {            
+            try
+            {               
+                using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
-
-                    if (user.jelszo == mainWin.pswbox.Password)
+                    var user = db.Logins.FirstOrDefault(u => u.felhasznalonev == mainWin.tblogin.Text);
+                    int maxId = db.Logins.Select(p => p.id).Max();
+                    if (user != null)
                     {
 
-                        mainWin.lblloginfo.Visibility = Visibility.Visible;
-                        mainWin.lblloginfo.Content = "Sikeres bejelentkezés!";
-                        mainWin.lblloginfo.Foreground = Brushes.Green;
-                        CDolgozokkezeles.loggeduserid = user.id;
+                        if (user.jelszo == mainWin.pswbox.Password)
+                        {
 
-                        Task.Delay(500).ContinueWith(t => ValidLogin());
+                            mainWin.lblloginfo.Visibility = Visibility.Visible;
+                            mainWin.lblloginfo.Content = "Sikeres bejelentkezés!";
+                            mainWin.lblloginfo.Foreground = Brushes.Green;
+                            CDolgozokkezeles.loggeduserid = user.id;
+
+                            Task.Delay(500).ContinueWith(t => ValidLogin());
+
+                        }
+                        else
+                        {
+                            mainWin.lblloginfo.Visibility = Visibility.Visible;
+                            mainWin.lblloginfo.Content = "Hibás jelszó!";
+                            mainWin.lblloginfo.Foreground = Brushes.Red;
+                        }
 
                     }
                     else
                     {
                         mainWin.lblloginfo.Visibility = Visibility.Visible;
-                        mainWin.lblloginfo.Content = "Hibás jelszó!";
+                        mainWin.lblloginfo.Content = "Hibás felhasználónév!";
                         mainWin.lblloginfo.Foreground = Brushes.Red;
+
                     }
 
                 }
-                else
-                {
-                    mainWin.lblloginfo.Visibility = Visibility.Visible;
-                    mainWin.lblloginfo.Content = "Hibás felhasználónév!";
-                    mainWin.lblloginfo.Foreground = Brushes.Red;
-                }
-
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+                mainWin.lblloginfo.Content = "Hiba a szerver kapcsolatban!";
             }
 
         }

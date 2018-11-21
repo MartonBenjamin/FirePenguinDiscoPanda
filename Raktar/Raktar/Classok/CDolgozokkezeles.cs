@@ -112,35 +112,40 @@ namespace Raktar
 
         public static List<CDolgozok> DolgozokListaLeker()
         {
-            List<CDolgozok> dolgozok = new List<CDolgozok>();
-            using (firepenguinEntities1 db = new firepenguinEntities1())
+            try
             {
-
-                foreach (var felhasznalok in db.Felhasznaloks)
+                List<CDolgozok> dolgozok = new List<CDolgozok>();
+                using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
-                    dolgozok.Add(new CDolgozok
-                    {
-                        Id = felhasznalok.id,
-                        Vezeteknev = felhasznalok.vezeteknev,
-                        Keresztnev = felhasznalok.keresztnev,
-                        Irsz = felhasznalok.irsz,
-                        Szulido = Convert.ToDateTime(felhasznalok.szulido),
-                        Adoazon = felhasznalok.adoazon,
-                        Taj = felhasznalok.taj,
-                        Anyjaneve = felhasznalok.anyjaneve,
-                        Fizetes = Convert.ToInt32(felhasznalok.fizetes),
-                        Loginid = felhasznalok.loginid
-                       
-                       
 
-                    });
+                    foreach (var felhasznalok in db.Felhasznaloks)
+                    {
+                        dolgozok.Add(new CDolgozok
+                        {
+                            Id = felhasznalok.id,
+                            Vezeteknev = felhasznalok.vezeteknev,
+                            Keresztnev = felhasznalok.keresztnev,
+                            Irsz = felhasznalok.irsz,
+                            Szulido = Convert.ToDateTime(felhasznalok.szulido),
+                            Adoazon = felhasznalok.adoazon,
+                            Taj = felhasznalok.taj,
+                            Anyjaneve = felhasznalok.anyjaneve,
+                            Fizetes = Convert.ToInt32(felhasznalok.fizetes),
+                            Loginid = felhasznalok.loginid
+                        });
+                    }
+                    return dolgozok;
                 }
-                return dolgozok;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A dolgozók betöltése sikertelen!");
+                return null;
             }
         }
 
-            //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
-            public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
+        //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
+        public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
             {
             try
             {
@@ -165,11 +170,13 @@ namespace Raktar
             }
             catch (Exception ex)
             {
-                //Logger.Logging.LogExToTxt(ex);
+                Logger.Logging.LogExToTxt(ex);
             }
                
             }
             public static void Dolgozotorol(int id)
+            {
+            try
             {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
@@ -177,6 +184,12 @@ namespace Raktar
                     db.Felhasznaloks.Remove(toroldolgozo);
                     db.SaveChanges();
                 }
+            }
+            catch (Exception ex)
+            {
+                Logger.Logging.LogExToTxt(ex);
+            }
+            
             }
         }
 }
