@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raktar.Classok
 {
-    class IdeiglenesFelhasznalo
+    class Regisztracio
     {
         
         private string vezeteknev, keresztnev,  taj, irsz, anyjaneve;

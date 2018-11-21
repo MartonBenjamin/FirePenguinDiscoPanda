@@ -125,7 +125,7 @@
     <Compile Include="Classok\CLogin.cs" />
     <Compile Include="Classok\CTermekkezeles.cs" />
     <Compile Include="Classok\CRaktarakKezeles.cs" />
-    <Compile Include="Classok\IdeiglenesFelhasznalo.cs" />
+    <Compile Include="Classok\Regisztracio.cs" />
     <Compile Include="Pagek\DolgozoHozaad.xaml.cs">
       <DependentUpon>DolgozoHozaad.xaml</DependentUpon>
     </Compile>
@@ -159,8 +159,8 @@
     <Compile Include="Pagek\Raktarak.xaml.cs">
       <DependentUpon>Raktarak.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pagek\IdeiglenesRegisztracio.xaml.cs">
-      <DependentUpon>IdeiglenesRegisztracio.xaml</DependentUpon>
+    <Compile Include="Pagek\Regisztracio.xaml.cs">
+      <DependentUpon>Regisztracio.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pagek\TermekHozzaad.xaml.cs">
       <DependentUpon>TermekHozzaad.xaml</DependentUpon>
@@ -201,7 +201,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pagek\IdeiglenesRegisztracio.xaml">
+    <Page Include="Pagek\Regisztracio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
