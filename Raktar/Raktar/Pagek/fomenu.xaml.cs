@@ -24,7 +24,9 @@ namespace Raktar.Pagek
         public fomenu()
         {
             InitializeComponent();
-            Bejelentkezett();
+            if (CDolgozokkezeles.loggeduserid != 0)
+                Bejelentkezett();
+            
         }
 
         MainWindow mainWin = Application.Current.Windows
@@ -60,6 +62,7 @@ namespace Raktar.Pagek
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 loggeduser = null;
+                CDolgozokkezeles.loggeduserid = 0;
                 lblloggeduser.Content = "Nem vagy bejelentkezve!";
                 //login ablak újra mutatása kéne
             }
