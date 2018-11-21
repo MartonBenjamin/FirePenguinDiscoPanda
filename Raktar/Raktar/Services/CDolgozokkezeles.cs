@@ -77,6 +77,7 @@ namespace Raktar
             }
             catch (Exception ex)
             {
+                Logger.Logging.LogExToTxt(ex);
                 MessageBox.Show("A dolgozók betöltése sikertelen!");
                 return null;
             }

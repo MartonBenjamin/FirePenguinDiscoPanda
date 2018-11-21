@@ -41,7 +41,7 @@ namespace Raktar.Pagek
 
         private void btn_click_dolgozok(object sender, RoutedEventArgs e)
         {
-            DolgozoModell dolgozok = new DolgozoModell();
+            Dolgozok dolgozok = new Dolgozok();
             mainWin.Content = dolgozok;
         }
 

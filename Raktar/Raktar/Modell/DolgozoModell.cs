@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raktar.Modell
 {
-    class DolgozoModell
+    public class DolgozoModell
     {
         private int id, fizetes, loginid;
         private string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;

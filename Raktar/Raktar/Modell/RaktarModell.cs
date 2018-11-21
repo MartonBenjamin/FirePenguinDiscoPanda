@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raktar.Modell
 {
-    class RaktarModell
+    public class RaktarModell
     {
         public int Id
         {
