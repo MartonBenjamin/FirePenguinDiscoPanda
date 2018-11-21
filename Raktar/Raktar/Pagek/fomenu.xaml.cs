@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Raktar.Modell;
 
 namespace Raktar.Pagek
 {
@@ -20,7 +21,7 @@ namespace Raktar.Pagek
     /// </summary>
     public partial class fomenu : Page
     {
-        CDolgozok loggeduser;
+        DolgozoModell loggeduser;
         public fomenu()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Raktar.Pagek
 
         private void btn_click_dolgozok(object sender, RoutedEventArgs e)
         {
-            Dolgozok dolgozok = new Dolgozok();
+            DolgozoModell dolgozok = new DolgozoModell();
             mainWin.Content = dolgozok;
         }
 

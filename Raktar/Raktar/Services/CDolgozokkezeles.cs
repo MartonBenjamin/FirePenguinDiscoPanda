@@ -14,79 +14,17 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
+using Raktar.Modell;
 
 namespace Raktar
 {
-    public class CDolgozok
-    {
-        private int id, fizetes, loginid;
-        private string vezeteknev, keresztnev, adoazon, taj, irsz, anyjaneve;
-        DateTime szulido;
-
-        
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public string Vezeteknev
-        {
-            get { return vezeteknev; }
-            set { vezeteknev = value; }
-        }
-        public string Keresztnev
-        {
-            get { return keresztnev; }
-            set { keresztnev = value; }
-        }
-        public DateTime Szulido
-        {
-            get { return szulido; }
-            set { szulido = value; }
-        }
-        public string Adoazon
-        {
-            get { return adoazon; }
-            set { adoazon = value; }
-        }
-        public string Taj
-        {
-            get { return taj; }
-            set { taj = value; }
-        }
-        public string Irsz
-        {
-            get { return irsz; }
-            set { irsz = value; }
-        }
-        public string Anyjaneve
-        {
-            get { return anyjaneve; }
-            set { anyjaneve = value; }
-        }
-        
-        public int Fizetes
-        {
-            get { return fizetes; }
-            set { fizetes = value; }
-        }
-
-        public int Loginid
-        {
-            get { return loginid; }
-            set { loginid = value; }
-        }
-
-
-    }
+   
     public class CDolgozokkezeles
     {
         static public int loggeduserid = 0;
-        public static CDolgozok LoggedUserVisszaad()
+        public static DolgozoModell LoggedUserVisszaad()
         {
-            CDolgozok loggeddolgozo = new CDolgozok();
+            DolgozoModell loggeddolgozo = new DolgozoModell();
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
 
@@ -110,17 +48,17 @@ namespace Raktar
                 return loggeddolgozo;
         }
 
-        public static List<CDolgozok> DolgozokListaLeker()
+        public static List<DolgozoModell> DolgozokListaLeker()
         {
             try
             {
-                List<CDolgozok> dolgozok = new List<CDolgozok>();
+                List<DolgozoModell> dolgozok = new List<DolgozoModell>();
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
 
                     foreach (var felhasznalok in db.Felhasznaloks)
                     {
-                        dolgozok.Add(new CDolgozok
+                        dolgozok.Add(new DolgozoModell
                         {
                             Id = felhasznalok.id,
                             Vezeteknev = felhasznalok.vezeteknev,

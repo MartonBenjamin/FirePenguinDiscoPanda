@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Raktar.Modell;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,36 +7,20 @@ using System.Threading.Tasks;
 
 namespace Raktar
 {
-    class CRaktarak
-    {
-        public int Id
-        {
-            get; set;
-        }
-        public string Raktarnev
-        {
-            get; set;
-        }
-
-        public string Raktarcim
-        {
-            get; set;
-        }
-    }
     class CRaktarakKezeles
     {
         //Raktár adatainak kilistázása, raktár eltávolítása, hozzáadása
 
-        static List<CRaktarak> raktarak = new List<CRaktarak>();
+        static List<RaktarModell> raktarak = new List<RaktarModell>();
 
-        public static List<CRaktarak> RaktarListaVisszaad()
+        public static List<RaktarModell> RaktarListaVisszaad()
         {
             
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
                 foreach (var raktár in db.Raktár)
                 {
-                    raktarak.Add(new CRaktarak
+                    raktarak.Add(new RaktarModell
                     {
                         Id = raktár.id,
                         Raktarnev = raktár.Név,

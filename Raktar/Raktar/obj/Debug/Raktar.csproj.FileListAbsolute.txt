@@ -592,3 +592,4 @@ C:\Users\Ákos\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Ra
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Logger.dll
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.g.cs
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.baml
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.g.cs
