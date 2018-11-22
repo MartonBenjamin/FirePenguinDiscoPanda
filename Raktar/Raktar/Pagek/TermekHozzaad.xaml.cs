@@ -13,15 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Raktar.Pagek
-{
+{    
     /// <summary>
     /// Interaction logic for TermekHozzaad.xaml
     /// </summary>
     public partial class TermekHozzaad : Page
     {
         public TermekHozzaad()
-        {
+        {                        
             InitializeComponent();
         }
 
@@ -89,6 +90,20 @@ namespace Raktar.Pagek
             szavatossag.Text = "";
         }
 
+      
+        private void Page_KeyDown(object sender, KeyEventArgs e)
+        {
+            List<TextBox> TextBoxes = new List<TextBox> { megnevezes, suly, Raktar_id, raktaron, szavatossag };
+            if (e.Key == Key.Enter)
+            {
+                if (TextBoxes[0].IsFocused) TextBoxes[1].Focus();
+                else if (TextBoxes[1].IsFocused) TextBoxes[2].Focus();
+                else if (TextBoxes[2].IsFocused) TextBoxes[3].Focus();
+                else if (TextBoxes[3].IsFocused) TextBoxes[4].Focus();
+                else AddButton.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));            
+            }            
+        }
 
+       
     }
 }

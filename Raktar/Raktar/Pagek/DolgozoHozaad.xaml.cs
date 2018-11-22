@@ -90,5 +90,21 @@ namespace Raktar.Pagek
         {
             tbanyjaneve.Text = "";
         }
+
+        private void Page_KeyDown(object sender, KeyEventArgs e)
+        {
+            List<TextBox> TextBoxes = new List<TextBox> { tbvezeteknev, tbkeresztnev, tbszulido, tbadoazon, tbtaj, tbirsz, tbanyjaneve, tbfizetes };
+            if (e.Key == Key.Enter)
+            {
+                if (TextBoxes[0].IsFocused) TextBoxes[1].Focus();
+                else if (TextBoxes[1].IsFocused) TextBoxes[2].Focus();
+                else if (TextBoxes[2].IsFocused) TextBoxes[3].Focus();
+                else if (TextBoxes[3].IsFocused) TextBoxes[4].Focus();
+                else if (TextBoxes[4].IsFocused) TextBoxes[5].Focus();
+                else if (TextBoxes[5].IsFocused) TextBoxes[6].Focus();
+                else if (TextBoxes[6].IsFocused) TextBoxes[7].Focus();
+                else btnDolgozoHozaad.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));
+            }
+        }
     }
 }
