@@ -123,11 +123,14 @@
     </ApplicationDefinition>
     <Compile Include="Modell\DolgozoModell.cs" />
     <Compile Include="Modell\RaktarModell.cs" />
+    <Compile Include="Modell\RegisterModell.cs" />
     <Compile Include="Modell\TermekModell.cs" />
     <Compile Include="Services\CDolgozokkezeles.cs" />
     <Compile Include="Services\CLogin.cs" />
+    <Compile Include="Services\CRegister.cs" />
     <Compile Include="Services\CTermekkezeles.cs" />
     <Compile Include="Services\CRaktarakKezeles.cs" />
+    <Compile Include="Services\Ellenorzes.cs" />
     <Compile Include="Services\Regisztracio.cs" />
     <Compile Include="Pagek\DolgozoHozaad.xaml.cs">
       <DependentUpon>DolgozoHozaad.xaml</DependentUpon>

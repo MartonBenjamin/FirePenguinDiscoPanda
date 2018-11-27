@@ -20,6 +20,7 @@
     <EntitySetMapping Name="Logins">
       <EntityTypeMapping TypeName="firepenguinModel1.Login">
         <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="admin" ColumnName="admin" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
           <ScalarProperty Name="jelszo" ColumnName="jelszo" />

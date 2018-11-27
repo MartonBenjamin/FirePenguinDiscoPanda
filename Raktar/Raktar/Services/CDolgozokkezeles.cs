@@ -111,14 +111,13 @@ namespace Raktar
         //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
         public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
             {
-            try
-            {
+            //try
+            //{
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
                     Felhasznalok ujdolgozo = new Felhasznalok();
 
-                    int maxId = db.Felhasznaloks.Select(p => p.id).Max();
-                    ujdolgozo.id = maxId + 1;
+                    ujdolgozo.id = db.Felhasznaloks.Select(p => p.id).Max() + 1;
                     ujdolgozo.vezeteknev = vezeteknev;
                     ujdolgozo.keresztnev = keresztnev;
                     ujdolgozo.szulido = Convert.ToDateTime(szulido);
@@ -127,34 +126,35 @@ namespace Raktar
                     ujdolgozo.irsz = irsz;
                     ujdolgozo.anyjaneve = anyjaneve;
                     ujdolgozo.fizetes = fizetes;
-
+                    ujdolgozo.loginid = db.Logins.Select(p => p.id).Max() + 1;
+                    //ide kell a Cregister és paraméternek pl vezetéknév, mint felhasználónév, keresztnev, mint jelszo
                     db.Felhasznaloks.Add(ujdolgozo);
                     db.SaveChanges();
                 }
                 MessageBox.Show("Dolgozó sikeresen hozzáadva.");
             }
-            catch (EntityCommandExecutionException ex)
-            {
-                MessageBox.Show("Hiba a szerver kapcsolatban.");
-                Logger.Logging.LogExToTxt(ex);
-            }
-            catch (EntityException ex)
-            {
-                MessageBox.Show("Hiba a szerver kapcsolatban.");
-                Logger.Logging.LogExToTxt(ex);
-            }
-            catch (DbUpdateException ex)
-            {                
-                MessageBox.Show("Hibás beviteli érték.");
-                Logger.Logging.LogExToTxt(ex);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hiba");
-                Logger.Logging.LogExToTxt(ex);
-            }
+            //catch (EntityCommandExecutionException ex)
+            //{
+            //    MessageBox.Show("Hiba a szerver kapcsolatban.");
+            //    Logger.Logging.LogExToTxt(ex);
+            //}
+            //catch (EntityException ex)
+            //{
+            //    MessageBox.Show("Hiba a szerver kapcsolatban.");
+            //    Logger.Logging.LogExToTxt(ex);
+            //}
+            //catch (DbUpdateException ex)
+            //{                
+            //    MessageBox.Show("Hibás beviteli érték.");
+            //    Logger.Logging.LogExToTxt(ex);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Hiba");
+            //    Logger.Logging.LogExToTxt(ex);
+            //}
     
-        }
+       // }
             public static void Dolgozotorol(int id)
             {
             try
@@ -162,7 +162,9 @@ namespace Raktar
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
                     Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
+                    Login toroldolgozologin = db.Logins.FirstOrDefault(u => u.id == toroldolgozo.loginid);
                     db.Felhasznaloks.Remove(toroldolgozo);
+                    db.Logins.Remove(toroldolgozologin);
                     db.SaveChanges();
                 }
             }

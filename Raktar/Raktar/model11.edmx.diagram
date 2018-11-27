@@ -12,6 +12,7 @@
         <AssociationConnector Association="firepenguinModel1.FK_Felhasznalok_Varos" ManuallyRouted="false" />
         <EntityTypeShape EntityType="firepenguinModel1.Termék" Width="1.5" PointX="5.375" PointY="0.75" />
         <AssociationConnector Association="firepenguinModel1.FK_Felhasznalok_Login" />
+        <AssociationConnector Association="firepenguinModel1.FK_Login_Login" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

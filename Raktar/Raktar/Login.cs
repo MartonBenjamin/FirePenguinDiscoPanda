@@ -23,8 +23,11 @@ namespace Raktar
         public int id { get; set; }
         public string felhasznalonev { get; set; }
         public string jelszo { get; set; }
+        public Nullable<byte> admin { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Felhasznalok> Felhasznaloks { get; set; }
+        public virtual Login Login1 { get; set; }
+        public virtual Login Login2 { get; set; }
     }
 }

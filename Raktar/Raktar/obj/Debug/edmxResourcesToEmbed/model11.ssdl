@@ -22,6 +22,7 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="felhasznalonev" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="jelszo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="admin" Type="tinyint" />
   </EntityType>
   <EntityType Name="Raktár">
     <Key>
@@ -50,7 +51,7 @@
     <Property Name="Irányítószám" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="Város" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Felhasznalok_Login">
+  <Association Name="FK_Felhasznalok_Login1">
     <End Role="Login" Type="Self.Login" Multiplicity="1" />
     <End Role="Felhasznalok" Type="Self.Felhasznalok" Multiplicity="*" />
     <ReferentialConstraint>
@@ -62,15 +63,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Login_Login">
+    <End Role="Login" Type="Self.Login" Multiplicity="1" />
+    <End Role="Login1" Type="Self.Login" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Login1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="firepenguinModel1StoreContainer">
     <EntitySet Name="Felhasznalok" EntityType="Self.Felhasznalok" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Raktár" EntityType="Self.Raktár" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Termék" EntityType="Self.Termék" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Város" EntityType="Self.Város" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Felhasznalok_Login" Association="Self.FK_Felhasznalok_Login">
+    <AssociationSet Name="FK_Felhasznalok_Login1" Association="Self.FK_Felhasznalok_Login1">
       <End Role="Login" EntitySet="Login" />
       <End Role="Felhasznalok" EntitySet="Felhasznalok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_Login" Association="Self.FK_Login_Login">
+      <End Role="Login" EntitySet="Login" />
+      <End Role="Login1" EntitySet="Login" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

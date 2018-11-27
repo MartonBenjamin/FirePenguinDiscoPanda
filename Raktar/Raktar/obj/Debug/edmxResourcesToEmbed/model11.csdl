@@ -25,6 +25,9 @@
     <Property Name="felhasznalonev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="jelszo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Felhasznaloks" Relationship="firepenguinModel1.FK_Felhasznalok_Login" FromRole="Login" ToRole="Felhasznalok" />
+    <Property Name="admin" Type="Byte" />
+    <NavigationProperty Name="Login1" Relationship="firepenguinModel1.FK_Login_Login" FromRole="Login" ToRole="Login1" />
+    <NavigationProperty Name="Login2" Relationship="firepenguinModel1.FK_Login_Login" FromRole="Login1" ToRole="Login" />
   </EntityType>
   <EntityType Name="Raktár">
     <Key>
@@ -68,6 +71,10 @@
       <End Role="Login" EntitySet="Logins" />
       <End Role="Felhasznalok" EntitySet="Felhasznaloks" />
     </AssociationSet>
+    <AssociationSet Name="FK_Login_Login" Association="firepenguinModel1.FK_Login_Login">
+      <End Role="Login" EntitySet="Logins" />
+      <End Role="Login1" EntitySet="Logins" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Termék">
     <Key>
@@ -90,6 +97,18 @@
       </Principal>
       <Dependent Role="Felhasznalok">
         <PropertyRef Name="loginid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_Login">
+    <End Type="firepenguinModel1.Login" Role="Login" Multiplicity="1" />
+    <End Type="firepenguinModel1.Login" Role="Login1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Login1">
+        <PropertyRef Name="id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

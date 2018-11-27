@@ -27,6 +27,7 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="felhasznalonev" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="jelszo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="admin" Type="tinyint" />
         </EntityType>
         <EntityType Name="Raktár">
           <Key>
@@ -55,7 +56,7 @@
           <Property Name="Irányítószám" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="Város" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Felhasznalok_Login">
+        <Association Name="FK_Felhasznalok_Login1">
           <End Role="Login" Type="Self.Login" Multiplicity="1" />
           <End Role="Felhasznalok" Type="Self.Felhasznalok" Multiplicity="*" />
           <ReferentialConstraint>
@@ -67,15 +68,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Login_Login">
+          <End Role="Login" Type="Self.Login" Multiplicity="1" />
+          <End Role="Login1" Type="Self.Login" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Login1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="firepenguinModel1StoreContainer">
           <EntitySet Name="Felhasznalok" EntityType="Self.Felhasznalok" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Raktár" EntityType="Self.Raktár" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Termék" EntityType="Self.Termék" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Város" EntityType="Self.Város" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Felhasznalok_Login" Association="Self.FK_Felhasznalok_Login">
+          <AssociationSet Name="FK_Felhasznalok_Login1" Association="Self.FK_Felhasznalok_Login1">
             <End Role="Login" EntitySet="Login" />
             <End Role="Felhasznalok" EntitySet="Felhasznalok" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Login_Login" Association="Self.FK_Login_Login">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Login1" EntitySet="Login" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -107,6 +124,9 @@
           <Property Name="felhasznalonev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="jelszo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Felhasznaloks" Relationship="firepenguinModel1.FK_Felhasznalok_Login" FromRole="Login" ToRole="Felhasznalok" />
+          <Property Name="admin" Type="Byte" />
+          <NavigationProperty Name="Login1" Relationship="firepenguinModel1.FK_Login_Login" FromRole="Login" ToRole="Login1" />
+          <NavigationProperty Name="Login2" Relationship="firepenguinModel1.FK_Login_Login" FromRole="Login1" ToRole="Login" />
         </EntityType>
         <EntityType Name="Raktár">
           <Key>
@@ -150,6 +170,10 @@
             <End Role="Login" EntitySet="Logins" />
             <End Role="Felhasznalok" EntitySet="Felhasznaloks" />
           </AssociationSet>
+          <AssociationSet Name="FK_Login_Login" Association="firepenguinModel1.FK_Login_Login">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="Login1" EntitySet="Logins" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Termék">
           <Key>
@@ -172,6 +196,18 @@
             </Principal>
             <Dependent Role="Felhasznalok">
               <PropertyRef Name="loginid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Login_Login">
+          <End Type="firepenguinModel1.Login" Role="Login" Multiplicity="1" />
+          <End Type="firepenguinModel1.Login" Role="Login1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Login1">
+              <PropertyRef Name="id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -200,6 +236,7 @@
           <EntitySetMapping Name="Logins">
             <EntityTypeMapping TypeName="firepenguinModel1.Login">
               <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="admin" ColumnName="admin" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
                 <ScalarProperty Name="jelszo" ColumnName="jelszo" />
