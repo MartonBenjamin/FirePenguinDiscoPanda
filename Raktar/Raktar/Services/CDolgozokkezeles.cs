@@ -17,6 +17,7 @@ using System.Threading;
 using Raktar.Modell;
 using System.Data.Entity.Core;
 using System.Data.Entity.Infrastructure;
+using Raktar.Pagek;
 
 namespace Raktar
 {
@@ -143,7 +144,7 @@ namespace Raktar
                 Logger.Logging.LogExToTxt(ex);
             }
             catch (DbUpdateException ex)
-            {
+            {                
                 MessageBox.Show("Hibás beviteli érték.");
                 Logger.Logging.LogExToTxt(ex);
             }

@@ -58,38 +58,6 @@ namespace Raktar.Pagek
             Dolgozok dolgozok = new Dolgozok();
             mainWin.Content = dolgozok;
         }
-        private void vezeteknev_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbvezeteknev.Text = "";
-        }
-        private void keresztnev_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbkeresztnev.Text = "";
-        }
-        private void szulido_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbszulido.Text = "";
-        }
-        private void adoazon_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbadoazon.Text = "";
-        }
-        private void taj_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbtaj.Text = "";
-        }
-        private void fizetes_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbfizetes.Text = "";
-        }
-        private void irsz_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbirsz.Text = "";
-        }
-        private void anyjaneve_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbanyjaneve.Text = "";
-        }
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
@@ -103,7 +71,132 @@ namespace Raktar.Pagek
                 else if (TextBoxes[4].IsFocused) TextBoxes[5].Focus();
                 else if (TextBoxes[5].IsFocused) TextBoxes[6].Focus();
                 else if (TextBoxes[6].IsFocused) TextBoxes[7].Focus();
-                else btnDolgozoHozaad.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));
+                else
+                {
+                    btnDolgozoHozaad.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));
+                    tbvezeteknev.Focus();
+                }
+            }
+        }
+        private void vezeteknev_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbvezeteknev.Text == "Vezetéknév")
+                tbvezeteknev.Text = "";
+            lblvezeteknevinfo.Visibility = Visibility.Visible;
+        }
+        private void keresztnev_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbkeresztnev.Text == "Keresztnév")
+                tbkeresztnev.Text = "";
+            lblkeresztnevinfo.Visibility = Visibility.Visible;
+        }
+        private void szulido_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbszulido.Text == "Születési idő")
+                tbszulido.Text = "";
+            lblszulidoinfo.Visibility = Visibility.Visible;
+        }
+        private void adoazon_GotFocus(object sender, RoutedEventArgs e)
+        { 
+            if(tbadoazon.Text == "Adóazonosító szám")
+                tbadoazon.Text = "";
+            lbladoazoninfo.Visibility = Visibility.Visible;
+        }
+        private void taj_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbtaj.Text == "Taj szám")
+                tbtaj.Text = "";
+            lbltajszaminfo.Visibility = Visibility.Visible;
+        }
+        private void fizetes_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbfizetes.Text == "Fizetés")
+                tbfizetes.Text = "";
+            lblfizetesinfo.Visibility = Visibility.Visible;
+        }
+        private void irsz_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbirsz.Text == "Irányítószám")
+                tbirsz.Text = "";
+            lbliranyitoinfo.Visibility = Visibility.Visible;
+        }
+        private void anyjaneve_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbanyjaneve.Text == "Anyja neve")
+                tbanyjaneve.Text = "";
+            lblanyjaneveinfo.Visibility = Visibility.Visible;
+        }
+
+
+        private void tbvezeteknev_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbvezeteknev.Text == "")
+            {
+                tbvezeteknev.Text = "Vezetéknév"; 
+                lblvezeteknevinfo.Visibility = Visibility.Hidden;
+            }
+        }
+        private void tbkeresztnev_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbkeresztnev.Text == "")
+            {
+                tbkeresztnev.Text = "Keresztnév";
+                lblkeresztnevinfo.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbszulido_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbszulido.Text == "")
+            {
+                tbszulido.Text = "Születési idő";
+                lblszulidoinfo.Visibility = Visibility.Hidden;
+            }
+
+        }
+
+        private void tbadoazon_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbadoazon.Text == "")
+            {
+                tbadoazon.Text = "Adóazonosító szám";
+                lbladoazoninfo.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbtaj_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbtaj.Text == "")
+            {
+                tbtaj.Text = "Taj szám";
+                lbltajszaminfo.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbirsz_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbirsz.Text == "")
+            {
+                tbirsz.Text = "Irányítószám";
+                lbliranyitoinfo.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbanyjaneve_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbanyjaneve.Text == "")
+            {
+                tbanyjaneve.Text = "Anyja neve";
+                lblanyjaneveinfo.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbfizetes_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbfizetes.Text == "")
+            {
+                tbfizetes.Text = "Fizetés";
+                lblfizetesinfo.Visibility = Visibility.Hidden;
             }
         }
     }

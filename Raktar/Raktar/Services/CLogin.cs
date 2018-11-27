@@ -71,7 +71,7 @@ namespace Raktar
                         mainWin.lblloginfo.Visibility = Visibility.Visible;
                         mainWin.lblloginfo.Content = "Hibás felhasználónév!";
                         mainWin.lblloginfo.Foreground = Brushes.Red;
-                        mainWin.pswbox.Focus();
+                        mainWin.tblogin.Focus();
 
                     }
 

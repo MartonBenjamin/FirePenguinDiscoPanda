@@ -17,6 +17,6 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="170,161,0,0" TextWrapping="Wrap" x:Name="raktaron" Text="darabszám" VerticalAlignment="Top" Width="120" GotFocus="darabszam_GotFocus"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="170,184,0,0" TextWrapping="Wrap" x:Name="szavatossag" Text="Szavatosság" VerticalAlignment="Top" Width="120" GotFocus="szavatossag_GotFocus"/>
         <Button  x:Name="AddButton" Click="Button_Click" Content="Termék hozzáad" HorizontalAlignment="Left" Margin="170,246,0,0" VerticalAlignment="Top" Width="120"/>
-        <Image Margin="10,10,685,387.6" Source="/Raktar;component/Designthings/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="80" Source="/Raktar;component/Designthings/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
     </Grid>
 </Page>

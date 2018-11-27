@@ -21,7 +21,7 @@
         <Label x:Name="lbversion"  Content="Aktuális verzió: v1.0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Image Margin="504,138,10,120" Source="designthings/logo.png" Stretch="Fill" Opacity="0.85"/>
         <TextBlock Name="datelbl"  HorizontalAlignment="Left" Height="17.933" Margin="0,394.84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175.133"/>
-        <Image Margin="58,255,531.6,100" MouseLeftButtonDown="btnlogin_Click" Source="designthings/loginbutton.png" Stretch="Fill"/>
+        <Image Margin="58,253,532,102" MouseLeftButtonDown="btnlogin_Click" Source="designthings/loginbutton.png" Stretch="Fill"/>
         <Label x:Name="lblloginfo" Height="auto" Content=" " Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="62,0,531.6,51" FontSize="14" FontStyle="Oblique" Foreground="Red"/>
 
         <Grid.Background>
