@@ -18,6 +18,7 @@ using Raktar.Modell;
 using System.Data.Entity.Core;
 using System.Data.Entity.Infrastructure;
 using Raktar.Pagek;
+using Raktar.Services;
 
 namespace Raktar
 {
@@ -126,10 +127,10 @@ namespace Raktar
                     ujdolgozo.irsz = irsz;
                     ujdolgozo.anyjaneve = anyjaneve;
                     ujdolgozo.fizetes = fizetes;
-                    ujdolgozo.loginid = db.Logins.Select(p => p.id).Max() + 1;
-                    //ide kell a Cregister és paraméternek pl vezetéknév, mint felhasználónév, keresztnev, mint jelszo
+                    ujdolgozo.loginid = db.Logins.Select(p => p.id).Max() + 1;                    
                     db.Felhasznaloks.Add(ujdolgozo);
-                    db.SaveChanges();
+                    db.SaveChanges();                
+                    CRegister.Register(vezeteknev, keresztnev);                    
                 }
                 MessageBox.Show("Dolgozó sikeresen hozzáadva.");
             }
