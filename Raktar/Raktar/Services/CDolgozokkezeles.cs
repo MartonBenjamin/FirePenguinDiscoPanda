@@ -22,7 +22,7 @@ using Raktar.Services;
 
 namespace Raktar
 {
-   
+
     public class CDolgozokkezeles
     {
         static public int loggeduserid = 0;
@@ -55,7 +55,7 @@ namespace Raktar
                 return loggeddolgozo;
             }
             catch (Exception ex)
-            {                
+            {
                 MessageBox.Show("Hiba a szerver kapcsolatban");
                 Logger.Logging.LogExToTxt(ex);
                 return null;
@@ -111,9 +111,12 @@ namespace Raktar
 
         //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
         public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
-            {
+        {
             //try
             //{
+            int loginid = CRegister.Register(vezeteknev, keresztnev);
+            if (loginid > -1)
+            {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
                 {
                     Felhasznalok ujdolgozo = new Felhasznalok();
@@ -127,37 +130,39 @@ namespace Raktar
                     ujdolgozo.irsz = irsz;
                     ujdolgozo.anyjaneve = anyjaneve;
                     ujdolgozo.fizetes = fizetes;
-                    ujdolgozo.loginid = db.Logins.Select(p => p.id).Max() + 1;                    
+                    ujdolgozo.loginid = loginid;
                     db.Felhasznaloks.Add(ujdolgozo);
-                    db.SaveChanges();                
-                    CRegister.Register(vezeteknev, keresztnev);                    
+                    db.SaveChanges();
+
                 }
                 MessageBox.Show("Dolgozó sikeresen hozzáadva.");
             }
-            //catch (EntityCommandExecutionException ex)
-            //{
-            //    MessageBox.Show("Hiba a szerver kapcsolatban.");
-            //    Logger.Logging.LogExToTxt(ex);
-            //}
-            //catch (EntityException ex)
-            //{
-            //    MessageBox.Show("Hiba a szerver kapcsolatban.");
-            //    Logger.Logging.LogExToTxt(ex);
-            //}
-            //catch (DbUpdateException ex)
-            //{                
-            //    MessageBox.Show("Hibás beviteli érték.");
-            //    Logger.Logging.LogExToTxt(ex);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Hiba");
-            //    Logger.Logging.LogExToTxt(ex);
-            //}
-    
-       // }
-            public static void Dolgozotorol(int id)
-            {
+            else throw new Exception("Nem sikerült a login létrehozás.");
+        }
+        //catch (EntityCommandExecutionException ex)
+        //{
+        //    MessageBox.Show("Hiba a szerver kapcsolatban.");
+        //    Logger.Logging.LogExToTxt(ex);
+        //}
+        //catch (EntityException ex)
+        //{
+        //    MessageBox.Show("Hiba a szerver kapcsolatban.");
+        //    Logger.Logging.LogExToTxt(ex);
+        //}
+        //catch (DbUpdateException ex)
+        //{                
+        //    MessageBox.Show("Hibás beviteli érték.");
+        //    Logger.Logging.LogExToTxt(ex);
+        //}
+        //catch (Exception ex)
+        //{
+        //    MessageBox.Show("Hiba");
+        //    Logger.Logging.LogExToTxt(ex);
+        //}
+
+        // }
+        public static void Dolgozotorol(int id)
+        {
             try
             {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
@@ -191,5 +196,5 @@ namespace Raktar
             }
 
         }
-        }
+    }
 }

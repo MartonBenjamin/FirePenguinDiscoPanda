@@ -11,22 +11,26 @@ namespace Raktar.Services
 {
     public static class CRegister
     {
-        public static void Register(string felhasznalonev, string jelszo)
+        public static int Register(string felhasznalonev, string jelszo)
         {
+            int felid;
             try
             {
                 using (firepenguinEntities1 db = new firepenguinEntities1())
-            {
-                Login ujfelhasznalo = new Login();
+                {
+                    Login ujfelhasznalo = new Login();
 
-                ujfelhasznalo.felhasznalonev = felhasznalonev;
-                ujfelhasznalo.jelszo = jelszo;
-                ujfelhasznalo.id = db.Logins.Select(p => p.id).Max() + 1;
-                db.Logins.Add(ujfelhasznalo);
-                db.SaveChanges();
+                    ujfelhasznalo.felhasznalonev = felhasznalonev;
+                    ujfelhasznalo.jelszo = jelszo;
+                    ujfelhasznalo.id = db.Logins.Select(p => p.id).Max() + 1;
+                    db.Logins.Add(ujfelhasznalo);
+                    db.SaveChanges();
+                    felid = ujfelhasznalo.id;
+
+                }
+                MessageBox.Show("Felhasználó sikeresen regisztrálca.");
+                return felid;
             }
-            MessageBox.Show("Felhasználó sikeresen regisztrálca.");
-        }
             catch (EntityCommandExecutionException ex)
             {
                 MessageBox.Show("Hiba a szerver kapcsolatban.");
@@ -47,6 +51,7 @@ namespace Raktar.Services
                 MessageBox.Show("Hiba");
                 Logger.Logging.LogExToTxt(ex);
             }
+            return -1;
 
         }
     }
