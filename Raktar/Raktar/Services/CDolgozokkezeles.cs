@@ -112,55 +112,55 @@ namespace Raktar
         //HOZZÁADNI, CSAK FŐNÖK TUDJA MAJD!!
         public static void DolgozokHozaad(string vezeteknev, string keresztnev, string szulido, string adoazon, string taj, string irsz, string anyjaneve, int fizetes)
         {
-            //try
-            //{
-            int loginid = CRegister.Register(vezeteknev, keresztnev);
-            if (loginid > -1)
+            try
             {
-                using (firepenguinEntities1 db = new firepenguinEntities1())
+                int loginid = CRegister.Register(vezeteknev, keresztnev);
+                if (loginid > -1)
                 {
-                    Felhasznalok ujdolgozo = new Felhasznalok();
+                    using (firepenguinEntities1 db = new firepenguinEntities1())
+                    {
+                        Felhasznalok ujdolgozo = new Felhasznalok();
 
-                    ujdolgozo.id = db.Felhasznaloks.Select(p => p.id).Max() + 1;
-                    ujdolgozo.vezeteknev = vezeteknev;
-                    ujdolgozo.keresztnev = keresztnev;
-                    ujdolgozo.szulido = Convert.ToDateTime(szulido);
-                    ujdolgozo.adoazon = adoazon;
-                    ujdolgozo.taj = taj;
-                    ujdolgozo.irsz = irsz;
-                    ujdolgozo.anyjaneve = anyjaneve;
-                    ujdolgozo.fizetes = fizetes;
-                    ujdolgozo.loginid = loginid;
-                    db.Felhasznaloks.Add(ujdolgozo);
-                    db.SaveChanges();
+                        ujdolgozo.id = db.Felhasznaloks.Select(p => p.id).Max() + 1;
+                        ujdolgozo.vezeteknev = vezeteknev;
+                        ujdolgozo.keresztnev = keresztnev;
+                        ujdolgozo.szulido = Convert.ToDateTime(szulido);
+                        ujdolgozo.adoazon = adoazon;
+                        ujdolgozo.taj = taj;
+                        ujdolgozo.irsz = irsz;
+                        ujdolgozo.anyjaneve = anyjaneve;
+                        ujdolgozo.fizetes = fizetes;
+                        ujdolgozo.loginid = loginid;
+                        db.Felhasznaloks.Add(ujdolgozo);
+                        db.SaveChanges();
 
+                    }
+                    MessageBox.Show("Dolgozó sikeresen hozzáadva.");
                 }
-                MessageBox.Show("Dolgozó sikeresen hozzáadva.");
+                else throw new Exception("Nem sikerült a login létrehozás.");
             }
-            else throw new Exception("Nem sikerült a login létrehozás.");
-        }
-        //catch (EntityCommandExecutionException ex)
-        //{
-        //    MessageBox.Show("Hiba a szerver kapcsolatban.");
-        //    Logger.Logging.LogExToTxt(ex);
-        //}
-        //catch (EntityException ex)
-        //{
-        //    MessageBox.Show("Hiba a szerver kapcsolatban.");
-        //    Logger.Logging.LogExToTxt(ex);
-        //}
-        //catch (DbUpdateException ex)
-        //{                
-        //    MessageBox.Show("Hibás beviteli érték.");
-        //    Logger.Logging.LogExToTxt(ex);
-        //}
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show("Hiba");
-        //    Logger.Logging.LogExToTxt(ex);
-        //}
+            catch (EntityCommandExecutionException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (EntityException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (DbUpdateException ex)
+            {
+                MessageBox.Show("Hibás beviteli érték.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba");
+                Logger.Logging.LogExToTxt(ex);
+            }
 
-        // }
+        }
         public static void Dolgozotorol(int id)
         {
             try

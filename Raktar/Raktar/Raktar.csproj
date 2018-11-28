@@ -125,6 +125,7 @@
     <Compile Include="Modell\RaktarModell.cs" />
     <Compile Include="Modell\RegisterModell.cs" />
     <Compile Include="Modell\TermekModell.cs" />
+    <Compile Include="Modell\VarosModell.cs" />
     <Compile Include="Pagek\Jelszovaltoztatas.xaml.cs">
       <DependentUpon>Jelszovaltoztatas.xaml</DependentUpon>
     </Compile>
@@ -180,6 +181,7 @@
     <Compile Include="Pagek\Termekek.xaml.cs">
       <DependentUpon>Termekek.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\Varoskezeles.cs" />
     <Compile Include="Termék.cs">
       <DependentUpon>model11.tt</DependentUpon>
     </Compile>

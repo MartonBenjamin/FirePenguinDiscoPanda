@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Raktar.Services;
+using Raktar.Modell;
 
 namespace Raktar.Pagek
 {
@@ -23,7 +25,9 @@ namespace Raktar.Pagek
         public DolgozoHozaad()
         {
             InitializeComponent();
+            cbFeltolt();
         }
+        
 
         private void btnDolgozoHozaad_Click(object sender, RoutedEventArgs e)
         {
@@ -198,6 +202,22 @@ namespace Raktar.Pagek
                 tbfizetes.Text = "Fizetés";
                 lblfizetesinfo.Visibility = Visibility.Hidden;
             }
+        }
+        private void cbFeltolt()
+        {
+            List<VarosModell> varosok = Varoskezeles.VarosokVisszaad();
+            for (int i = 0; i < varosok.Count; i++)
+                cbVarosok.Items.Add(varosok[i].Varosmegnevezes);
+        }
+        private void CbVarosok_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<VarosModell> varosok = Varoskezeles.VarosokVisszaad();
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Város selectedvaros = db.Város.FirstOrDefault(p => p.Város1 == cbVarosok.SelectedItem);
+                tbirsz.Text = selectedvaros.Irányítószám;
+            }
+
         }
     }
 }

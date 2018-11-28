@@ -22,7 +22,7 @@
         <TextBox x:Name="tbszulido" Background="Khaki" HorizontalAlignment="Left" Margin="175,100,0,0" TextWrapping="Wrap" Text="Születési idő" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="szulido_GotFocus" LostFocus="tbszulido_LostFocus"/>
         <TextBox x:Name="tbadoazon" Background="Khaki" HorizontalAlignment="Left" Margin="175,120,0,0" TextWrapping="Wrap" Text="Adóazonosító szám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="adoazon_GotFocus" LostFocus="tbadoazon_LostFocus"/>
         <TextBox x:Name="tbtaj" Background="Khaki" HorizontalAlignment="Left" Margin="175,140,0,0" TextWrapping="Wrap" Text="Taj szám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="taj_GotFocus" LostFocus="tbtaj_LostFocus"/>
-        <TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="175,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="irsz_GotFocus" LostFocus="tbirsz_LostFocus"/>
+        <!--<TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="330,160,0,0" TextWrapping="Wrap" Text="Irányítószám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="irsz_GotFocus" LostFocus="tbirsz_LostFocus"/>-->
         <TextBox x:Name="tbanyjaneve" Background="Khaki" HorizontalAlignment="Left" Margin="175,180,0,0" TextWrapping="Wrap" Text="Anyja neve" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="anyjaneve_GotFocus" LostFocus="tbanyjaneve_LostFocus"/>
         <TextBox x:Name="tbfizetes" Background="Khaki" HorizontalAlignment="Left" Margin="175,200,0,0" TextWrapping="Wrap" Text="Fizetés" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="fizetes_GotFocus" LostFocus="tbfizetes_LostFocus"/>
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="80" Source="/Raktar;component/Designthings/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
@@ -34,6 +34,8 @@
         <Label HorizontalContentAlignment="Right"  Visibility="Hidden" x:Name="lbliranyitoinfo" Content="Irányítószám:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,163,0,0" Height="15" Width="100" Padding="0,0,0,0"/>
         <Label HorizontalContentAlignment="Right"  Visibility="Hidden" x:Name="lblanyjaneveinfo" Content="Anyja neve:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,183,0,0" Height="15" Width="100" Padding="0,0,0,0"/>
         <Label HorizontalContentAlignment="Right"  Visibility="Hidden" x:Name="lblfizetesinfo" Content="Fizetés:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,203,0,0" Height="15" Width="100" Padding="0,0,0,0"/>
+        <ComboBox x:Name="cbVarosok" HorizontalAlignment="Left" Background="Khaki" Margin="175,160,0,0" VerticalAlignment="Top" Height="20" Width="150" SelectionChanged="CbVarosok_SelectionChanged"/>
+        <TextBox x:Name="tbirsz" Background="Khaki" HorizontalAlignment="Left" Margin="325,160,0,0" TextWrapping="Wrap" Text="Taj szám" Width="150" Foreground="Black" VerticalAlignment="Top" GotFocus="taj_GotFocus" LostFocus="tbtaj_LostFocus"/>
 
     </Grid>
 </Page>

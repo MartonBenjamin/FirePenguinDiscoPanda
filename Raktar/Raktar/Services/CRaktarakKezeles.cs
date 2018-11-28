@@ -33,6 +33,7 @@ namespace Raktar
 
                 return raktarak;
         }
+        
 
         public static void RaktarHozzaAd(string raktarnev, string raktarcim)
         {
