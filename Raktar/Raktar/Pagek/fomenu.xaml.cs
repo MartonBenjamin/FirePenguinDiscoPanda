@@ -21,7 +21,7 @@ namespace Raktar.Pagek
     /// </summary>
     public partial class fomenu : Page
     {
-        DolgozoModell loggeduser;
+        public static DolgozoModell loggeduser;
         public fomenu()
         {
             InitializeComponent();
@@ -71,6 +71,12 @@ namespace Raktar.Pagek
                 //login ablak újra mutatása kéne
             }
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Jelszovaltoztatas jelszovaltoztatas = new Jelszovaltoztatas();
+            mainWin.Content = jelszovaltoztatas;
         }
     }
 }

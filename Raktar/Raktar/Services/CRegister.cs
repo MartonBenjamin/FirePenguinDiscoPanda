@@ -54,5 +54,38 @@ namespace Raktar.Services
             return -1;
 
         }
+        public static void JelszoValtoztat(int id, string jelszo)
+        {
+            try
+            {
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Login jelszocsere = db.Logins.FirstOrDefault(u => u.id == id);
+                    jelszocsere.jelszo = jelszo;
+                    db.SaveChanges();
+                }
+                MessageBox.Show("Jelszó megváltoztatása sikeres!");
+            }
+            catch (EntityCommandExecutionException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (EntityException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (DbUpdateException ex)
+            {
+                MessageBox.Show("Hibás beviteli érték.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba");
+                Logger.Logging.LogExToTxt(ex);
+            }
+        }
     }
 }
