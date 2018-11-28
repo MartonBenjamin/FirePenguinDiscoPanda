@@ -596,3 +596,5 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.g.cs
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Raktar.csprojAssemblyReference.cache
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.g.cs
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.baml
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\bin\Debug\Logger.dll
+D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Regisztracio.baml

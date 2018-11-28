@@ -24,6 +24,12 @@ namespace Raktar
         public Raktarak()
         {
             InitializeComponent();
+            RaktarListaFeltolt();
+            
+        }
+        public void RaktarListaFeltolt()
+        {
+            raktarlistatarolo.ItemsSource = CRaktarakKezeles.RaktarListaVisszaad();
         }
 
         MainWindow mainWin = Application.Current.Windows

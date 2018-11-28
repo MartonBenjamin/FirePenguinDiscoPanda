@@ -11,11 +11,12 @@ namespace Raktar
     {
         //Raktár adatainak kilistázása, raktár eltávolítása, hozzáadása
 
-        static List<RaktarModell> raktarak = new List<RaktarModell>();
+        
 
         public static List<RaktarModell> RaktarListaVisszaad()
         {
-            
+            List<RaktarModell> raktarak = new List<RaktarModell>();
+
             using (firepenguinEntities1 db = new firepenguinEntities1())
             {
                 foreach (var raktár in db.Raktár)
