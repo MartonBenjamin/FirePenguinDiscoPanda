@@ -19,7 +19,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="felhasznalonev" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="jelszo" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="admin" Type="tinyint" />

@@ -22,7 +22,7 @@ namespace Raktar.Services
 
                     ujfelhasznalo.felhasznalonev = felhasznalonev;
                     ujfelhasznalo.jelszo = jelszo;
-                    ujfelhasznalo.id = db.Logins.Select(p => p.id).Max() + 1;
+                    ujfelhasznalo.admin = 0;
                     db.Logins.Add(ujfelhasznalo);
                     db.SaveChanges();
                     felid = ujfelhasznalo.id;
@@ -54,6 +54,32 @@ namespace Raktar.Services
             return -1;
 
         }
+
+        public static bool Admine(int id)
+        {
+            try
+            {
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Login ellenorzottfelhasznalo = db.Logins.FirstOrDefault(u => u.id == id);
+                    if (ellenorzottfelhasznalo.admin == 1)
+                        return true;
+                    
+                }
+            }
+            catch (EntityCommandExecutionException ex)
+            {
+                MessageBox.Show("Hiba a szerver kapcsolatban.");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ismeretlen hiba történt");
+                Logger.Logging.LogExToTxt(ex);
+            }
+            return false;
+        }
+
         public static void JelszoValtoztat(int id, string jelszo)
         {
             try

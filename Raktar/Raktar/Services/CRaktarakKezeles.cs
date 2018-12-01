@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Threading.Tasks;
+using Raktar.Services;
 
 namespace Raktar
 {
@@ -11,7 +13,7 @@ namespace Raktar
     {
         //Raktár adatainak kilistázása, raktár eltávolítása, hozzáadása
 
-        
+
 
         public static List<RaktarModell> RaktarListaVisszaad()
         {
@@ -31,30 +33,44 @@ namespace Raktar
                 }
             }
 
-                return raktarak;
+            return raktarak;
         }
-        
+
 
         public static void RaktarHozzaAd(string raktarnev, string raktarcim)
         {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
+            if (CRegister.Admine(CDolgozokkezeles.loggeduserid))
             {
-                Raktár ujraktar = new Raktár();
-                int maxId = db.Raktár.Select(p => p.id).Max();
-                ujraktar.Név = raktarnev;
-                ujraktar.Cím = raktarcim;
-                db.Raktár.Add(ujraktar);
-                db.SaveChanges();
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Raktár ujraktar = new Raktár();
+                    int maxId = db.Raktár.Select(p => p.id).Max();
+                    ujraktar.Név = raktarnev;
+                    ujraktar.Cím = raktarcim;
+                    db.Raktár.Add(ujraktar);
+                    db.SaveChanges();
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nem vagy jogosult raktárak felvitelére!");
             }
         }
         public static void RaktarTorol(int id)
         {
-            using (firepenguinEntities1 db = new firepenguinEntities1())
+            if (CRegister.Admine(CDolgozokkezeles.loggeduserid))
             {
-                Raktár torolraktar = db.Raktár.FirstOrDefault(p => p.id == id);
-                db.Raktár.Remove(torolraktar);
-                db.SaveChanges();
+                using (firepenguinEntities1 db = new firepenguinEntities1())
+                {
+                    Raktár torolraktar = db.Raktár.FirstOrDefault(p => p.id == id);
+                    db.Raktár.Remove(torolraktar);
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nem vagy jogosult raktárak felvitelére!");
             }
         }
     }

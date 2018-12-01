@@ -114,30 +114,37 @@ namespace Raktar
         {
             try
             {
-                int loginid = CRegister.Register(vezeteknev, keresztnev);
-                if (loginid > -1)
-                {
-                    using (firepenguinEntities1 db = new firepenguinEntities1())
+                if(CRegister.Admine(loggeduserid))
+                { 
+                    int loginid = CRegister.Register(vezeteknev, keresztnev);
+                    if (loginid > -1)
                     {
-                        Felhasznalok ujdolgozo = new Felhasznalok();
+                        using (firepenguinEntities1 db = new firepenguinEntities1())
+                        {
+                            Felhasznalok ujdolgozo = new Felhasznalok();
 
-                        ujdolgozo.id = db.Felhasznaloks.Select(p => p.id).Max() + 1;
-                        ujdolgozo.vezeteknev = vezeteknev;
-                        ujdolgozo.keresztnev = keresztnev;
-                        ujdolgozo.szulido = Convert.ToDateTime(szulido);
-                        ujdolgozo.adoazon = adoazon;
-                        ujdolgozo.taj = taj;
-                        ujdolgozo.irsz = irsz;
-                        ujdolgozo.anyjaneve = anyjaneve;
-                        ujdolgozo.fizetes = fizetes;
-                        ujdolgozo.loginid = loginid;
-                        db.Felhasznaloks.Add(ujdolgozo);
-                        db.SaveChanges();
+                            ujdolgozo.id = db.Felhasznaloks.Select(p => p.id).Max() + 1;
+                            ujdolgozo.vezeteknev = vezeteknev;
+                            ujdolgozo.keresztnev = keresztnev;
+                            ujdolgozo.szulido = Convert.ToDateTime(szulido);
+                            ujdolgozo.adoazon = adoazon;
+                            ujdolgozo.taj = taj;
+                            ujdolgozo.irsz = irsz;
+                            ujdolgozo.anyjaneve = anyjaneve;
+                            ujdolgozo.fizetes = fizetes;
+                            ujdolgozo.loginid = loginid;
+                            db.Felhasznaloks.Add(ujdolgozo);
+                            db.SaveChanges();
 
+                        }
+                        MessageBox.Show("Dolgozó sikeresen hozzáadva.");
                     }
-                    MessageBox.Show("Dolgozó sikeresen hozzáadva.");
+                    else throw new Exception("Nem sikerült a login létrehozás.");
                 }
-                else throw new Exception("Nem sikerült a login létrehozás.");
+                else
+                {
+                    MessageBox.Show("Csak főnök tudja használni!");
+                }
             }
             catch (EntityCommandExecutionException ex)
             {
@@ -165,13 +172,20 @@ namespace Raktar
         {
             try
             {
-                using (firepenguinEntities1 db = new firepenguinEntities1())
+                if (CRegister.Admine(loggeduserid))
                 {
-                    Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
-                    Login toroldolgozologin = db.Logins.FirstOrDefault(u => u.id == toroldolgozo.loginid);
-                    db.Felhasznaloks.Remove(toroldolgozo);
-                    db.Logins.Remove(toroldolgozologin);
-                    db.SaveChanges();
+                    using (firepenguinEntities1 db = new firepenguinEntities1())
+                    {
+                        Felhasznalok toroldolgozo = db.Felhasznaloks.FirstOrDefault(p => p.id == id);
+                        Login toroldolgozologin = db.Logins.FirstOrDefault(u => u.id == toroldolgozo.loginid);
+                        db.Felhasznaloks.Remove(toroldolgozo);
+                        db.Logins.Remove(toroldolgozologin);
+                        db.SaveChanges();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Csak főnök tud törölni!");
                 }
             }
             catch (ArgumentNullException ex)

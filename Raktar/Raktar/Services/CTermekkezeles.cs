@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Raktar.Services;
 
 namespace Raktar
 {
@@ -65,12 +66,17 @@ namespace Raktar
         {
             try
             {
-                using (firepenguinEntities1 db = new firepenguinEntities1())
+                if (CRegister.Admine(CDolgozokkezeles.loggeduserid))
                 {
-                    Termék toroltermek = db.Termék.FirstOrDefault(p => p.id == id);
-                    db.Termék.Remove(toroltermek);
-                    db.SaveChanges();
+                    using (firepenguinEntities1 db = new firepenguinEntities1())
+                    {
+                        Termék toroltermek = db.Termék.FirstOrDefault(p => p.id == id);
+                        db.Termék.Remove(toroltermek);
+                        db.SaveChanges();
+                    }
                 }
+                else
+                    MessageBox.Show("Nincs jogosultságod a termék törléséhez!");
             }
             catch (ArgumentNullException ex)
             {

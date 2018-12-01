@@ -37,6 +37,7 @@ namespace Raktar.Pagek
         {
             loggeduser = CDolgozokkezeles.LoggedUserVisszaad();
             lblloggeduser.Content =  "Bejelentkezve, mint: "+loggeduser.Vezeteknev + " " + loggeduser.Keresztnev;
+            
         }
 
         private void btn_click_dolgozok(object sender, RoutedEventArgs e)
