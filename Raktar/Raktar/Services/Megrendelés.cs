@@ -10,6 +10,13 @@ namespace Raktar.Services
     class Megrendelés
     {
         //Termékhez árat rendelni!
+        /// <summary>
+        /// Termék kiküldése a megrendelőhöz! Visszatérés: Termékek ára
+        /// </summary>
+        /// <param name="termekid"></param>
+        /// <param name="darab"></param>
+        /// <param name="megrendelo"></param>
+        /// <returns>Visszaadja, hogy mennyi a bevétel!</returns>
         public static int TermekKikuld(int termekid, byte darab, string megrendelo)
         {
             using (firepenguinEntities1 db = new firepenguinEntities1())
@@ -19,8 +26,25 @@ namespace Raktar.Services
                     kikuldtermek.Raktáron -= darab;
                 else MessageBox.Show("Nincs ennyi termék raktáron! Raktáron van " + kikuldtermek.Raktáron+ "db");
                 db.SaveChanges();
+                return darab*kikuldtermek.Ár;
             }
-            return 1;
+            
+        }
+        /// <summary>
+        /// Termékeket lehet megrendelni a raktárba! Feltétele, hogy szerepljen a termékek táblába! Visszatérés: Termékek ára
+        /// </summary>
+        /// <param name="termekid"></param>
+        /// <param name="darab"></param>
+        /// <param name="beszallito"></param>
+        public static int TermekMegrendel(int termekid, byte darab, string beszallito)
+        {
+            using (firepenguinEntities1 db = new firepenguinEntities1())
+            {
+                Termék megrendeltermek = db.Termék.FirstOrDefault(p => p.id == termekid);
+                megrendeltermek.Raktáron += darab;
+                db.SaveChanges();
+                return darab;
+            }
         }
             
     }

@@ -17,9 +17,10 @@ namespace Raktar
         public int id { get; set; }
         public string Megnevezés { get; set; }
         public int Súly_gramm_ { get; set; }
-        public byte Raktáron { get; set; }
+        public int Raktáron { get; set; }
         public int Raktár { get; set; }
         public System.DateTime Beszállítva { get; set; }
         public Nullable<System.DateTime> Szavatosság { get; set; }
+        public int Ár { get; set; }
     }
 }

@@ -39,10 +39,11 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="Megnevezés" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Súly(gramm)" Type="int" Nullable="false" />
-    <Property Name="Raktáron" Type="tinyint" Nullable="false" />
+    <Property Name="Raktáron" Type="int" Nullable="false" />
     <Property Name="Raktár" Type="int" Nullable="false" />
     <Property Name="Beszállítva" Type="date" Nullable="false" />
     <Property Name="Szavatosság" Type="date" />
+    <Property Name="Ár" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Város">
     <Key>

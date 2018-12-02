@@ -44,10 +44,11 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Megnevezés" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Súly(gramm)" Type="int" Nullable="false" />
-          <Property Name="Raktáron" Type="tinyint" Nullable="false" />
+          <Property Name="Raktáron" Type="int" Nullable="false" />
           <Property Name="Raktár" Type="int" Nullable="false" />
           <Property Name="Beszállítva" Type="date" Nullable="false" />
           <Property Name="Szavatosság" Type="date" />
+          <Property Name="Ár" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Város">
           <Key>
@@ -182,10 +183,11 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Megnevezés" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Súly_gramm_" Type="Int32" Nullable="false" />
-          <Property Name="Raktáron" Type="Byte" Nullable="false" />
+          <Property Name="Raktáron" Type="Int32" Nullable="false" />
           <Property Name="Raktár" Type="Int32" Nullable="false" />
           <Property Name="Beszállítva" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Szavatosság" Type="DateTime" Precision="0" />
+          <Property Name="Ár" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Felhasznalok_Login">
           <End Type="firepenguinModel1.Login" Role="Login" Multiplicity="1" />
@@ -263,6 +265,7 @@
           <EntitySetMapping Name="Termék">
             <EntityTypeMapping TypeName="firepenguinModel1.Termék">
               <MappingFragment StoreEntitySet="Termék">
+                <ScalarProperty Name="Ár" ColumnName="Ár" />
                 <ScalarProperty Name="Szavatosság" ColumnName="Szavatosság" />
                 <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />
                 <ScalarProperty Name="Raktár" ColumnName="Raktár" />

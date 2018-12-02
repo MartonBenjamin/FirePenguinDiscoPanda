@@ -17,11 +17,15 @@ namespace Raktar.Modell
         {
             get; set;
         }
+        public int Ár
+        {
+            get; set;
+        }
         public int Suly_gramm
         {
             get; set;
         }
-        public byte Raktáron
+        public int Raktáron
         {
             get; set;
         }

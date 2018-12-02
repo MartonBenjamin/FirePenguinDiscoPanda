@@ -47,6 +47,7 @@
     <EntitySetMapping Name="Termék">
       <EntityTypeMapping TypeName="firepenguinModel1.Termék">
         <MappingFragment StoreEntitySet="Termék">
+          <ScalarProperty Name="Ár" ColumnName="Ár" />
           <ScalarProperty Name="Szavatosság" ColumnName="Szavatosság" />
           <ScalarProperty Name="Beszállítva" ColumnName="Beszállítva" />
           <ScalarProperty Name="Raktár" ColumnName="Raktár" />

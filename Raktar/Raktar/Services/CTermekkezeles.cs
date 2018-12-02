@@ -36,7 +36,8 @@ namespace Raktar
                             Megnevezés = termek.Megnevezés,
                             Raktáron = termek.Raktáron,
                             Beszállítva = Convert.ToDateTime(termek.Beszállítva),
-                            Szavatosság = Convert.ToDateTime(termek.Szavatosság)
+                            Szavatosság = Convert.ToDateTime(termek.Szavatosság),
+                            Ár = termek.Ár
                         });
                     }
                     return termekek;
@@ -100,7 +101,7 @@ namespace Raktar
             }
         }
 
-        public static void TermekHozaad(int suly, int raktar, string megnevezes, byte raktaron, DateTime szavatossag)
+        public static void TermekHozaad(int suly, int raktar, int ar, string megnevezes, byte darab, DateTime szavatossag)
         {
             try
             {
@@ -112,9 +113,11 @@ namespace Raktar
                     ujtermek.Megnevezés = megnevezes;
                     ujtermek.Súly_gramm_ = suly;
                     ujtermek.Raktár = raktar;
-                    ujtermek.Raktáron = raktaron;
+                    ujtermek.Raktáron = darab;
                     ujtermek.Beszállítva = DateTime.Now;
                     ujtermek.Szavatosság = szavatossag;
+                    ujtermek.Ár = ar;
+                    
                     db.Termék.Add(ujtermek);
 
                     db.SaveChanges();
