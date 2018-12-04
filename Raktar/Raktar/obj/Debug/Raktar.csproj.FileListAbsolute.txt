@@ -602,3 +602,5 @@ C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\
 C:\Users\B\Documents\GitHub\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.baml
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.g.cs
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.g.cs
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.baml

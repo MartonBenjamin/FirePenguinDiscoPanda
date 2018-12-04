@@ -65,16 +65,18 @@ namespace Raktar.Pagek
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
         {
-            List<TextBox> TextBoxes = new List<TextBox> { tbvezeteknev, tbkeresztnev, tbszulido, tbadoazon, tbtaj, tbirsz, tbanyjaneve, tbfizetes };
+            List<Control> Controls = new List<Control> { tbvezeteknev, tbkeresztnev, tbszulido, tbadoazon, tbtaj, cbVarosok,tbanyjaneve, tbfizetes };
             if (e.Key == Key.Enter)
             {
-                if (TextBoxes[0].IsFocused) TextBoxes[1].Focus();
-                else if (TextBoxes[1].IsFocused) TextBoxes[2].Focus();
-                else if (TextBoxes[2].IsFocused) TextBoxes[3].Focus();
-                else if (TextBoxes[3].IsFocused) TextBoxes[4].Focus();
-                else if (TextBoxes[4].IsFocused) TextBoxes[5].Focus();
-                else if (TextBoxes[5].IsFocused) TextBoxes[6].Focus();
-                else if (TextBoxes[6].IsFocused) TextBoxes[7].Focus();
+
+                if (Controls[0].IsFocused) Controls[1].Focus();
+                else if (Controls[1].IsFocused) Controls[2].Focus();
+                else if (Controls[2].IsFocused) Controls[3].Focus();
+                else if (Controls[3].IsFocused) Controls[4].Focus();
+                else if (Controls[4].IsFocused)
+                { cbVarosok.IsDropDownOpen = true; cbVarosok.SelectedIndex = 0; }
+                else if (cbVarosok.IsFocused) Controls[6].Focus();
+                else if (Controls[6].IsFocused) Controls[7].Focus();
                 else
                 {
                     btnDolgozoHozaad.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));
@@ -120,7 +122,7 @@ namespace Raktar.Pagek
         }
         private void irsz_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (tbirsz.Text == "Irányítószám")
+            if (tbirsz.Text == "Város, Irányítószám")
                 tbirsz.Text = "";
             lbliranyitoinfo.Visibility = Visibility.Visible;
         }
@@ -177,6 +179,19 @@ namespace Raktar.Pagek
             }
         }
 
+        private void cbVarosok_GotFocus(object sender, RoutedEventArgs e)
+        {
+            lbliranyitoinfo.Visibility = Visibility.Visible;
+        }
+
+        private void cbVarosok_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (cbVarosok.Text == "")
+            {
+                lbliranyitoinfo.Visibility = Visibility.Hidden;
+            }
+        }
+
         private void tbirsz_LostFocus(object sender, RoutedEventArgs e)
         {
             if (tbirsz.Text == "")
@@ -219,5 +234,7 @@ namespace Raktar.Pagek
             }
 
         }
+
+       
     }
 }
