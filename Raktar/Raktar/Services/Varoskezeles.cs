@@ -7,7 +7,7 @@ using Raktar.Modell;
 
 namespace Raktar.Services
 {
-    class Varoskezeles
+    public class Varoskezeles
     {
         public static List<VarosModell> VarosokVisszaad()
         {

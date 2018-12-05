@@ -9,7 +9,7 @@ using Raktar.Services;
 
 namespace Raktar
 {
-    class CRaktarakKezeles
+    public class CRaktarakKezeles
     {
         //Raktár adatainak kilistázása, raktár eltávolítása, hozzáadása
 

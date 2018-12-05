@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Raktar.Services
 {
-    class Megrendelés
+    public class Megrendelés
     {
         //Termékhez árat rendelni!
         /// <summary>
