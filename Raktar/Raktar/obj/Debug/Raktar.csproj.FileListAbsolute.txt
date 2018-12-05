@@ -604,3 +604,4 @@ D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.
 D:\github\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.baml
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.g.cs
 C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\Pagek\Jelszovaltoztatas.baml
+C:\BB_Main\Git\FirePenguinDiscoPanda\Raktar\Raktar\obj\Debug\App.baml

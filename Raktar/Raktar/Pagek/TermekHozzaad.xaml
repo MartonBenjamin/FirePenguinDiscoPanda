@@ -7,17 +7,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TermekHozzaad"
-      KeyDown="Page_KeyDown"  
+      KeyDown="Page_KeyDown"
       >
 
     <Grid Background="Khaki">
-        <TextBox  x:Name="megnevezes" Text="Megnevezés" HorizontalAlignment="Left" Height="23" Margin="170,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="megnevezes_GotFocus"  />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,115,0,0" TextWrapping="Wrap" x:Name="suly" Text="Súly(gramm)" VerticalAlignment="Top" Width="120" GotFocus="suly_GotFocus"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,138,0,0" TextWrapping="Wrap" x:Name="Raktar_id" Text="Raktár id" VerticalAlignment="Top" Width="120" GotFocus="raktar_id_GotFocus"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,161,0,0" TextWrapping="Wrap" x:Name="darab" Text="darabszám" VerticalAlignment="Top" Width="120" GotFocus="darabszam_GotFocus"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,184,0,0" TextWrapping="Wrap" x:Name="szavatossag" Text="Szavatosság" VerticalAlignment="Top" Width="120" GotFocus="szavatossag_GotFocus"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,207,0,0" TextWrapping="Wrap" x:Name="tbar" Text="Ár" VerticalAlignment="Top" Width="120"  GotFocus="tbar_GotFocus"/>
-        <Button  x:Name="AddButton" Click="Button_Click" Content="Termék hozzáad" HorizontalAlignment="Left" Margin="170,246,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="Megnevezés" x:Name="megnevezes" HorizontalAlignment="Left" Margin="170,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="150"  Background="Khaki" FontSize="20"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="Súly(gramm)" HorizontalAlignment="Left" Height="30" Margin="170,115,0,0" TextWrapping="Wrap" x:Name="suly" VerticalAlignment="Top" Width="150"  Background="Khaki" FontSize="20"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="Raktár id" HorizontalAlignment="Left" Height="30" Margin="170,145,0,0" TextWrapping="Wrap" x:Name="Raktar_id" VerticalAlignment="Top" Width="150"  Background="Khaki" FontSize="20"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="Darabszám" HorizontalAlignment="Left" Height="30" Margin="170,175,0,0" TextWrapping="Wrap" x:Name="darab" VerticalAlignment="Top" Width="150"  Background="Khaki" FontSize="20"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="Szavatosság" HorizontalAlignment="Left" Height="30" Margin="170,205,0,0" TextWrapping="Wrap" x:Name="szavatossag" VerticalAlignment="Top" Width="150"  Background="Khaki" FontSize="20"/>
+        <TextBox Style="{StaticResource placeHolder}" Tag="Ár" HorizontalAlignment="Left" Height="30" Margin="170,235,0,0" TextWrapping="Wrap" x:Name="tbar" VerticalAlignment="Top" Width="150"  Background="Khaki" FontSize="20"/>
+        <Button  x:Name="AddButton" Click="Button_Click" Content="Termék hozzáad" HorizontalAlignment="Left" Margin="170,292,0,0" VerticalAlignment="Top" Height="30" Width="150" FontSize="18" Foreground="#FFF495" BorderThickness="0" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Raktar;component/Designthings/gomb.png"/>
+            </Button.Background>
+        </Button>
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="80" Source="/Raktar;component/Designthings/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
     </Grid>
 </Page>

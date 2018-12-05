@@ -67,32 +67,33 @@ namespace Raktar.Pagek
             }            
         }
 
-        
 
-        private void megnevezes_GotFocus(object sender, RoutedEventArgs e)
-        {
-            megnevezes.Text = "";
-        }
-        private void suly_GotFocus(object sender, RoutedEventArgs e)
-        {
-            suly.Text = "";
-        }
-        private void raktar_id_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Raktar_id.Text = "";
-        }
-        private void darabszam_GotFocus(object sender, RoutedEventArgs e)
-        {
-            darab.Text = "";
-        }
-        private void szavatossag_GotFocus(object sender, RoutedEventArgs e)
-        {
-            szavatossag.Text = "";
-        }
-        private void tbar_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbar.Text = "";
-        }
+
+
+        //private void megnevezes_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    megnevezes.Text = "";
+        //}
+        //private void suly_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    suly.Text = "";
+        //}
+        //private void raktar_id_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    Raktar_id.Text = "";
+        //}
+        //private void darabszam_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    darab.Text = "";
+        //}
+        //private void szavatossag_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    szavatossag.Text = "";
+        //}
+        //private void tbar_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    tbar.Text = "";
+        //}
 
 
         private void Page_KeyDown(object sender, KeyEventArgs e)
@@ -105,10 +106,9 @@ namespace Raktar.Pagek
                 else if (TextBoxes[2].IsFocused) TextBoxes[3].Focus();
                 else if (TextBoxes[3].IsFocused) TextBoxes[4].Focus();
                 else if (TextBoxes[4].IsFocused) TextBoxes[5].Focus();
-                else AddButton.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));            
-            }            
+                else AddButton.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Primitives.ButtonBase.ClickEvent));
+            }
         }
 
-       
     }
 }

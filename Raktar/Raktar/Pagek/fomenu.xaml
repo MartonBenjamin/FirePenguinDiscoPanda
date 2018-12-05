@@ -9,16 +9,6 @@
       Title="Főmenü">
 
     <Grid Background="Khaki">
-        <Image Margin="525,35,-20,146.6" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
-                    <SkewTransform AngleY="0" AngleX="0"/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
         <Image Margin="-35,210,540,-28.4" Source="/Raktar;component/Designthings/raklap.png" Stretch="Fill" RenderTransformOrigin="0.559,0.485"/>
         <Image Margin="580,250,0,17.6" Source="/Raktar;component/Designthings/targonca.png" HorizontalAlignment="Left" Width="210" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
