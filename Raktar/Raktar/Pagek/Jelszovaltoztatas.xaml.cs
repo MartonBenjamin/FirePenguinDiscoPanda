@@ -29,25 +29,10 @@ namespace Raktar.Pagek
 
         private void Btnjelszocsere_Click(object sender, RoutedEventArgs e)
         {
-            CRegister.JelszoValtoztat(fomenu.loggeduser.Loginid, tbjelszo.Text);
+            CRegister.JelszoValtoztat(fomenu.loggeduser.Loginid, tbjelszo.Password);
             backtomenu();
         }
-
-        private void Jelszomegegyszer_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (tbjelszo.Text != tbjelszomegegyszer.Text)
-            {
-                lblnemegyezojelszo.Foreground = Brushes.Red;
-                lblnemegyezojelszo.Content = "A két jelszó nem egyezik meg!";
-                btnjelszocsere.IsEnabled = false;
-            }
-            else if (tbjelszo.Text != null && tbjelszomegegyszer.Text != null)
-            {
-                lblnemegyezojelszo.Foreground = Brushes.Green;
-                lblnemegyezojelszo.Content = "Megfelelő jelszó!";
-                btnjelszocsere.IsEnabled = true;
-            }
-        }
+    
 
         MainWindow mainWin = Application.Current.Windows
          .Cast<Window>()
@@ -78,6 +63,24 @@ namespace Raktar.Pagek
                 MessageBox.Show("Hiba a szerver kapcsolatban.");
                 Logger.Logging.LogExToTxt(ex);
             }
+        }
+
+        private void tbjelszomegegyszer_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+            if (tbjelszo.Password != tbjelszomegegyszer.Password)
+            {
+                lblnemegyezojelszo.Foreground = Brushes.Red;
+                lblnemegyezojelszo.Content = "A két jelszó nem egyezik meg!";
+                btnjelszocsere.IsEnabled = false;
+            }
+            else if (tbjelszo.Password != null && tbjelszomegegyszer.Password != null)
+            {
+                lblnemegyezojelszo.Foreground = Brushes.Green;
+                lblnemegyezojelszo.Content = "Megfelelő jelszó!";
+                btnjelszocsere.IsEnabled = true;
+            }
+
         }
     }
 }

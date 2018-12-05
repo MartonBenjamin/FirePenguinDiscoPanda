@@ -28,7 +28,7 @@ namespace Raktar.Services
                     felid = ujfelhasznalo.id;
 
                 }
-                MessageBox.Show("Felhasználó sikeresen regisztrálca.");
+                MessageBox.Show("Felhasználó sikeresen regisztrálva.");
                 return felid;
             }
             catch (EntityCommandExecutionException ex)
@@ -54,7 +54,7 @@ namespace Raktar.Services
             return -1;
 
         }
-
+        
         public static bool Admine(int id)
         {
             try

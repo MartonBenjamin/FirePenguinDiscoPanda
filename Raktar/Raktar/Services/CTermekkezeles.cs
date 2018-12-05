@@ -11,7 +11,7 @@ using Raktar.Services;
 
 namespace Raktar
 {
-    class CTermekkezeles
+    public class CTermekkezeles
     {
         //Add,remove,modify Ha 0 van raktáron kiírja, hogy "nincs raktáron"        
         public static List<TermekModell> termekListaVisszaAd()

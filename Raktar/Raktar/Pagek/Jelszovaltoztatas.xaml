@@ -10,9 +10,9 @@
 
     <Grid Background="Khaki">
         <Button Click="Btnjelszocsere_Click" x:Name="btnjelszocsere" IsEnabled="False" Content="Jelszó megváltoztatása" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,110" Width="150"/>
-        <TextBox TextChanged="Jelszomegegyszer_TextChanged" x:Name="tbjelszomegegyszer" HorizontalAlignment="Center" Height="20" Margin="0,0,0,170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="200"/>
+        <PasswordBox PasswordChanged="tbjelszomegegyszer_PasswordChanged" x:Name="tbjelszomegegyszer" HorizontalAlignment="Center" Height="20" Margin="0,0,0,170" VerticalAlignment="Bottom" Width="200"/>
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="80" Source="/Raktar;component/Designthings/Visszagomb.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Stretch="Fill"/>
-        <TextBox x:Name="tbjelszo" HorizontalAlignment="Center" Height="20" Margin="0,0,0,200" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="200"/>
+        <PasswordBox x:Name="tbjelszo" PasswordChanged="tbjelszomegegyszer_PasswordChanged" HorizontalAlignment="Center" Height="20" Margin="0,0,0,200" VerticalAlignment="Bottom" Width="200"/>
         <Label Content="Jelszó megváltoztatása" HorizontalAlignment="Center" Height="50" BorderThickness="0" FontSize="30" VerticalAlignment="Top" Margin="0,120,0,0"/>
         <Label Content="Új jelszó" BorderThickness="0" HorizontalAlignment="Center"  Margin="0,0,330,195" VerticalAlignment="Bottom"/>
         <Label Content="Új jelszó mégegyszer" BorderThickness="0" HorizontalAlignment="Center" Margin="0,0,330,170" VerticalAlignment="Bottom"/>

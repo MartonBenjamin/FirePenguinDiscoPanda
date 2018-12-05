@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raktar.Services
 {
-    class Ellenorzes
+    public class Ellenorzes
     {
         public bool adoazonositoellenoriz(string adoazonosito)
         {

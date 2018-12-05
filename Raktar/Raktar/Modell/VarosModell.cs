@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raktar.Modell
 {
-    class VarosModell
+    public class VarosModell
     {
         private string irszam;
 

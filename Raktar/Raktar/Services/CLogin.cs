@@ -19,7 +19,7 @@ using Raktar.Pagek;
 namespace Raktar
 {
 
-    class CLogin
+    public class CLogin
     {
         MainWindow mainWin = Application.Current.Windows
        .Cast<Window>()
@@ -82,6 +82,7 @@ namespace Raktar
                 Logger.Logging.LogExToTxt(ex);
                 mainWin.lblloginfo.Content = "Hiba a szerver kapcsolatban!";
             }
+            double asd = mainWin.ActualHeight;
 
         }
 
